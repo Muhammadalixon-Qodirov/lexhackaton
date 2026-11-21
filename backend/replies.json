@@ -1,0 +1,453 @@
+{
+  "_izoh": "Raqib advokatning oldindan tayyorlangan javoblari (LexSim_Backend_AI_Toliq_Topshiriq.md §3.4). Ish vaqtida talaba gapi har bir variantning 'when' namunalari bilan GPU reranker orqali solishtiriladi: moslik >= threshold bo'lsa shu variant darhol (<300 ms) aytiladi; bo'lmasa 'generic: true' variant. LLM faqat advanced darajada va mos variant topilmaganda chaqiriladi. Har bir matn llm_check'dan o'tadi (unit test). Mentor tekshirishi kerak.",
+  "threshold": 0.5,
+  "bank": {
+    "javobgar-vakili": {
+      "answer": [
+        {
+          "id": "a-ref",
+          "when": [
+            "Fuqarolik kodeksining 544-moddasiga asosan ijara haqi va qarz undirilishini so'raymiz.",
+            "Shartnoma bo'yicha javobgar ijara haqini to'lashi shart."
+          ],
+          "text": "Hurmatli sud, da'vogar keltirgan modda ijara haqini to'lashni nazarda tutadi, lekin obyekt avval topshirilgan bo'lishi kerak. Fuqarolik kodeksining 578-moddasiga ko'ra bino dalolatnoma bilan topshiriladi, bunday hujjat yo'q."
+        },
+        {
+          "id": "a-penya",
+          "when": [
+            "Shartnomaning 8.5-bandiga asosan penya undirishni so'raymiz.",
+            "Kechiktirilgan to'lov uchun penya talab qilamiz."
+          ],
+          "text": "Hurmatli sud, penya talabiga alohida e'tirozimiz bor: so'ralayotgan summa qarzga nisbatan juda katta. Bundan tashqari, obyekt bizga dalolatnoma bilan topshirilmagan."
+        },
+        {
+          "id": "a-faktura",
+          "when": [
+            "Javobgar hisob-fakturalarni imzolagan.",
+            "Imzolangan fakturalar qarzni tasdiqlaydi."
+          ],
+          "text": "Hurmatli sud, hisob-fakturalar imzolanganini inkor etmaymiz, lekin topshirish dalolatnomasi tuzilmagan. Ijara munosabati qonunda belgilangan tartibda rasmiylashtirilmagan."
+        },
+        {
+          "id": "a-foydalanish",
+          "when": [
+            "Javobgar joydan foydalangan, lekin to'lamagan.",
+            "Javobgar obyektda savdo qilgan."
+          ],
+          "text": "Hurmatli sud, to'g'ri, joydan qisqa muddat foydalanganmiz. Lekin obyekt dalolatnoma bilan topshirilmagan, bunday katta summa va penya adolatsiz."
+        },
+        {
+          "id": "a-zaif",
+          "when": [
+            "Javobgar qarzdor, hammasi da'vo arizasida yozilgan.",
+            "Qarzni undirib bering."
+          ],
+          "text": "Hurmatli sud, da'vogar vakili talabning huquqiy asosini aytmadi. Obyekt bizga dalolatnoma bilan topshirilmagan, da'voni tan olmaymiz."
+        },
+        {
+          "id": "a-shartnoma",
+          "when": [
+            "Taraflar o'rtasida 32-P-sonli ijara shartnomasi tuzilgan.",
+            "Shartnoma 2022-yil 1-aprelda imzolangan."
+          ],
+          "text": "Hurmatli sud, shartnoma tuzilganini inkor etmaymiz, lekin uning ijrosi obyektni topshirishdan boshlanadi. Obyekt dalolatnoma bilan topshirilmagan, demak ijara haqi talabi asossiz."
+        },
+        {
+          "id": "a-6.4",
+          "when": [
+            "Shartnomaning 6.4-bandiga ko'ra to'lov har oy muddatida qilinishi kerak edi."
+          ],
+          "text": "Hurmatli sud, 6.4-banddagi to'lov muddati obyekt topshirilgandan keyin boshlanadi. Topshirish dalolatnomasi imzolanmagan, shuning uchun muddat ham boshlanmagan deb hisoblaymiz."
+        },
+        {
+          "id": "a-summa",
+          "when": [
+            "Asosiy qarz summasi hisob-fakturalar bo'yicha hisoblangan.",
+            "Qarz 25 620 433,19 so'mni tashkil etadi."
+          ],
+          "text": "Hurmatli sud, da'vo qilingan summa bilan rozi emasmiz: u obyekt rasman topshirilmagan davrni ham o'z ichiga oladi. Joydan faqat qisqa muddat foydalanganmiz."
+        },
+        {
+          "id": "a-kelishuv",
+          "when": [
+            "Javobgar bilan kelishuvga tayyormiz.",
+            "Ishni kelishuv bitimi bilan tugatish mumkin."
+          ],
+          "text": "Hurmatli sud, hozircha kelishuv bitimiga rozi emasmiz. Avval obyekt dalolatnomasiz topshirilgani va penya miqdori masalasi ko'rib chiqilishi kerak."
+        },
+        {
+          "id": "a-qasd",
+          "when": [
+            "Javobgar qasddan to'lamagan.",
+            "Javobgar aybdor, majburiyatni bajarmagan."
+          ],
+          "text": "Hurmatli sud, qasd haqidagi gap asossiz. Mijozim obyektni rasman qabul qilmagan, shuning uchun to'lov majburiyati qanday hajmda paydo bo'lgani ham aniq emas."
+        },
+        {
+          "id": "a-zarar",
+          "when": [
+            "Ijaraga beruvchi zarar ko'rdi.",
+            "Da'vogar daromaddan mahrum bo'ldi."
+          ],
+          "text": "Hurmatli sud, da'vogarning zarari haqida dalil keltirilmadi. Bundan tashqari, obyekt bizga dalolatnoma bilan topshirilmagan."
+        },
+        {
+          "id": "a-umumiy",
+          "generic": true,
+          "when": [],
+          "text": "Hurmatli sud, da'voni tan olmaymiz. Obyekt bizga topshirish dalolatnomasi bilan topshirilmagan. To'g'ri, joydan uch oy foydalanganmiz, lekin bunday katta summa va penya adolatsiz."
+        }
+      ],
+      "closing": [
+        {
+          "id": "c-faktura",
+          "when": [
+            "Tekshirilgan shartnoma va hisob-fakturalar qarzni tasdiqlaydi.",
+            "Javobgar foydalanganini tan oldi, qarzni undiring."
+          ],
+          "text": "Hurmatli sud, qarzning mavjudligini inkor etmaymiz, lekin obyekt dalolatnoma bilan topshirilmagan. Penya juda katta, Fuqarolik kodeksining 326-moddasiga asosan uni kamaytirishingizni so'raymiz."
+        },
+        {
+          "id": "c-penya",
+          "when": [
+            "Penyani to'liq undirishni so'raymiz.",
+            "Penya shartnomada yozma kelishilgan."
+          ],
+          "text": "Hurmatli sud, penya qarzga nisbatan nomutanosib. Fuqarolik kodeksining 326-moddasiga ko'ra sud uni kamaytirishga haqli, shuni so'raymiz."
+        },
+        {
+          "id": "c-578",
+          "when": [
+            "Dalolatnoma yo'qligi to'lov majburiyatini bekor qilmaydi.",
+            "Hisob-fakturalar topshirishga doir boshqa hujjat."
+          ],
+          "text": "Hurmatli sud, hisob-faktura to'lov hujjati, topshirish hujjati emas. FK 578-modda talab qilgan dalolatnoma tuzilmagan, shuning uchun penyani kamaytirishingizni so'raymiz."
+        },
+        {
+          "id": "c-544",
+          "when": [
+            "FK 544-moddaga ko'ra ijara haqi to'lanishi shart."
+          ],
+          "text": "Hurmatli sud, to'lov majburiyati obyekt lozim darajada topshirilgandan keyin to'liq yuzaga keladi. Topshirish rasmiylashtirilmagan, kamida penya FK 326-modda bo'yicha kamaytirilishi kerak."
+        },
+        {
+          "id": "c-kechiktirish",
+          "when": [
+            "Javobgar to'lovni muddatida qilmagan, kechiktirgan."
+          ],
+          "text": "Hurmatli sud, kechiktirish obyekt rasman topshirilmagani bilan bog'liq. Penya miqdori qarzga nomutanosib, uni kamaytirishingizni so'raymiz."
+        },
+        {
+          "id": "c-tekshirilmagan",
+          "when": [
+            "Javobgar boshqa ijarachilardan ham qarzdor.",
+            "Menda ma'lumot bor, javobgar qasddan to'lamayapti."
+          ],
+          "text": "Hurmatli sud, da'vogar vakili sudda tekshirilmagan holatga tayandi, buni inobatga olmaslikni so'raymiz. Tekshirilgan dalillar penyaning nomutanosibligini ko'rsatadi."
+        },
+        {
+          "id": "c-262",
+          "when": [
+            "Penya yozma kelishilgan, FK 262-modda.",
+            "Penya shartnomada belgilangan."
+          ],
+          "text": "Hurmatli sud, yozma kelishuv sudning penyani kamaytirish huquqini cheklamaydi. FK 326-moddaga ko'ra sud nomutanosib penyani kamaytirishga haqli, shuni so'raymiz."
+        },
+        {
+          "id": "c-zarar",
+          "when": [
+            "Da'vogar katta zarar ko'rdi."
+          ],
+          "text": "Hurmatli sud, da'vogar zarari haqida sudda hech qanday dalil tekshirilmadi. Penya nomutanosib, FK 326-moddaga asosan uni kamaytirishingizni so'raymiz."
+        },
+        {
+          "id": "c-umumiy",
+          "generic": true,
+          "when": [],
+          "text": "Hurmatli sud, qarzning mavjudligini inkor etmaymiz, lekin obyekt dalolatnoma bilan topshirilmagan va penya juda katta. Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishingizni so'raymiz."
+        }
+      ]
+    },
+    "davogar-vakili": {
+      "rebut": [
+        {
+          "id": "r-578",
+          "when": [
+            "Obyekt topshirish dalolatnomasi bilan topshirilmagan, FK 578-modda talab qilgan hujjat yo'q.",
+            "Topshirish-qabul akti imzolanmagan."
+          ],
+          "text": "Hurmatli sud, Fuqarolik kodeksining 578-moddasi dalolatnoma bilan birga topshirishga doir boshqa hujjatni ham nazarda tutadi. Javobgar imzolagan hisob-fakturalar aynan shunday hujjat, u obyektdan foydalangan."
+        },
+        {
+          "id": "r-541",
+          "when": [
+            "Dalolatnomani tuzish ijaraga beruvchining burchi edi, FK 541-modda.",
+            "Ijaraga beruvchi mol-mulkni topshirmagan."
+          ],
+          "text": "Hurmatli sud, dalolatnomani tuzish ijaraga beruvchining burchi ekani to'g'ri, lekin javobgar obyektni qabul qilib, undan foydalangan. Foydalanganlik uchun haq Fuqarolik kodeksining 544-moddasiga ko'ra to'lanishi shart."
+        },
+        {
+          "id": "r-soxta",
+          "when": [
+            "Hisob-fakturalar soxta, biz ularni imzolamaganmiz.",
+            "Fakturalardagi imzo bizniki emas."
+          ],
+          "text": "Hurmatli sud, hisob-fakturalar javobgar tomonidan imzolangan va ish materiallarida bor. Ularni inkor etish ish materiallariga zid, foydalanish faktini javobgarning o'zi tan olgan."
+        },
+        {
+          "id": "r-penya",
+          "when": [
+            "Penya juda katta, adolatsiz.",
+            "Penyani kamaytirish kerak."
+          ],
+          "text": "Hurmatli sud, penya masalasiga tegishli bosqichda to'xtalamiz. Asosiy qarz bo'yicha esa javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan."
+        },
+        {
+          "id": "r-tan",
+          "when": [
+            "Joydan foydalanganmiz, lekin summa adolatsiz.",
+            "Da'voni qisman tan olamiz."
+          ],
+          "text": "Hurmatli sud, javobgar foydalanish faktini tan oldi. Demak ijara munosabati amalda bajarilgan va ijara haqi to'lanishi kerak."
+        },
+        {
+          "id": "r-foydalanmagan",
+          "when": [
+            "Biz joydan umuman foydalanmaganmiz.",
+            "Mijozim obyektga kirmagan."
+          ],
+          "text": "Hurmatli sud, javobgar uch oy davomida obyektdan foydalangan, bu hisob-fakturalar bilan tasdiqlanadi. Javobgar vakilining bu gapi ish materiallariga zid."
+        },
+        {
+          "id": "r-qisqa",
+          "when": [
+            "Mijozim joydan faqat uch oy foydalangan.",
+            "Foydalanish muddati qisqa bo'lgan."
+          ],
+          "text": "Hurmatli sud, foydalanish muddati qancha bo'lishidan qat'i nazar, shu davr uchun ijara haqi to'lanishi kerak. Hisob-fakturalar aynan shu davrni qamraydi."
+        },
+        {
+          "id": "r-ahvol",
+          "when": [
+            "Mijozimning moliyaviy ahvoli og'ir.",
+            "Javobgar to'lay olmaydi."
+          ],
+          "text": "Hurmatli sud, moliyaviy qiyinchilik ijara haqini to'lash majburiyatidan ozod qilmaydi. Javobgar obyektdan foydalangan va fakturalarni imzolagan."
+        },
+        {
+          "id": "r-summa",
+          "when": [
+            "Da'vo summasi noto'g'ri hisoblangan.",
+            "Qarz summasi asossiz katta."
+          ],
+          "text": "Hurmatli sud, qarz summasi imzolangan hisob-fakturalar asosida hisoblangan, javobgar ularga e'tiroz bildirmagan. Hisob-kitob ish materiallarida bor."
+        },
+        {
+          "id": "r-kelishuv",
+          "when": [
+            "Kelishuv bitimi tuzishga tayyormiz.",
+            "Ishni tinch yo'l bilan hal qilaylik."
+          ],
+          "text": "Hurmatli sud, asosiy qarz to'liq to'lansa, kelishuvni muhokama qilishga tayyormiz. Hozircha esa talablarimizni quvvatlaymiz."
+        },
+        {
+          "id": "r-munosabat",
+          "when": [
+            "Ijara munosabati umuman yuzaga kelmagan.",
+            "Shartnoma bajarilmagan."
+          ],
+          "text": "Hurmatli sud, 32-P-sonli shartnoma imzolangan va javobgar obyektdan foydalangan. Ijara munosabati amalda yuzaga kelgan, FK 544-moddaga ko'ra haq to'lanadi."
+        },
+        {
+          "id": "r-sifat",
+          "when": [
+            "Obyekt yaroqsiz holatda edi.",
+            "Joyning sifati yomon bo'lgan."
+          ],
+          "text": "Hurmatli sud, obyekt holati haqida javobgar ilgari hech qanday e'tiroz bildirmagan va undan foydalangan. Bunday da'vo dalil bilan tasdiqlanmagan."
+        },
+        {
+          "id": "r-imzo",
+          "when": [
+            "Shartnomadagi imzo bizniki emas.",
+            "Shartnoma imzolanmagan."
+          ],
+          "text": "Hurmatli sud, 32-P-sonli shartnoma ikki tomon tomonidan imzolangan va ish materiallarida bor. Imzoni inkor etish hech qanday dalil bilan tasdiqlanmagan."
+        },
+        {
+          "id": "r-umumiy",
+          "generic": true,
+          "when": [],
+          "text": "Hurmatli sud, javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan. Bu ijara munosabati amalda bajarilganini ko'rsatadi."
+        }
+      ],
+      "on_motion": [
+        {
+          "id": "m-nomutanosib",
+          "when": [
+            "Penya majburiyat buzilishi oqibatlariga nomutanosib, FK 326-modda bo'yicha kamaytiring.",
+            "Penya qarzga nisbatan juda katta."
+          ],
+          "text": "Hurmatli sud, penya miqdori shartnomaning 8.5-bandida taraflar kelishuvi bilan belgilangan. Uning nomutanosibligi haqida hech qanday dalil keltirilmadi."
+        },
+        {
+          "id": "m-ahvol",
+          "when": [
+            "Mijozimning moliyaviy ahvoli og'ir.",
+            "Mulkiy ahvolini inobatga olib penyani kamaytiring."
+          ],
+          "text": "Hurmatli sud, javobgarning moliyaviy ahvoli shartnoma majburiyatlarini bajarmaslikka asos emas. Penya yozma kelishilgan, Fuqarolik kodeksining 262-moddasi talabiga mos."
+        },
+        {
+          "id": "m-qisqa",
+          "when": [
+            "Mijozim obyektdan qisqa muddat, uch oy foydalangan.",
+            "Foydalanish muddati qisqa bo'lgan."
+          ],
+          "text": "Hurmatli sud, foydalanish muddati qisqa bo'lsa ham, javobgar to'lovni har oy kechiktirgan. Penya aynan shu kechiktirish uchun hisoblangan."
+        },
+        {
+          "id": "m-bekor",
+          "when": [
+            "Penyani butunlay bekor qiling.",
+            "Penya to'lamaymiz."
+          ],
+          "text": "Hurmatli sud, penyani butunlay bekor qilish uchun asos yo'q. Penya shartnomada yozma kelishilgan va javobgar to'lov muddatini buzgan."
+        },
+        {
+          "id": "m-zarar",
+          "when": [
+            "Da'vogar hech qanday zarar ko'rmagan.",
+            "Kreditorning zarari yo'q."
+          ],
+          "text": "Hurmatli sud, FK 260-moddaga ko'ra neustoyka talab qilishda kreditor zararni isbotlashga majbur emas. Penya kechiktirishning o'zi uchun kelishilgan, kamaytirishga asos yo'q."
+        },
+        {
+          "id": "m-muddat",
+          "when": [
+            "Kechiktirish muddati qisqa bo'lgan."
+          ],
+          "text": "Hurmatli sud, javobgar to'lovni bir necha oy davomida kechiktirgan. Penya aynan shu davr uchun shartnoma bo'yicha hisoblangan."
+        },
+        {
+          "id": "m-dalolatnoma",
+          "when": [
+            "Obyekt dalolatnoma bilan topshirilmagan, shuning uchun penya hisoblanmasligi kerak."
+          ],
+          "text": "Hurmatli sud, dalolatnoma masalasi penya hisobiga ta'sir qilmaydi: javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan."
+        },
+        {
+          "id": "m-stavka",
+          "when": [
+            "Penya qarzga nisbatan juda yuqori foizda hisoblangan."
+          ],
+          "text": "Hurmatli sud, penya shartnomada belgilangan stavka bo'yicha hisoblangan. Javobgar shartnomani imzolab, bu shartga rozi bo'lgan."
+        },
+        {
+          "id": "m-qisman",
+          "when": [
+            "Penyani hech bo'lmasa qisman kamaytiring.",
+            "Penyani yarmiga tushiring."
+          ],
+          "text": "Hurmatli sud, qisman kamaytirishga ham asos ko'rmaymiz. Ammo asosiy qarz to'liq to'lansa, penya bo'yicha kelishuvni muhokama qilishga tayyormiz."
+        },
+        {
+          "id": "m-ayb",
+          "when": [
+            "Kechikishda mijozimning aybi yo'q.",
+            "To'lov ijaraga beruvchi aybi bilan kechikdi."
+          ],
+          "text": "Hurmatli sud, javobgar o'z aybi yo'qligini isbotlamadi. FK 333-moddaga ko'ra aybning yo'qligini majburiyatni buzgan shaxs isbotlaydi."
+        },
+        {
+          "id": "m-ixtiyor",
+          "when": [
+            "Sud o'z ixtiyori bilan penyani kamaytirishga haqli."
+          ],
+          "text": "Hurmatli sud, sudning bu huquqi penya oqibatlarga nomutanosib bo'lgandagina qo'llanadi. Bunday nomutanosiblik haqida dalil keltirilmadi."
+        },
+        {
+          "id": "m-bolib",
+          "when": [
+            "Mijozim qarzni bo'lib to'lashga tayyor."
+          ],
+          "text": "Hurmatli sud, qarzni bo'lib to'lash taklifini alohida muhokama qilish mumkin, lekin u penyani kamaytirishga asos emas."
+        },
+        {
+          "id": "m-umumiy",
+          "generic": true,
+          "when": [],
+          "text": "Hurmatli sud, penya shartnomada taraflar kelishuvi bilan yozma belgilangan, javobgar uni imzolagan. Kamaytirishga asos yo'q deb hisoblaymiz."
+        }
+      ],
+      "closing": [
+        {
+          "id": "k-penya",
+          "when": [
+            "Penyani FK 326-modda bo'yicha kamaytirishni so'rayman.",
+            "Penya nomutanosib, kamaytirish kerak."
+          ],
+          "text": "Hurmatli sud! Tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar qarzni tasdiqlaydi. Penya yozma kelishilgan, uni kamaytirishga asos yo'q, talablarimizni to'liq qanoatlantirishingizni so'raymiz."
+        },
+        {
+          "id": "k-dalolatnoma",
+          "when": [
+            "Obyekt dalolatnoma bilan topshirilmagan.",
+            "Topshirish hujjati yo'q."
+          ],
+          "text": "Hurmatli sud! Dalolatnoma yo'qligi to'lov majburiyatini bekor qilmaydi: javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan. Fuqarolik kodeksining 544-moddasi asosida qarzni undirishni so'raymiz."
+        },
+        {
+          "id": "k-ahvol",
+          "when": [
+            "Mijozimning moliyaviy ahvoli og'ir."
+          ],
+          "text": "Hurmatli sud! Javobgarning moliyaviy ahvoli uni shartnoma majburiyatidan ozod qilmaydi. Tekshirilgan shartnoma va fakturalar asosida qarz va penyani undirishni so'raymiz."
+        },
+        {
+          "id": "k-soxta",
+          "when": [
+            "Hisob-fakturalar soxta.",
+            "Fakturalarni imzolamaganmiz."
+          ],
+          "text": "Hurmatli sud! Hisob-fakturalar imzolangan va ish materiallarida bor, ularni inkor etish asossiz. FK 544-moddaga asosan qarzni undirishingizni so'raymiz."
+        },
+        {
+          "id": "k-qisqa",
+          "when": [
+            "Mijozim uch oy foydalangan, keyin chiqib ketgan."
+          ],
+          "text": "Hurmatli sud! Javobgar foydalangan davr uchun ijara haqi to'lanishi shart, hisob-fakturalar shu davrni qamraydi. Talablarimizni to'liq qanoatlantirishingizni so'raymiz."
+        },
+        {
+          "id": "k-578",
+          "when": [
+            "FK 578-modda bo'yicha topshirish dalolatnomasi talab qilinadi."
+          ],
+          "text": "Hurmatli sud! FK 578-modda topshirishga doir boshqa hujjatni ham nazarda tutadi, javobgar imzolagan fakturalar shunday hujjat. Asosiy qarz va penyani undirishni so'raymiz."
+        },
+        {
+          "id": "k-ayb",
+          "when": [
+            "Kechikishda mijozimning aybi yo'q."
+          ],
+          "text": "Hurmatli sud! Javobgar aybsizligini isbotlamadi (FK 333-modda). Tekshirilgan dalillar asosida qarz va penyani undirishni so'raymiz."
+        },
+        {
+          "id": "k-kelishuv",
+          "when": [
+            "Kelishuvga tayyormiz.",
+            "Ishni tinch yo'l bilan hal qilaylik."
+          ],
+          "text": "Hurmatli sud! Asosiy qarz to'liq to'lansa, penya bo'yicha kelishuvga ochiqmiz. Hozircha tekshirilgan dalillar asosida talablarimizni quvvatlaymiz."
+        },
+        {
+          "id": "k-umumiy",
+          "generic": true,
+          "when": [],
+          "text": "Hurmatli sud! Sud majlisida tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning to'lov majburiyatini tasdiqlaydi. Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga asosan asosiy qarzni, 8.5-bandiga asosan penyani undirishni so'raymiz."
+        }
+      ]
+    }
+  }
+}

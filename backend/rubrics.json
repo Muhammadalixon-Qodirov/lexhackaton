@@ -1,0 +1,396 @@
+{
+ "_izoh": "Tushuntiriladigan baholash mezonlari. Har mezon va band - manbasi bilan. Ball = bajarilgan bandlar og'irligi / mezondagi musbat og'irliklar yig'indisi × mezon maksimumi. Hisobni server qiladi (rubric.py), AI faqat «ha/yo'q + iqtibos» beradi. Hisobot: reports/LexSim baholash metodikasi.md",
+ "sources": {
+  "jessup": {
+   "title": "Jessup Oral Judging Rubric 2026 (ILSA)",
+   "url": "https://www.ilsa.org/Jessup/Jessup2026/Admin/2026%20Oral%20Judging%20Rubric.pdf",
+   "note": "Huquq 30, savollarga javob 25, faktlar 20 - qisman tasdiqlangan"
+  },
+  "vis": {
+   "title": "31st Vis Moot - General Arbitrator Instructions",
+   "url": "https://www.vismoot.org/wp-content/uploads/2024/02/31st-Vis-Moot_General-Arbitrator-Instructions_FINAL.pdf",
+   "note": "4 mezon: tayyorgarlik, fakt va huquqni bilish, taqdimot, savollarga javob; ona tili bo'lmagani uchun ball kamaytirilmaydi"
+  },
+  "berkeley": {
+   "title": "Berkeley McBaine Oral Argument Scoring Sheet 2025",
+   "url": "https://law.berkeley.edu/wp-content/uploads/2024/10/2025-McBaine-Oral-Argument-Scoring-Sheet.pdf",
+   "note": "kirish 15, mazmun 35, savollar 35, yakun 5, nutq 10"
+  },
+  "sqe2": {
+   "title": "SQE2 Assessment Specification (SRA, 2026-09-01 dan)",
+   "url": "https://sqe.sra.org.uk/assessments/sqe2-assessments/sqe2-specification",
+   "note": "ko'nikma va huquqni qo'llash teng og'irlikda; huquq: to'g'ri, to'liq, etika"
+  },
+  "ipk": {
+   "title": "Iqtisodiy protsessual kodeks (lex.uz)",
+   "url": "https://lex.uz/docs/3523891"
+  },
+  "ipk167": {
+   "title": "IPK 167-modda - sud majlisida tartib («Hurmatli sud!»)",
+   "url": "https://lex.uz/docs/3523891"
+  },
+  "ipk68": {
+   "title": "IPK 68-modda - dalillarni oshkor qilish, faqat oshkor qilingan dalilga tayanish",
+   "url": "https://lex.uz/docs/3523891"
+  },
+  "ipk173": {
+   "title": "IPK 173-modda - sud muzokaralari tartibi",
+   "url": "https://lex.uz/docs/3523891",
+   "note": "matnini mentor qayta tekshiradi"
+  },
+  "etika": {
+   "title": "Advokatning kasb etikasi qoidalari (Advokatlar palatasi, 27.09.2013, 8-ilova), 11, 55, 56-bandlar",
+   "url": "https://nrm.uz/contentf?doc=549533",
+   "note": "rasmiy to'liq matn topilmadi - nrm.uz nusxasi"
+  },
+  "r3637": {
+   "title": "Adliya vazirligi 3637-son nizomi (malaka imtihoni: 0-10 ball, o'tish 60%)",
+   "url": "https://lex.uz/docs/7619714"
+  },
+  "price": {
+   "title": "Price Media Law Moot 2026–27, 8.1-qoida (yozma ish mezonlari)",
+   "url": "https://www.law.ox.ac.uk/sites/default/files/2026-11/2026-2027%20Competition%20Rules%20Price%20Media%20Law%20Moot%20Court.pdf"
+  }
+ },
+ "rubrics": {
+  "moot": {
+   "id": "moot",
+   "version": "moot-2026.11.1",
+   "title": "«Bahs» - jamoaviy sud bahsi",
+   "judgeRole": "O'zbekiston iqtisodiy sudi sudyasi (o'quv bahsi hakami)",
+   "scale": "Har mezon: bandlar bo'yicha 0..max. Jami 100. O'tish chegarasi yo'q (bahsda g'olib aniqlanadi); farq ≤ 2 - durang.",
+   "basis": [
+    "jessup",
+    "vis",
+    "berkeley",
+    "sqe2"
+   ],
+   "routing": {
+    "heavyWeight": 3,
+    "passMark": null,
+    "nearPass": 0,
+    "drawMargin": 2
+   },
+   "dims": [
+    {
+     "id": "legal",
+     "label": "Huquqiy asos",
+     "max": 30,
+     "basis": [
+      "jessup",
+      "sqe2"
+     ],
+     "why": "Jessup: huquqni bilish 30; SQE2: huquqni qo'llash - baholashning yarmi"
+    },
+    {
+     "id": "rebuttal",
+     "label": "Raqibga javob",
+     "max": 25,
+     "basis": [
+      "jessup",
+      "vis",
+      "berkeley"
+     ],
+     "why": "Jessup: savollarga javob 25; Vis: savollarni boshqarish alohida mezon; Berkeley: savollar 35"
+    },
+    {
+     "id": "facts",
+     "label": "Faktlar va dalillar",
+     "max": 20,
+     "basis": [
+      "jessup",
+      "vis",
+      "ipk68"
+     ],
+     "why": "Jessup: faktlar 20; Vis: faktlarni bilish; IPK 68: faqat oshkor qilingan dalilga tayaniladi"
+    },
+    {
+     "id": "participation",
+     "label": "Soʻzdan foydalanish",
+     "max": 15,
+     "basis": [
+      "vis",
+      "berkeley"
+     ],
+     "why": "Vis: tashkil etish va tayyorgarlik; Berkeley: kirish 15 + yakun 5"
+    },
+    {
+     "id": "manners",
+     "label": "Sud odobi",
+     "max": 10,
+     "basis": [
+      "ipk167",
+      "etika",
+      "berkeley"
+     ],
+     "why": "IPK 167: murojaat shakli va tartib; etika qoidalari 55-band; Berkeley: nutq 10"
+    }
+   ],
+   "items": [
+    {
+     "id": "L1",
+     "dim": "legal",
+     "method": "rule",
+     "rule": "cited_material_norm",
+     "weight": 3,
+     "ask": "Ish materiallaridagi normani (modda yoki shartnoma bandini) nomi bilan keltirdi",
+     "basis": [
+      "jessup"
+     ]
+    },
+    {
+     "id": "L2",
+     "dim": "legal",
+     "method": "ai",
+     "weight": 4,
+     "ask": "Keltirilgan norma yoki shartnoma bandi ish faktlariga qanday qo'llanishini tushuntirdi (norma → fakt → xulosa)",
+     "basis": [
+      "sqe2",
+      "jessup"
+     ]
+    },
+    {
+     "id": "L3",
+     "dim": "legal",
+     "method": "ai",
+     "weight": 3,
+     "ask": "Huquqiy xulosasi ish materiallariga zid emas va o'z tomonining talabini to'g'ri ifodaladi",
+     "basis": [
+      "sqe2"
+     ]
+    },
+    {
+     "id": "L4",
+     "dim": "legal",
+     "method": "rule",
+     "rule": "unsourced_norm",
+     "weight": -2,
+     "ask": "Ish materiallarida yo'q modda raqamini keltirdi (manbasiz)",
+     "basis": [
+      "sqe2"
+     ]
+    },
+    {
+     "id": "R1",
+     "dim": "rebuttal",
+     "method": "ai",
+     "weight": 4,
+     "ask": "Raqibning aniq bir dalili yoki gapiga to'g'ridan-to'g'ri javob berdi (umumiy inkor emas)",
+     "basis": [
+      "jessup",
+      "berkeley"
+     ]
+    },
+    {
+     "id": "R2",
+     "dim": "rebuttal",
+     "method": "ai",
+     "optional": true,
+     "weight": 3,
+     "ask": "O'ziga berilgan savolga aniq javob berdi (avval javob, keyin izoh), savoldan qochmadi",
+     "basis": [
+      "vis",
+      "berkeley"
+     ]
+    },
+    {
+     "id": "R3",
+     "dim": "rebuttal",
+     "method": "ai",
+     "optional": true,
+     "weight": 2,
+     "ask": "Replika yoki muzokarada raqib keltirgan yangi vajga munosabat bildirdi",
+     "basis": [
+      "jessup"
+     ]
+    },
+    {
+     "id": "F1",
+     "dim": "facts",
+     "method": "ai",
+     "weight": 3,
+     "ask": "Ish materiallaridagi aniq faktga (sana, summa, hodisa) tayandi",
+     "basis": [
+      "vis",
+      "jessup"
+     ]
+    },
+    {
+     "id": "F2",
+     "dim": "facts",
+     "method": "ai",
+     "weight": 3,
+     "ask": "Ish materiallaridagi aniq dalil hujjatini nomlab, u nimani isbotlashini aytdi",
+     "basis": [
+      "ipk68",
+      "jessup"
+     ]
+    },
+    {
+     "id": "F3",
+     "dim": "facts",
+     "method": "ai",
+     "weight": 2,
+     "ask": "O'z tomonining zaif joyini tan olib, uni yopishga harakat qildi",
+     "basis": [
+      "vis"
+     ]
+    },
+    {
+     "id": "F4",
+     "dim": "facts",
+     "method": "ai",
+     "weight": -3,
+     "ask": "Ish materiallarida yo'q faktni haqiqat sifatida aytdi (uydirma)",
+     "basis": [
+      "ipk68",
+      "etika"
+     ]
+    },
+    {
+     "id": "P1",
+     "dim": "participation",
+     "method": "rule",
+     "rule": "spoke_all_turns",
+     "weight": 3,
+     "ask": "O'z tomoniga berilgan har bir so'zda gapirdi",
+     "basis": [
+      "vis"
+     ]
+    },
+    {
+     "id": "P2",
+     "dim": "participation",
+     "method": "rule",
+     "rule": "closing",
+     "weight": 2,
+     "ask": "Sud muzokarasida (yakuniy nutqda) chiqish qildi",
+     "basis": [
+      "berkeley"
+     ]
+    },
+    {
+     "id": "P3",
+     "dim": "participation",
+     "method": "ai",
+     "weight": 2,
+     "ask": "Chiqishi tuzilmali: pozitsiya → asoslar → sudga aniq iltimos",
+     "basis": [
+      "berkeley",
+      "vis"
+     ]
+    },
+    {
+     "id": "M1",
+     "dim": "manners",
+     "method": "rule",
+     "rule": "address_court",
+     "weight": 2,
+     "ask": "Sudga «Hurmatli sud» deb murojaat qildi",
+     "basis": [
+      "ipk167"
+     ]
+    },
+    {
+     "id": "M2",
+     "dim": "manners",
+     "method": "ai",
+     "weight": -2,
+     "ask": "Raqibga shaxsan tegdi, kamsitdi yoki masxara qildi",
+     "basis": [
+      "etika"
+     ]
+    },
+    {
+     "id": "M3",
+     "dim": "manners",
+     "method": "rule",
+     "rule": "profanity",
+     "weight": -4,
+     "capTotal": 40,
+     "ask": "So'kindi yoki haqorat qildi",
+     "basis": [
+      "etika",
+      "ipk167"
+     ]
+    }
+   ]
+  },
+  "court": {
+   "id": "court",
+   "version": "court-2026.11.1",
+   "title": "Sud zali — bitta talaba (iqtisodiy sud majlisi)",
+   "scale": "Har mezon 0–4 daraja → ball. Jami 100. 60 dan past — qoniqarsiz (AV 3637-son Nizomdagi o'tish chegarasiga mos); 85 dan yuqori — a'lo (taklif, manbasi yo'q). Qo'pol etika buzilishi — 0.",
+   "basis": [
+    "sqe2",
+    "jessup",
+    "r3637"
+   ],
+   "routing": {},
+   "dims": [
+    {
+     "id": "legal",
+     "label": "Huquqiy asos",
+     "max": 25,
+     "basis": [
+      "sqe2",
+      "jessup"
+     ],
+     "why": "SQE2: huquq yarmi (to'g'ri, to'liq, etika) — 25 + 15 + 10"
+    },
+    {
+     "id": "procedure",
+     "label": "Tartib-taomil",
+     "max": 15,
+     "basis": [
+      "sqe2",
+      "ipk"
+     ],
+     "why": "IPK tartibi: vakolat, rad, dalil, muzokara"
+    },
+    {
+     "id": "ethics",
+     "label": "Kasbiy etika",
+     "max": 10,
+     "basis": [
+      "sqe2",
+      "etika"
+     ],
+     "why": "SQE2 2026: etika alohida mezon; qo'pol buzilish — 0"
+    },
+    {
+     "id": "facts",
+     "label": "Faktlar va dalillar",
+     "max": 20,
+     "basis": [
+      "sqe2",
+      "jessup",
+      "ipk68"
+     ],
+     "why": "SQE2 ko'nikma yarmi; Jessup faktlar 20"
+    },
+    {
+     "id": "communication",
+     "label": "Sud odobi va nutq",
+     "max": 20,
+     "basis": [
+      "sqe2",
+      "ipk167"
+     ],
+     "why": "SQE2 advokatlik ko'nikmasi; IPK 167"
+    },
+    {
+     "id": "document",
+     "label": "Hujjat va rasmiylashtirish",
+     "max": 10,
+     "basis": [
+      "sqe2",
+      "price"
+     ],
+     "why": "SQE2 drafting; Price yozma ish mezonlari"
+    }
+   ],
+   "items": []
+  }
+ }
+}

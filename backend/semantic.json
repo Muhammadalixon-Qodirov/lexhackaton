@@ -1,0 +1,140 @@
+{
+  "_izoh": "Maʼno boʻyicha baholash (GPU reranker, bge-reranker-v2-m3). Talaba gapi har bir lahzaning 'pos' (toʻgʻri fikr), 'neg' (boshqa mavzu) va 'false' (ish materiallariga zid) namunalari bilan solishtiriladi. Qoidalar: pos >= 0.5 va pos > neg -> daraja 3; pos >= 0.2 -> daraja 2; false >= 0.7 va false > pos -> materiallarga zid daʼvo. 4-daraja uchun modda keltirish (kalit soʻz) kerak. Namunalarni mentor tahrirlashi mumkin — backendni qayta ishga tushiring. Kalibrlash: 2026-11-21, 12 ta sinov gapi.",
+  "thresholds": {
+    "good": 0.5,
+    "partial": 0.2,
+    "false": 0.7
+  },
+  "common_neg": [
+    "Rad bildirmaymiz.",
+    "Qoʻshimcha materiallarimiz yoʻq.",
+    "Huquqlarimiz tushunarli.",
+    "Vakolatimni tasdiqlovchi ishonchnomani taqdim etaman."
+  ],
+  "anchors": {
+    "claim_davogar": {
+      "pos": [
+        "Ijara shartnomasi boʻyicha javobgar ijara haqini toʻlamagan, shuning uchun asosiy qarz va penya undirishni soʻraymiz.",
+        "Javobgar shartnomada belgilangan muddatda ijara toʻlovlarini qilmagan, qarz summasini va kechiktirish uchun penyani undirib berishingizni soʻraymiz."
+      ],
+      "neg": [
+        "Obyekt dalolatnoma bilan topshirilmagan.",
+        "Penyani kamaytirishni soʻrayman."
+      ],
+      "false": [
+        {
+          "text": "Javobgar ijara haqini toʻliq toʻlagan.",
+          "why": "Ish materiallariga koʻra ijara haqi toʻlanmagan — daʼvoning asosi aynan shu."
+        }
+      ]
+    },
+    "KM2_davogar": {
+      "pos": [
+        "Javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan, shuning uchun ijara munosabati amalda bajarilgan va ijara haqi toʻlanishi kerak.",
+        "Dalolatnoma boʻlmasa ham, javobgar joyni ishlatgan va fakturalarga imzo qoʻygan, bu toʻlov majburiyatini tasdiqlaydi."
+      ],
+      "neg": [
+        "Penya shartnomada belgilangan.",
+        "Penyani kamaytirishni soʻrayman."
+      ],
+      "false": [
+        {
+          "text": "Topshirish dalolatnomasi imzolangan edi.",
+          "why": "Ish materiallarida topshirish dalolatnomasi yoʻq (F3) — sudga mavjud boʻlmagan dalilni aytish uni chalgʻitadi."
+        },
+        {
+          "text": "Javobgar joydan umuman foydalanmagan.",
+          "why": "Javobgar joydan uch oy foydalangan (F3) — buni inkor etish ish materiallariga zid."
+        }
+      ]
+    },
+    "KM2_javobgar": {
+      "pos": [
+        "Obyekt topshirish dalolatnomasi bilan topshirilmagan, bino ijaraga dalolatnoma yoki boshqa topshirish hujjati bilan topshiriladi.",
+        "Joy bizga rasmiy hujjat bilan topshirilmagan, topshirish-qabul qilish akti imzolanmagan."
+      ],
+      "neg": [
+        "Penyani kamaytirishni soʻrayman.",
+        "Javobgar ijara haqini toʻlashi kerak."
+      ],
+      "false": [
+        {
+          "text": "Hisob-fakturalar soxta, biz ularni imzolamaganmiz.",
+          "why": "Hisob-fakturalar imzolangan va sudda oʻqildi (F2) — ularni inkor etish ish materiallariga zid."
+        },
+        {
+          "text": "Biz joydan umuman foydalanmaganmiz.",
+          "why": "Mijoz joydan taxminan uch oy foydalangan (F3) — buni inkor etish sudni chalgʻitadi."
+        }
+      ]
+    },
+    "KM3_davogar": {
+      "pos": [
+        "Penya shartnomada taraflar tomonidan yozma kelishilgan, javobgar toʻlovni kechiktirgan, kamaytirishga asos yoʻq.",
+        "Neustoyka toʻgʻrisida yozma kelishuv bor, javobgar uni imzolagan va toʻlov muddatini buzgan."
+      ],
+      "neg": [
+        "Javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan.",
+        "Obyekt dalolatnoma bilan topshirilmagan."
+      ],
+      "false": [
+        {
+          "text": "Shartnomada penya haqida hech narsa yozilmagan.",
+          "why": "Penya shartnomaning 8.5-bandida yozma belgilangan — bu ish materiallariga zid."
+        }
+      ]
+    },
+    "KM3_javobgar": {
+      "pos": [
+        "Penya majburiyat buzilishi oqibatlariga nomutanosib, uni kamaytirishni soʻrayman.",
+        "Jarima summasi juda katta, mijozning moliyaviy ahvoli va qisqa muddat foydalanganini hisobga olib, neustoykani kamaytirishingizni soʻrayman."
+      ],
+      "neg": [
+        "Obyekt dalolatnoma bilan topshirilmagan.",
+        "Daʼvoni tan olmaymiz."
+      ],
+      "false": [
+        {
+          "text": "Hisob-fakturalar soxta, biz ularni imzolamaganmiz.",
+          "why": "Hisob-fakturalar imzolangan va sudda oʻqildi (F2) — ularni inkor etish ish materiallariga zid."
+        },
+        {
+          "text": "Biz joydan umuman foydalanmaganmiz.",
+          "why": "Mijoz joydan taxminan uch oy foydalangan (F3) — buni inkor etish sudni chalgʻitadi."
+        }
+      ]
+    },
+    "KM4_davogar": {
+      "pos": [
+        "Sudda tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning qarzini tasdiqlaydi, asosiy qarz va penyani undirishni soʻraymiz.",
+        "Tekshirilgan dalillar javobgar joydan foydalanganini va toʻlamaganini koʻrsatdi, shu asosda daʼvoni qanoatlantirishingizni soʻraymiz."
+      ],
+      "neg": [
+        "Rad bildirmaymiz.",
+        "Penyani kamaytirishni soʻrayman."
+      ],
+      "false": [
+        {
+          "text": "Menda boshqa maʼlumot bor, javobgar boshqa ijarachilardan ham qarzdor.",
+          "why": "Bu holat sud majlisida tekshirilmagan — muzokarada unga tayanib boʻlmaydi (IPK 173-modda)."
+        }
+      ]
+    },
+    "KM4_javobgar": {
+      "pos": [
+        "Tekshirilgan dalillar obyekt dalolatnomasiz topshirilganini va penya nomutanosibligini koʻrsatadi, penyani kamaytirishingizni soʻraymiz.",
+        "Sudda oʻqilgan shartnoma va fakturalardan koʻrinadiki, penya qarzga nisbatan juda katta, uni kamaytirib, adolatli qaror chiqarishingizni soʻraymiz."
+      ],
+      "neg": [
+        "Rad bildirmaymiz.",
+        "Javobgar ijara haqini toʻlashi kerak."
+      ],
+      "false": [
+        {
+          "text": "Menda boshqa maʼlumot bor, daʼvogar boshqa ijarachilarni ham aldagan.",
+          "why": "Bu holat sud majlisida tekshirilmagan — muzokarada unga tayanib boʻlmaydi (IPK 173-modda)."
+        }
+      ]
+    }
+  }
+}

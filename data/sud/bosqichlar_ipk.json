@@ -1,0 +1,162 @@
+{
+  "version": "ipk-v1",
+  "case_type": "IPK",
+  "status": "qoralama — mentor tekshirishi kerak",
+  "izoh": "Iqtisodiy sudda birinchi instansiya sud majlisi bosqichlari. Asos: IPK 165, 167–175, 20–24, 64, 169. FPK'dan olingan qismlar 'fpk_analog' deb belgilangan — IPK'da aynan shu tartib bormi, mentor tasdiqlasin. Bosqichdan bosqichga o'tishni faqat kod qiladi, LLM emas.",
+
+  "acts": {
+    "statement": "Bayon yoki savolga javob",
+    "motion": "Iltimosnoma (IPK-169)",
+    "recusal": "Rad qilish arizasi (IPK-20–24)",
+    "objection": "Raqib gapi yoki dalilga e'tiroz (so'z berilganda aytiladi)",
+    "present-evidence": "Dalil yoki vakolat hujjatini taqdim etish",
+    "question-party": "Boshqa ishtirokchiga savol (sud ruxsati bilan)",
+    "closing-argument": "Sud muzokarasidagi nutq (IPK-173)",
+    "rebuttal": "Replika",
+    "improper-address": "Sudga noto'g'ri murojaat (IPK-167)",
+    "off-procedure": "Bosqichga to'g'ri kelmaydigan harakat",
+    "injection": "Rolni buzishga urinish"
+  },
+
+  "templates": {
+    "T_OPEN": "Sud majlisi ochiq deb e'lon qilinadi. {plaintiff_desc}ning {defendant_desc}ga nisbatan {claim_desc} to'g'risidagi da'vo arizasi bo'yicha iqtisodiy ish ko'rib chiqiladi.",
+    "T_CLERK_REPORT": "Hurmatli sud, sud majlisiga {attendance} kelgan.",
+    "T_ASK_POWERS": "{role_name}, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+    "T_POWERS_OK": "Vakolat tekshirildi.",
+    "T_COMPOSITION": "Ish raislik qiluvchi sudya tomonidan yakka tartibda ko'riladi. Sud majlisi kotibi ishtirok etmoqda.",
+    "T_RECUSAL_RIGHT": "Ishda ishtirok etuvchi shaxslarga rad qilish huquqi tushuntiriladi. Sud tarkibiga yoki kotibga rad bildirasizmi?",
+    "T_RIGHTS": "Sizlarga protsessual huquq va majburiyatlaringiz tushuntiriladi: dalillar taqdim etish, iltimosnoma berish, boshqa ishtirokchilarga savol berish, sud muzokaralarida qatnashish huquqiga egasiz. Huquqlaringiz tushunarlimi?",
+    "T_PRE_MOTIONS": "Ishni mazmunan ko'rishdan oldin iltimosnomalaringiz bormi?",
+    "T_MERITS_START": "Ishni mazmunan ko'rishga o'tamiz.",
+    "T_ASK_SUPPORT": "Da'vogar, da'vo talablaringizni quvvatlaysizmi?",
+    "T_ASK_ADMIT": "Javobgar, da'vo talablarini tan olasizmi?",
+    "T_ASK_SETTLE": "Taraflar ishni kelishuv bitimi bilan tugatishni xohlaysizlarmi?",
+    "T_FLOOR": "So'z {role_name}ga beriladi.",
+    "T_EVIDENCE_ORDER": "Sud dalillarni tekshirish tartibini belgilaydi: avval ish materiallaridagi yozma dalillar, keyin taraflarning tushuntirishlari.",
+    "T_READ_DOC": "Ish materiallaridagi {doc_name} o'qib eshittiriladi.",
+    "T_HEAR_OTHER": "Iltimosnoma bo'yicha boshqa taraf fikrini eshitamiz. {other_role}, fikringiz?",
+    "T_RULING_GRANT": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnoma qanoatlantirilsin. {effect}",
+    "T_RULING_DENY": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnomani qanoatlantirish rad etilsin, chunki {reason}.",
+    "T_RULING_DEFER": "Bu masala hal qiluv qarorini qabul qilishda ishning barcha holatlari inobatga olingan holda hal qilinadi.",
+    "T_ASK_MORE": "Ishda ishtirok etuvchi shaxslarda qo'shimcha materiallar bormi?",
+    "T_DEBATES": "Qo'shimcha materiallar bo'lmaganligi sababli sud muzokaralariga o'tiladi. Birinchi bo'lib da'vogar so'zga chiqadi.",
+    "T_REPLICA": "Replika uchun so'z beriladi, qisqa bo'lsin.",
+    "T_DELIBERATE": "Sud hal qiluv qarorini qabul qilish uchun maslahatxonaga kiradi.",
+    "T_RISE": "Sud kirib kelmoqda, o'rningizdan turing!",
+    "T_ANNOUNCE": "O'zbekiston Respublikasi nomidan hal qiluv qarorining xulosa qismi o'qib eshittiriladi: {operative_part}",
+    "T_APPEAL": "Hal qiluv qarori qabul qilingandan keyin bir oy muddat o'tgach qonuniy kuchga kiradi. Qaror ustidan bir oy muddat ichida shikoyat qilish mumkin.",
+    "T_CLOSE": "Sud majlisi yopiq deb e'lon qilinadi.",
+    "W_ADDRESS": "{role_name}, sudga «Hurmatli sud» deb murojaat qiling.",
+    "W_OUT_OF_TURN": "So'z sizga berilmadi. Navbatingizni kuting.",
+    "W_NOT_NOW": "Bu masala hozirgi bosqichda ko'rilmaydi. {when_allowed}",
+    "W_UNEXAMINED": "Muzokaralarda sud majlisida tekshirilmagan holat va dalillarga tayanishga haqingiz yo'q. Fikringizni tekshirilgan dalillar doirasida bayon qiling.",
+    "W_ORDER": "Sud majlisi tartibini buzmang. Takrorlansa, chora ko'riladi.",
+    "W_NO_NORM": "Bunday norma sud tomonidan aniqlanmadi. Qaysi qonun hujjatiga tayanayotganingizni aniqlashtiring.",
+    "W_ROLE": "Sud majlisida faqat ish bo'yicha gapiring."
+  },
+
+  "global_rules": [
+    {"id": "G1", "when": "Talaba gapida 'Hurmatli sud' murojaati yo'q va gap sudga qaratilgan", "judge": "W_ADDRESS", "count_as": "violation:address", "norms": ["IPK-167"], "note": "Birinchi marta ogohlantirish, keyingilari faqat hisoblanadi (har gapda takrorlanmasin)"},
+    {"id": "G2", "when": "Talaba so'z berilmagan paytda gapirdi (navbat boshqada)", "judge": "W_OUT_OF_TURN", "count_as": "violation:turn", "norms": ["IPK-165"]},
+    {"id": "G3", "when": "Harakat hozirgi bosqichda ruxsat etilmagan (acts ro'yxatida yo'q)", "judge": "W_NOT_NOW", "count_as": "violation:stage", "norms": ["IPK-165"]},
+    {"id": "G4", "when": "Talaba haqoratli yoki hurmatsiz gapirdi", "judge": "W_ORDER", "count_as": "violation:order", "norms": ["IPK-167"], "escalate": "3 marta bo'lsa — yakuniy ogohlantirish va etika mezonidan ayirish"},
+    {"id": "G5", "when": "Teg = injection", "judge": "W_ROLE", "count_as": "violation:injection", "norms": [], "note": "Sudya rolda qoladi, hech qanday ichki ma'lumot (rubrika, haqiqiy qaror) aytilmaydi"},
+    {"id": "G6", "when": "Talaba keltirgan modda RAG bazasida yo'q yoki mavzuga aloqasiz", "judge": "W_NO_NORM", "count_as": "violation:citation", "norms": []}
+  ],
+
+  "states": [
+    {"id": "ochilish", "title": "Majlisni ochish", "norms": ["IPK-165", "IPK-167"],
+     "flow": ["CLERK:T_RISE", "JUDGE:T_OPEN"], "student_acts": [], "next": "ishtirokchilar"},
+
+    {"id": "ishtirokchilar", "title": "Ishtirokchilar va vakolatlarni tekshirish", "norms": ["IPK-165", "IPK-64", "IPK-62"],
+     "flow": ["CLERK:T_CLERK_REPORT", "JUDGE:T_ASK_POWERS(student)", "WAIT:student", "JUDGE:T_POWERS_OK"],
+     "student_acts": ["present-evidence", "statement"],
+     "expect": "Talaba ishonchnomani taqdim etadi (dalil E3)",
+     "timeout_s": 60, "on_timeout": "Sudya so'rovni takrorlaydi; ikkinchi marta — 'vakolat tasdiqlanmadi' deb qayd etiladi (procedure mezoni)",
+     "next": "tarkib_va_rad"},
+
+    {"id": "tarkib_va_rad", "title": "Sud tarkibi va rad qilish huquqi", "norms": ["IPK-165", "IPK-20", "IPK-21", "IPK-22", "IPK-23"],
+     "flow": ["JUDGE:T_COMPOSITION", "JUDGE:T_RECUSAL_RIGHT", "WAIT:student", "WAIT:opponent"],
+     "student_acts": ["statement", "recusal"],
+     "sub_flow_on": {"recusal": "rad_arizasi"},
+     "next": "huquqlar"},
+
+    {"id": "huquqlar", "title": "Huquq va majburiyatlarni tushuntirish", "norms": ["IPK-165"],
+     "flow": ["JUDGE:T_RIGHTS", "WAIT:student", "WAIT:opponent"],
+     "student_acts": ["statement"], "next": "oldingi_iltimosnomalar"},
+
+    {"id": "oldingi_iltimosnomalar", "title": "Ishni ko'rishdan oldingi iltimosnomalar", "norms": ["IPK-169"],
+     "flow": ["JUDGE:T_PRE_MOTIONS", "WAIT:student", "WAIT:opponent"],
+     "student_acts": ["statement", "motion"],
+     "sub_flow_on": {"motion": "iltimosnoma"}, "next": "mazmunan_boshlash"},
+
+    {"id": "mazmunan_boshlash", "title": "Ishni mazmunan ko'rishning boshlanishi", "norms": ["FPK-225"], "fpk_analog": true,
+     "flow": ["JUDGE:T_MERITS_START", "JUDGE:T_ASK_SUPPORT", "WAIT:plaintiff", "JUDGE:T_ASK_ADMIT", "WAIT:defendant", "JUDGE:T_ASK_SETTLE", "WAIT:plaintiff", "WAIT:defendant"],
+     "student_acts": ["statement"],
+     "note": "Kelishuv bitimiga rozilik bo'lsa — ssenariy 'kelishuv' tarmog'iga o'tadi (IPK-131–134). MVP'da raqib kelishuvga rozi bo'lmaydi.",
+     "next": "tushuntirishlar"},
+
+    {"id": "tushuntirishlar", "title": "Taraflarning tushuntirishlari", "norms": ["IPK-89", "FPK-227"], "fpk_analog": true,
+     "flow": ["JUDGE:T_FLOOR(plaintiff)", "WAIT:plaintiff", "JUDGE:T_FLOOR(defendant)", "WAIT:defendant", "JUDGE:QUESTIONS(scenario.judge_questions)"],
+     "student_acts": ["statement", "objection", "question-party", "rebuttal"],
+     "timeout_s": 120, "next": "dalillar"},
+
+    {"id": "dalillar", "title": "Dalillarni tekshirish", "norms": ["IPK-168", "IPK-165", "IPK-67", "IPK-68", "IPK-71", "IPK-72", "IPK-74", "IPK-75"],
+     "flow": ["JUDGE:T_EVIDENCE_ORDER", "LOOP:scenario.evidence -> JUDGE:T_READ_DOC + WAIT:both(opinion)"],
+     "student_acts": ["statement", "objection", "present-evidence", "motion", "question-party"],
+     "sub_flow_on": {"motion": "iltimosnoma"},
+     "key_moments": ["KM2", "KM3"], "next": "qoshimcha_materiallar"},
+
+    {"id": "qoshimcha_materiallar", "title": "Qo'shimcha materiallar bormi", "norms": ["IPK-173", "IPK-174"],
+     "flow": ["JUDGE:T_ASK_MORE", "WAIT:student", "WAIT:opponent"],
+     "student_acts": ["statement", "present-evidence", "motion"],
+     "branch": {"if": "yangi material taqdim etildi va sud qabul qildi", "to": "dalillar", "norm": "IPK-174"},
+     "next": "muzokaralar"},
+
+    {"id": "muzokaralar", "title": "Sud muzokaralari", "norms": ["IPK-173"],
+     "flow": ["JUDGE:T_DEBATES", "WAIT:plaintiff", "JUDGE:T_FLOOR(defendant)", "WAIT:defendant"],
+     "student_acts": ["closing-argument"],
+     "check": "Nutqdagi har bir holat va dalil sessiyada 'tekshirilgan' ro'yxatida bo'lishi kerak; aks holda W_UNEXAMINED (IPK-173, 5-qism)",
+     "timeout_s": 180, "key_moments": ["KM4"], "next": "replikalar"},
+
+    {"id": "replikalar", "title": "Replikalar", "norms": ["FPK-244"], "fpk_analog": true, "optional": true,
+     "flow": ["JUDGE:T_REPLICA", "WAIT:plaintiff", "WAIT:defendant"],
+     "student_acts": ["rebuttal"], "timeout_s": 60, "next": "maslahatxona"},
+
+    {"id": "maslahatxona", "title": "Sudning maslahatxonaga kirishi", "norms": ["IPK-175", "IPK-176", "IPK-177"],
+     "flow": ["JUDGE:T_DELIBERATE", "PAUSE:3s", "CLERK:T_RISE"], "student_acts": [], "next": "qaror_elon"},
+
+    {"id": "qaror_elon", "title": "Hal qiluv qarorini e'lon qilish", "norms": ["IPK-186", "IPK-179", "IPK-192"],
+     "flow": ["JUDGE:T_ANNOUNCE(scenario.outcome by student path)", "JUDGE:T_APPEAL", "JUDGE:T_CLOSE"],
+     "student_acts": [], "note": "Xulosa qismi ssenariydan olinadi (mentor yozgan variantlar), LLM erkin yozmaydi.",
+     "next": null}
+  ],
+
+  "sub_flows": {
+    "iltimosnoma": {
+      "norms": ["IPK-169"],
+      "steps": [
+        "1. Harakat aniqlagich: motion + mavzu (masalan, 'penyani kamaytirish', 'dalilni qo'shish').",
+        "2. Agar ssenariyda shu mavzu uchun key_moment bo'lsa — qaror ssenariydan olinadi.",
+        "3. Aks holda: JUDGE:T_HEAR_OTHER → raqib fikri (AI) → sudya ajrimi LLM'dan JSON bilan (decision: grant | deny | defer), asos — faqat RAG bergan norm_id'lar → validator.",
+        "4. Ajrim matni shablondan: T_RULING_GRANT / T_RULING_DENY / T_RULING_DEFER.",
+        "5. Bosqichga qaytish."
+      ]
+    },
+    "rad_arizasi": {
+      "norms": ["IPK-20", "IPK-22", "IPK-23"],
+      "steps": [
+        "1. Talabadan asos so'raladi.",
+        "2. Ssenariyda rad qilish uchun asos yo'q (sudya va kotib ishga aloqador emas) — ariza asoslanmagan bo'lsa, rad etiladi: T_RULING_DENY (reason: 'IPK-20-moddada nazarda tutilgan asoslar keltirilmadi').",
+        "3. Procedure mezoniga: asossiz rad arizasi — kichik minus."
+      ]
+    }
+  },
+
+  "turn_limits": {
+    "default_student_s": 90,
+    "objection_reply_s": 30,
+    "closing_argument_s": 180,
+    "max_student_chars": 800
+  }
+}

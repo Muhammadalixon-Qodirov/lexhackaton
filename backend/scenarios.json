@@ -1,0 +1,91 @@
+{
+  "_izoh": "Sud zali ssenariylari (v1.2). public qismi frontendga boradi (COURT_BACKEND.md §3.1, §11.1); qolgani faqat serverda. Manba: data/sud/ssenariy_ijara_qarzi.json. numbers — LLM javobida ruxsat etilgan raqamlar (ssenariy faktlari).",
+  "scenarios": {
+    "sud-ijara-davogar": {
+      "student_role": "davogar-vakili",
+      "case_type": "IPK",
+      "public": {
+        "id": "sud-ijara-davogar",
+        "title": "Ijara qarzi va penya — daʼvogar vakili",
+        "role": "Daʼvogar vakili (iqtisodiy sud)",
+        "level": "beginner",
+        "durationMinutes": "25",
+        "roomId": "court-economic",
+        "briefing": {
+          "workplace": "Namuna tumanlararo iqtisodiy sudi · 2-sud majlislari zali",
+          "position": "Daʼvogar vakili («A» MChJ, ijaraga beruvchi)",
+          "authority": [
+            "Ishonchnoma: «A» MChJ direktori tomonidan berilgan, muhr bilan tasdiqlangan",
+            "Maxfiy (faqat siz bilasiz): topshirish dalolatnomasi imzolanmagan — bu zaif joyingiz. Lekin javobgar hisob-fakturalarni imzolagan va joydan foydalangan."
+          ],
+          "task": [
+            "Mijozingiz savdo markazidagi 9,5 m² maydonni tadbirkor «B»ga 2022-yil 1-apreldagi 32-P-sonli shartnoma bilan ijaraga bergan, ijara haqi toʻlanmagan.",
+            "Sudda 25 620 433,19 soʻm asosiy qarz va 3 040 580,45 soʻm penya undirishni soʻraysiz.",
+            "Sudga «Hurmatli sud!» deb, tik turib murojaat qiling."
+          ]
+        },
+        "npc": {
+          "id": "sudya",
+          "name": "Sudya",
+          "age": 52
+        },
+        "disclaimer": "Oʻquv ssenariysi. Real iqtisodiy sud ishi asosida, sezilarli oʻzgartirilgan. Huquqiy maslahat emas.",
+        "court": "economic",
+        "difficulty": 2,
+        "tags": [
+          "ijara",
+          "penya",
+          "FK 544",
+          "FK 326",
+          "dalolatnoma"
+        ],
+        "summary": "Savdo markazidagi 9,5 m² joyning ijara haqi to'lanmagan: asosiy qarz va penya undirish. Topshirish dalolatnomasi imzolanmagan, lekin hisob-fakturalar imzolangan; penyani kamaytirish iltimosnomasi."
+      },
+      "numbers": "2022 32 544 578 541 326 260 262 333 8.5 6.4 9,5 25 620 433,19 3 040 580,45",
+      "ai_facts": "«A» MChJ (ijaraga beruvchi, da'vogar) savdo markazidagi 9,5 m² maydonni yakka tartibdagi tadbirkor «B»ga (ijaraga oluvchi, javobgar) 2022-yil 1-apreldagi 32-P-sonli shartnoma bilan ijaraga bergan. Ijara haqi to'lanmagan. Da'vo: 25 620 433,19 so'm asosiy qarz va 3 040 580,45 so'm penya. Topshirish dalolatnomasi imzolanmagan. Javobgar hisob-fakturalarni imzolagan va joydan taxminan uch oy foydalangan. Ijara haqi shartnomaning 6.4-bandida, penya 8.5-bandida belgilangan."
+    },
+    "sud-ijara-javobgar": {
+      "student_role": "javobgar-vakili",
+      "case_type": "IPK",
+      "public": {
+        "id": "sud-ijara-javobgar",
+        "title": "Ijara qarzi va penya — javobgar vakili",
+        "role": "Javobgar vakili (iqtisodiy sud)",
+        "level": "beginner",
+        "durationMinutes": "25",
+        "roomId": "court-economic",
+        "briefing": {
+          "workplace": "Namuna tumanlararo iqtisodiy sudi · 2-sud majlislari zali",
+          "position": "Javobgar vakili (yakka tartibdagi tadbirkor «B»)",
+          "authority": [
+            "Ishonchnoma: yakka tartibdagi tadbirkor «B» tomonidan berilgan",
+            "Maxfiy (faqat siz bilasiz): mijoz joydan taxminan uch oy foydalangan; topshirish dalolatnomasi imzolanmagan; moliyaviy ahvoli ogʻir. Hisob-fakturalar imzolanganini inkor etib boʻlmaydi."
+          ],
+          "task": [
+            "«A» MChJ 32-P-sonli ijara shartnomasi boʻyicha 25 620 433,19 soʻm qarz va 3 040 580,45 soʻm penya undirishni soʻragan.",
+            "Mijoz manfaatini himoya qiling: daʼvoga asosli eʼtiroz bildiring va penya boʻyicha iltimosnoma bering.",
+            "Sudga «Hurmatli sud!» deb, tik turib murojaat qiling."
+          ]
+        },
+        "npc": {
+          "id": "sudya",
+          "name": "Sudya",
+          "age": 52
+        },
+        "disclaimer": "Oʻquv ssenariysi. Real iqtisodiy sud ishi asosida, sezilarli oʻzgartirilgan. Huquqiy maslahat emas.",
+        "court": "economic",
+        "difficulty": 2,
+        "tags": [
+          "ijara",
+          "penya",
+          "FK 544",
+          "FK 326",
+          "dalolatnoma"
+        ],
+        "summary": "Savdo markazidagi 9,5 m² joyning ijara haqi to'lanmagan: asosiy qarz va penya undirish. Topshirish dalolatnomasi imzolanmagan, lekin hisob-fakturalar imzolangan; penyani kamaytirish iltimosnomasi."
+      },
+      "numbers": "2022 32 544 578 541 326 260 262 333 8.5 6.4 9,5 25 620 433,19 3 040 580,45",
+      "ai_facts": "«A» MChJ (ijaraga beruvchi, da'vogar) savdo markazidagi 9,5 m² maydonni yakka tartibdagi tadbirkor «B»ga (ijaraga oluvchi, javobgar) 2022-yil 1-apreldagi 32-P-sonli shartnoma bilan ijaraga bergan. Ijara haqi to'lanmagan. Da'vo: 25 620 433,19 so'm asosiy qarz va 3 040 580,45 so'm penya. Topshirish dalolatnomasi imzolanmagan. Javobgar hisob-fakturalarni imzolagan va joydan taxminan uch oy foydalangan. Ijara haqi shartnomaning 6.4-bandida, penya 8.5-bandida belgilangan."
+    }
+  }
+}

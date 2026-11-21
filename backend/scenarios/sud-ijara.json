@@ -1,0 +1,828 @@
+{
+ "format": "lexsim-scenario/1",
+ "meta": {
+  "id": "sud-ijara",
+  "title": "Ijara qarzi va penya",
+  "court": "economic",
+  "roles": {
+   "davogar-vakili": "sud-ijara-davogar",
+   "javobgar-vakili": "sud-ijara-javobgar"
+  },
+  "durationMinutes": 25,
+  "difficulty": 2,
+  "tags": [
+   "ijara",
+   "penya",
+   "FK 544",
+   "FK 326",
+   "dalolatnoma"
+  ],
+  "summary": "Savdo markazidagi 9,5 m² joyning ijara haqi to'lanmagan: asosiy qarz va penya undirish. Topshirish dalolatnomasi imzolanmagan, lekin hisob-fakturalar imzolangan; penyani kamaytirish iltimosnomasi."
+ },
+ "briefing": {
+  "davogar-vakili": {
+   "workplace": "Namuna tumanlararo iqtisodiy sudi · 2-sud majlislari zali",
+   "position": "Daʼvogar vakili («A» MChJ, ijaraga beruvchi)",
+   "authority": [
+    "Ishonchnoma: «A» MChJ direktori tomonidan berilgan, muhr bilan tasdiqlangan"
+   ],
+   "task": [
+    "Mijozingiz savdo markazidagi 9,5 m² maydonni tadbirkor «B»ga 2022-yil 1-apreldagi 32-P-sonli shartnoma bilan ijaraga bergan, ijara haqi toʻlanmagan.",
+    "Sudda 25 620 433,19 soʻm asosiy qarz va 3 040 580,45 soʻm penya undirishni soʻraysiz.",
+    "Sudga «Hurmatli sud!» deb, tik turib murojaat qiling."
+   ],
+   "secret": [
+    "Maxfiy (faqat siz bilasiz): topshirish dalolatnomasi imzolanmagan — bu zaif joyingiz. Lekin javobgar hisob-fakturalarni imzolagan va joydan foydalangan."
+   ]
+  },
+  "javobgar-vakili": {
+   "workplace": "Namuna tumanlararo iqtisodiy sudi · 2-sud majlislari zali",
+   "position": "Javobgar vakili (yakka tartibdagi tadbirkor «B»)",
+   "authority": [
+    "Ishonchnoma: yakka tartibdagi tadbirkor «B» tomonidan berilgan"
+   ],
+   "task": [
+    "«A» MChJ 32-P-sonli ijara shartnomasi boʻyicha 25 620 433,19 soʻm qarz va 3 040 580,45 soʻm penya undirishni soʻragan.",
+    "Mijoz manfaatini himoya qiling: daʼvoga asosli eʼtiroz bildiring va penya boʻyicha iltimosnoma bering.",
+    "Sudga «Hurmatli sud!» deb, tik turib murojaat qiling."
+   ],
+   "secret": [
+    "Maxfiy (faqat siz bilasiz): mijoz joydan taxminan uch oy foydalangan; topshirish dalolatnomasi imzolanmagan; moliyaviy ahvoli ogʻir. Hisob-fakturalar imzolanganini inkor etib boʻlmaydi."
+   ]
+  }
+ },
+ "aiFacts": "«A» MChJ (ijaraga beruvchi, da'vogar) savdo markazidagi 9,5 m² maydonni yakka tartibdagi tadbirkor «B»ga (ijaraga oluvchi, javobgar) 2022-yil 1-apreldagi 32-P-sonli shartnoma bilan ijaraga bergan. Ijara haqi to'lanmagan. Da'vo: 25 620 433,19 so'm asosiy qarz va 3 040 580,45 so'm penya. Topshirish dalolatnomasi imzolanmagan. Javobgar hisob-fakturalarni imzolagan va joydan taxminan uch oy foydalangan. Ijara haqi shartnomaning 6.4-bandida, penya 8.5-bandida belgilangan.",
+ "numbers": "2022 32 544 578 541 326 260 262 333 8.5 6.4 9,5 25 620 433,19 3 040 580,45",
+ "facts": [
+  {
+   "id": "F1",
+   "text": "Vakilning vakolati ishonchnoma bilan tasdiqlandi.",
+   "status": "undisputed",
+   "revealWhen": "stage:ishtirokchilar — ishonchnoma taqdim etilganda"
+  },
+  {
+   "id": "F2",
+   "text": "Ijara shartnomasi va imzolangan hisob-fakturalar sudda o'qildi.",
+   "status": "undisputed",
+   "revealWhen": "stage:dalillar — yozma dalillar o'qilganda"
+  },
+  {
+   "id": "F3",
+   "text": "Obyekt topshirish dalolatnomasi bilan rasmiylashtirilmagan, lekin javobgar undan uch oy foydalangan.",
+   "status": "disputed",
+   "revealWhen": "javobgar javobi (tushuntirish) yoki savol q-foydalanish"
+  },
+  {
+   "id": "F4",
+   "text": "Da'vo qilingan penya asosiy qarzning qariyb 12 foiziga teng; uni kamaytirish masalasi ko'tarildi.",
+   "status": "disputed",
+   "revealWhen": "stage:penya — penyani kamaytirish iltimosnomasi"
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "title": "Ishonchnoma (vakillar)",
+   "proves": [
+    "F1"
+   ],
+   "weakness": null
+  },
+  {
+   "id": "E2",
+   "title": "2022-yil 1-apreldagi 32-P-sonli ijara shartnomasi (6.4 va 8.5-bandlar)",
+   "proves": [
+    "F2",
+    "F4"
+   ],
+   "weakness": null
+  },
+  {
+   "id": "E3",
+   "title": "Javobgar imzolagan hisob-fakturalar",
+   "proves": [
+    "F2",
+    "F3"
+   ],
+   "weakness": null
+  },
+  {
+   "id": "E4",
+   "title": "Obyektni topshirish dalolatnomasi",
+   "proves": [
+    "F3"
+   ],
+   "weakness": "Imzolanmagan — da'vogarning zaif joyi (FK 578-modda)."
+  }
+ ],
+ "persona": {
+  "judge": {
+   "style": "Qat'iy, betaraf, qisqa; IPK tartibiga qat'iy amal qiladi; hukmni oldindan aytmaydi.",
+   "tone": "rasmiy"
+  },
+  "davogar-vakili": {
+   "who": "«A» MChJ (ijaraga beruvchi) vakili, ishonchnoma asosida.",
+   "position": "Javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan. FK-544 va shartnomaning 6.4-bandi bo'yicha ijara haqi to'lanishi shart. Penya shartnomaning 8.5-bandida yozma kelishilgan.",
+   "allowedArticles": [
+    "FK-544",
+    "FK-262",
+    "FK-333",
+    "FK-578",
+    "FK-260"
+   ],
+   "mayConcede": [
+    "Topshirish dalolatnomasi imzolanmagan"
+   ],
+   "neverConcede": [
+    "Dalolatnoma imzolanganini da'vo qilish (u imzolanmagan)",
+    "Yangi summa",
+    "Javobgarning boshqa qarzlari haqida gapirish (tekshirilmagan)"
+   ],
+   "settlement": "Hurmatli sud, javobgar asosiy qarzni to'liq to'lashga tayyor bo'lsa, penya bo'yicha kelishuvga tayyormiz."
+  },
+  "javobgar-vakili": {
+   "who": "Yakka tartibdagi tadbirkor «B» (ijaraga oluvchi) vakili, ishonchnoma asosida.",
+   "position": "Obyekt topshirish dalolatnomasi bilan topshirilmagan (FK-578, FK-541). Javobgar joydan taxminan uch oy foydalangan. Penya nomutanosib, FK-326 bo'yicha kamaytirilishi kerak. Hisob-fakturalar imzolanganini inkor etmaydi.",
+   "allowedArticles": [
+    "FK-578",
+    "FK-541",
+    "FK-326",
+    "FK-333"
+   ],
+   "mayConcede": [
+    "Joydan taxminan uch oy foydalangan",
+    "Hisob-fakturalar imzolangan"
+   ],
+   "neverConcede": [
+    "Hisob-fakturalarni inkor etish yoki soxta deyish",
+    "Obyektdan umuman foydalanmagan deyish",
+    "Kelishuv bitimiga rozi bo'lish"
+   ],
+   "settlement": "Hurmatli sud, hozircha kelishuv bitimiga rozi emasmiz, avval penya masalasi ko'rib chiqilsin."
+  }
+ },
+ "stages": [
+  {
+   "id": "ishtirokchilar",
+   "goal": "Vakolatni tasdiqlash (IPK 62)",
+   "actions": [
+    "answer",
+    "settlement"
+   ],
+   "next": "rad"
+  },
+  {
+   "id": "rad",
+   "goal": "Rad qilish huquqi",
+   "actions": [
+    "answer",
+    "settlement"
+   ],
+   "next": "huquqlar"
+  },
+  {
+   "id": "huquqlar",
+   "goal": "Huquq va majburiyatlar (IPK 165)",
+   "actions": [
+    "answer",
+    "settlement"
+   ],
+   "next": "oldingi"
+  },
+  {
+   "id": "oldingi",
+   "goal": "Iltimosnomalar",
+   "actions": [
+    "answer",
+    "motion",
+    "settlement"
+   ],
+   "next": "tushuntirish"
+  },
+  {
+   "id": "tushuntirish",
+   "goal": "Da'vo va unga munosabat",
+   "actions": [
+    "answer",
+    "motion",
+    "objection",
+    "question",
+    "settlement"
+   ],
+   "next": "dalillar"
+  },
+  {
+   "id": "dalillar",
+   "goal": "Yozma dalillarni tekshirish",
+   "actions": [
+    "answer",
+    "motion",
+    "objection",
+    "question",
+    "settlement"
+   ],
+   "next": "penya"
+  },
+  {
+   "id": "penya",
+   "goal": "Penya iltimosnomasi (FK 326)",
+   "actions": [
+    "answer",
+    "motion",
+    "objection",
+    "question",
+    "settlement"
+   ],
+   "next": "qoshimcha",
+   "skipTo": "qoshimcha",
+   "skipWhen": "da'vogar penyani talab qilmasa"
+  },
+  {
+   "id": "qoshimcha",
+   "goal": "Qo'shimcha materiallar",
+   "actions": [
+    "answer",
+    "motion",
+    "settlement"
+   ],
+   "next": "muzokara"
+  },
+  {
+   "id": "muzokara",
+   "goal": "Sud muzokaralari (IPK 173)",
+   "actions": [
+    "answer",
+    "objection",
+    "settlement"
+   ],
+   "next": "yakun"
+  },
+  {
+   "id": "yakun",
+   "goal": "Hal qiluv qarori",
+   "actions": [
+    "answer"
+   ],
+   "next": null
+  }
+ ],
+ "keyMoments": [
+  {
+   "id": "KM1",
+   "title": "Vakolatni tasdiqlash",
+   "stage": "ishtirokchilar",
+   "articleIds": [
+    "IPK-62",
+    "IPK-64",
+    "IPK-167"
+   ],
+   "expected": {
+    "davogar-vakili": "Vakolatni ishonchnoma bilan tasdiqlash",
+    "javobgar-vakili": "Vakolatni ishonchnoma bilan tasdiqlash"
+   },
+   "sample": {
+    "any": "Hurmatli sud, vakolatimni tasdiqlovchi ishonchnomani taqdim etaman."
+   },
+   "verifiedAt": null
+  },
+  {
+   "id": "KM2",
+   "title": "Topshirish dalolatnomasi bahsi",
+   "stage": "dalillar",
+   "articleIds": [
+    "FK-544",
+    "FK-578",
+    "FK-541",
+    "OXS234-p9"
+   ],
+   "expected": {
+    "davogar-vakili": "Dalolatnoma e'tiroziga foydalanish fakti va imzolangan hisob-fakturalar bilan javob berish",
+    "javobgar-vakili": "Topshirish dalolatnomasi masalasini FK-578/FK-541 bilan ko'tarish"
+   },
+   "sample": {
+    "davogar-vakili": "Hurmatli sud, javobgar obyektdan uch oy foydalanganini o'zi tan oldi va hisob-fakturalarni imzolagan. Bu ijara munosabati amalda bajarilganini tasdiqlaydi; Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga ko'ra ijara haqi to'lanishi shart.",
+    "javobgar-vakili": "Hurmatli sud, Fuqarolik kodeksining 578-moddasiga ko'ra bino topshirilishi dalolatnoma yoki topshirishga doir boshqa hujjat bilan rasmiylashtiriladi. Bunday hujjat imzolanmagan."
+   },
+   "verifiedAt": null
+  },
+  {
+   "id": "KM3",
+   "title": "Penya masalasi",
+   "stage": "penya",
+   "articleIds": [
+    "FK-326",
+    "FK-262",
+    "FK-333",
+    "OXS163-p4"
+   ],
+   "expected": {
+    "davogar-vakili": "Penya asosini keltirish (8.5-band, yozma kelishuv, kechiktirish)",
+    "javobgar-vakili": "FK-326 bo'yicha penyani kamaytirishni mezonlari bilan so'rash"
+   },
+   "sample": {
+    "davogar-vakili": "Hurmatli sud, penya shartnomaning 8.5-bandida taraflar tomonidan yozma kelishilgan, javobgar to'lovni muddatida amalga oshirmagan. Shu sababli penyani kamaytirishga asos yo'q deb hisoblaymiz.",
+    "javobgar-vakili": "Hurmatli sud, da'vo qilingan penya majburiyat buzilishi oqibatlariga nomutanosib. Fuqarolik kodeksining 326-moddasiga asosan, javobgar obyektdan qisqa muddat foydalanganini va mulkiy ahvolini inobatga olib, penyani kamaytirishingizni so'rayman."
+   },
+   "verifiedAt": null
+  },
+  {
+   "id": "KM4",
+   "title": "Sud muzokarasi",
+   "stage": "muzokara",
+   "articleIds": [
+    "IPK-173"
+   ],
+   "expected": {
+    "davogar-vakili": "Muzokarada faqat tekshirilgan dalillarga tayanish",
+    "javobgar-vakili": "Muzokarada faqat tekshirilgan dalillarga tayanish"
+   },
+   "sample": {
+    "any": "Hurmatli sud! Sud majlisida tekshirilgan ijara shartnomasi va hisob-fakturalar shuni ko'rsatadiki, ... Shu asosda ... ni so'rayman."
+   },
+   "verifiedAt": null
+  }
+ ],
+ "outcome": {
+  "grade": {
+   "basis": "scoreTotal (court-v1 rubrikasi)",
+   "excellent": ">= 85",
+   "average": ">= 60",
+   "poor": "< 60",
+   "failed": "etika nolga tushsa (pora, haqorat)",
+   "forcedPoor": [
+    "patience",
+    "no_powers"
+   ]
+  },
+  "decision": {
+   "default": "partial",
+   "text": "Da'vo arizasi qisman qanoatlantiriladi (hozirgi dvigatelda qaror matni qat'iy).",
+   "rules": []
+  }
+ },
+ "lines": {
+  "RISE": {
+   "text": "Sud kirib kelmoqda, o'rningizdan turing!",
+   "voice": "female",
+   "articleIds": [
+    "IPK-167"
+   ]
+  },
+  "SIT": {
+   "text": "O'tiring.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-167"
+   ]
+  },
+  "OPEN": {
+   "text": "Sud majlisi ochiq deb e'lon qilinadi. Namuna tumanlararo iqtisodiy sudida «A» MChJning yakka tartibdagi tadbirkor «B»ga nisbatan ijara shartnomasi bo'yicha asosiy qarz va penya undirish to'g'risidagi da'vo arizasi bo'yicha iqtisodiy ish ko'rib chiqiladi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-165"
+   ]
+  },
+  "CLERK_REPORT": {
+   "text": "Hurmatli sud, sud majlisiga taraflarning vakillari kelgan.",
+   "voice": "female",
+   "articleIds": []
+  },
+  "ASK_POWERS": {
+   "text": "{role_name}, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-165",
+    "IPK-62"
+   ]
+  },
+  "POWERS_OK": {
+   "text": "Vakolat tekshirildi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-62"
+   ]
+  },
+  "POWERS_AGAIN": {
+   "text": "{role_name}, vakolatingizni tasdiqlovchi hujjat — ishonchnomani taqdim etishingiz kerak.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-62"
+   ]
+  },
+  "POWERS_MISSING": {
+   "text": "Vakolat hujjati taqdim etilmadi, bu bayonnomaga qayd etiladi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-62"
+   ]
+  },
+  "RECUSAL": {
+   "text": "Ish raislik qiluvchi sudya tomonidan yakka tartibda ko'riladi. Sud majlisi kotibi ishtirok etmoqda. Ishda ishtirok etuvchi shaxslarga rad qilish huquqi tushuntiriladi. Sud tarkibiga yoki kotibga rad bildirasizmi?",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-165",
+    "IPK-20",
+    "IPK-21"
+   ]
+  },
+  "RECUSAL_DENY": {
+   "text": "Sud joyida maslahatlashib, ajrim chiqardi: rad qilish to'g'risidagi arizani qanoatlantirish rad etilsin, chunki qonunda nazarda tutilgan asoslar keltirilmadi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-22",
+    "IPK-23"
+   ]
+  },
+  "RIGHTS": {
+   "text": "Sizlarga protsessual huquq va majburiyatlaringiz tushuntiriladi: dalillar taqdim etish, iltimosnoma berish, boshqa ishtirokchilarga savol berish, sud muzokaralarida qatnashish huquqiga egasiz. Huquqlaringiz tushunarlimi?",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-165"
+   ]
+  },
+  "PRE_MOTIONS": {
+   "text": "Ishni mazmunan ko'rishdan oldin iltimosnomalaringiz bormi?",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-169"
+   ]
+  },
+  "MERITS_P": {
+   "text": "Ishni mazmunan ko'rishga o'tamiz. Da'vogar vakili, da'vo talablaringizni quvvatlaysizmi? Talablaringiz va ularning asoslarini bayon qiling.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "MERITS_D": {
+   "text": "Ishni mazmunan ko'rishga o'tamiz. So'z da'vogar vakiliga beriladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "ASK_ADMIT": {
+   "text": "Javobgar vakili, da'vo talablarini tan olasizmi? Fikringizni bayon qiling.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "EVIDENCE": {
+   "text": "Sud dalillarni tekshirish tartibini belgilaydi: avval ish materiallaridagi yozma dalillar. 2022-yil 1-apreldagi 32-P-sonli ijara shartnomasi va imzolangan hisob-fakturalar o'qib eshittiriladi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-168"
+   ]
+  },
+  "EVIDENCE_ASK_P": {
+   "text": "Da'vogar vakili, javobgar obyekt dalolatnoma bilan topshirilmaganini aytmoqda. Bunga munosabatingiz?",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "EVIDENCE_ASK_D": {
+   "text": "Javobgar vakili, yozma dalillarga fikringiz bormi? Iltimosnomangiz bo'lsa, bayon qiling.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "PENALTY_ASK_D": {
+   "text": "Javobgar vakili, da'vogarning penya talabiga munosabatingiz?",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "HEAR_OTHER": {
+   "text": "Iltimosnoma bo'yicha boshqa taraf fikrini eshitamiz. {other}, fikringiz?",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-169"
+   ]
+  },
+  "DEFER": {
+   "text": "Penyani kamaytirish masalasi hal qiluv qarorini qabul qilishda, ishning barcha holatlari inobatga olingan holda hal qilinadi. Taraflarning fikrlari bayonnomaga kiritildi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-169",
+    "FK-326"
+   ]
+  },
+  "ASK_MORE": {
+   "text": "Ishda ishtirok etuvchi shaxslarda qo'shimcha materiallar bormi?",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-173"
+   ]
+  },
+  "DEBATES_P": {
+   "text": "Qo'shimcha materiallar bo'lmaganligi sababli sud muzokaralariga o'tiladi. Birinchi bo'lib da'vogar so'zga chiqadi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-173"
+   ]
+  },
+  "DEBATES_D": {
+   "text": "Qo'shimcha materiallar bo'lmaganligi sababli sud muzokaralariga o'tiladi. Birinchi bo'lib da'vogar so'zga chiqadi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-173"
+   ]
+  },
+  "FLOOR_D": {
+   "text": "So'z javobgar vakiliga beriladi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-173"
+   ]
+  },
+  "TO_CHAMBER": {
+   "text": "Sud hal qiluv qarorini qabul qilish uchun maslahatxonaga kiradi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-175"
+   ]
+  },
+  "VERDICT": {
+   "text": "O'zbekiston Respublikasi nomidan hal qiluv qarorining xulosa qismi o'qib eshittiriladi: da'vo arizasi qisman qanoatlantirilsin. Javobgardan da'vogar foydasiga 25 620 433 so'm 19 tiyin asosiy qarz, 30 405 so'm penya va 33 000 so'm pochta xarajati undirilsin. Respublika byudjetiga 573 220 so'm 27 tiyin davlat boji undirilsin. Da'voning qolgan qismi rad qilinsin.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-186",
+    "IPK-179"
+   ]
+  },
+  "AFTER_VERDICT": {
+   "text": "Hal qiluv qarori bir oy o'tgach qonuniy kuchga kiradi, ustidan bir oy ichida shikoyat qilish mumkin. O'tiring. Sud majlisi yopiq deb e'lon qilinadi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-192"
+   ]
+  },
+  "W_STAND": {
+   "text": "{role_name}, sudga tik turib murojaat qiling.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-167"
+   ]
+  },
+  "W_REPEAT": {
+   "text": "Iltimos, fikringizni aniqroq takrorlang.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_SILENCE": {
+   "text": "{role_name}, javob bering.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_SILENCE_SOFT": {
+   "text": "{role_name}, sud sizning javobingizni kutmoqda.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_BRIBE": {
+   "text": "Sudga ta'sir o'tkazishga urinish qonunga zid. Bu holat bayonnomaga qayd etiladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "CLOSED": {
+   "text": "Sud majlisi yopilgan. Yakunlash tugmasini bosing.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_ADDRESS": {
+   "text": "{role_name}, sudga «Hurmatli sud» deb murojaat qiling.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-167"
+   ]
+  },
+  "W_NOT_NOW": {
+   "text": "Bu masala hozirgi bosqichda ko'rilmaydi. {when}",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_UNEXAMINED": {
+   "text": "Muzokaralarda sud majlisida tekshirilmagan holat va dalillarga tayanishga haqingiz yo'q. Fikringizni tekshirilgan dalillar doirasida qaytadan bayon qiling.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-173"
+   ]
+  },
+  "W_ORDER": {
+   "text": "Sud majlisi tartibini buzmang. Takrorlansa, chora ko'riladi.",
+   "voice": "elder_m",
+   "articleIds": [
+    "IPK-167"
+   ]
+  },
+  "W_ROLE": {
+   "text": "Sud majlisida faqat ish bo'yicha gapiring.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "W_NO_NORM": {
+   "text": "{ref} bo'yicha norma sud tomonidan aniqlanmadi. Qaysi qonun hujjatiga tayanayotganingizni aniqlashtiring.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "LEAVE": {
+   "text": "Sud majlisi tartibi qayta-qayta buzilgani sababli, sud majlisi to'xtatiladi. Bu holat bayonnomaga qayd etiladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.tushuntirish.davogar-vakili": {
+   "text": "Da'vogar vakili, talablaringiz va ularning asoslarini bayon qiling.",
+   "variants": [
+    "Da'vogar vakili, asosiy masalaga qaytamiz: talablaringizni bayon qiling.",
+    "Da'vogar vakili, davom eting: nimani va qaysi asosda undirishni so'rayapsiz?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.tushuntirish.javobgar-vakili": {
+   "text": "Javobgar vakili, da'vo talablariga munosabatingizni bayon qiling.",
+   "variants": [
+    "Javobgar vakili, asosiy masalaga qaytamiz: da'voni tan olasizmi?",
+    "Javobgar vakili, davom eting: da'vo talablariga munosabatingiz qanday?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.dalillar.davogar-vakili": {
+   "text": "Da'vogar vakili, javobgar obyekt dalolatnoma bilan topshirilmaganini aytmoqda. Bunga munosabatingiz?",
+   "variants": [
+    "Da'vogar vakili, savolga qaytamiz: dalolatnoma masalasiga munosabatingiz?",
+    "Da'vogar vakili, endi asosiy savolga javob bering: obyekt qanday topshirilgan?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.dalillar.javobgar-vakili": {
+   "text": "Javobgar vakili, yozma dalillarga fikringiz bormi? Iltimosnomangiz bo'lsa, bayon qiling.",
+   "variants": [
+    "Javobgar vakili, yozma dalillarga qaytamiz: fikringiz bormi?",
+    "Javobgar vakili, davom eting: dalillar bo'yicha yana nima deysiz?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.penya.davogar-vakili": {
+   "text": "Da'vogar vakili, penyani kamaytirish iltimosnomasiga munosabatingiz?",
+   "variants": [
+    "Da'vogar vakili, iltimosnomaga qaytamiz: penyani kamaytirishga munosabatingiz?",
+    "Da'vogar vakili, endi penya masalasiga javob bering."
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.penya.javobgar-vakili": {
+   "text": "Javobgar vakili, da'vogarning penya talabiga munosabatingiz?",
+   "variants": [
+    "Javobgar vakili, penya masalasiga qaytamiz: munosabatingiz?",
+    "Javobgar vakili, endi penya talabiga javob bering."
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.oldingi.any": {
+   "text": "Ishni mazmunan ko'rishdan oldin boshqa iltimosnomalaringiz bormi?",
+   "variants": [
+    "Boshqa iltimosnomalar bormi?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.qoshimcha.any": {
+   "text": "Ishda ishtirok etuvchi shaxslarda qo'shimcha materiallar bormi?",
+   "variants": [
+    "Qo'shimcha materiallar bormi?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.muzokara.any": {
+   "text": "Sud muzokaralarida nutqingizni davom ettiring.",
+   "variants": [
+    "Nutqingizni davom ettiring.",
+    "Davom eting, sud sizni tinglayapti."
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.ishtirokchilar.davogar-vakili": {
+   "text": "Da'vogar vakili, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+   "variants": [
+    "Da'vogar vakili, avval ishonchnomangizni taqdim eting."
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.ishtirokchilar.javobgar-vakili": {
+   "text": "Javobgar vakili, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+   "variants": [
+    "Javobgar vakili, avval ishonchnomangizni taqdim eting."
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.rad.any": {
+   "text": "Sudga rad bildirasizmi?",
+   "variants": [
+    "Shunday qilib, sud tarkibiga rad bildirasizmi?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "RESUME.huquqlar.any": {
+   "text": "Protsessual huquq va majburiyatlaringiz tushunarlimi?",
+   "variants": [
+    "Tushuntirilgan huquq va majburiyatlaringiz sizga tushunarlimi?"
+   ],
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.Q_FLOOR": {
+   "text": "Savolga javob berish uchun so'z {opp}ga beriladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.Q_IRRELEVANT": {
+   "text": "Savol ish holatlariga taalluqli emas, olib tashlanadi. Savolni ish materiallari doirasida bering.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.Q_STAGE": {
+   "text": "Savollar tushuntirishlar va dalillarni tekshirish bosqichida beriladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.Q_LIMIT": {
+   "text": "Savollar yetarli. Sud ishni ko'rishda davom etadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_PENYA_EARLY": {
+   "text": "Iltimosnomangiz bayonnomaga kiritildi. U dalillar tekshirilgach, boshqa tarafning fikri eshitilib hal qilinadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_EVIDENCE_HEAR": {
+   "text": "Iltimosnoma bo'yicha boshqa taraf fikrini eshitamiz. {opp}, fikringiz?",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_EVIDENCE_DENY_BASIS": {
+   "text": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnomani qanoatlantirish rad etilsin, chunki dalil qaysi holatni tasdiqlashi asoslanmadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_EVIDENCE_DENY_ENOUGH": {
+   "text": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnomani qanoatlantirish rad etilsin, chunki ishdagi yozma dalillar bu holatni aniqlash uchun yetarli.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_POSTPONE_DENY": {
+   "text": "Sud joyida maslahatlashib, ajrim chiqardi: ishni keyinga qoldirish to'g'risidagi iltimosnoma rad etilsin, chunki qonunda nazarda tutilgan uzrli sabab hujjat bilan tasdiqlanmadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_LIMIT": {
+   "text": "Iltimosnomalar bayonnomaga kiritildi. Sud ishni ko'rishda davom etadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.S_CONTINUE": {
+   "text": "Kelishuv bitimi ishning istalgan bosqichida tuzilishi mumkin va yozma shaklda sudga taqdim etiladi. Yozma kelishuv bitimi taqdim etilmagani sababli ish mazmunan ko'rishda davom etadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.O_SUSTAIN": {
+   "text": "Sud joyida maslahatlashib, e'tirozni qabul qildi: u bayonnomaga kiritiladi va dalillarga baho berishda inobatga olinadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.O_OVERRULE": {
+   "text": "E'tiroz rad etildi, chunki uning asosi ko'rsatilmadi: raqib tomonning qaysi gapi qaysi dalilga zid ekanini ayting.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.S_NEAR": {
+   "text": "Taraflar kelishuvga yaqin ko'rinadi. Kelishuv bitimi yozma shaklda tuzilib, sud tomonidan tasdiqlanadi. Hozircha yozma bitim taqdim etilmagani sababli ish mazmunan ko'rishda davom etadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.R_CONTINUE": {
+   "text": "Sud mavjud tushuntirishlar asosida ishni ko'rishda davom etadi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.NO_POWERS": {
+   "text": "Vakolatni tasdiqlovchi hujjat taqdim etilmagani sababli vakilning sud majlisida ishtirok etishiga yo'l qo'yilmaydi. Bu holat bayonnomaga qayd etiladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.M_STAGE": {
+   "text": "Iltimosnomalar huquq va majburiyatlar tushuntirilgach beriladi. Hozir sud joriy masalani hal qiladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  },
+  "J.O_STAGE": {
+   "text": "E'tirozlar ish mazmunan ko'rilayotganda, raqib tomon gapiga nisbatan bildiriladi.",
+   "voice": "elder_m",
+   "articleIds": []
+  }
+ },
+ "variables": {}
+}

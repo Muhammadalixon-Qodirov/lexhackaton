@@ -1,0 +1,258 @@
+{
+ "_izoh": "AI raqib va sudyaning qonuniy psixologik/protsessual taktikalari (reports/Sud jarayonidagi psixologik taktikalar.md). mode: Q — standart; E — «e'tiroz mashqi» (ataylab noto'g'ri harakat, faqat LEXSIM_TACTICS_E=1 bilan, debriefda ochiq aytiladi). T rejimidagi narsalar (yolg'on fakt, soxta dalil, sudni chalg'itish, haqorat, tahdid) bu yerga hech qachon kiritilmaydi. Natija: avoided (tushmadi) +2, recovered (2 navbat ichida chiqdi) +1, fell (tushdi) −2.",
+ "caps": {
+  "beginner": 1,
+  "intermediate": 2,
+  "advanced": 3
+ },
+ "window": 2,
+ "points": {
+  "avoided": 2,
+  "recovered": 1,
+  "fell": -2
+ },
+ "tactics": [
+  {
+   "id": "R4",
+   "name": "Kichik yon berib burilish",
+   "mode": "Q",
+   "speaker": "opponent",
+   "student_role": "davogar-vakili",
+   "stage": "dalillar",
+   "min_level": "beginner",
+   "line": "Hurmatli sud, ochiq aytamiz: uch oy joydan foydalanganimizni tan olamiz. Lekin topshirish dalolatnomasi imzolanmagan ekan, ijara munosabati boshlanmagan, demak qarz ham yo'q.",
+   "avoided": [
+    "bayonnoma\\w* (kirit|yoz|qayd)",
+    "tan ol\\w*\\W.{0,60}(qayd|bayonnoma)",
+    "541",
+    "234",
+    "amalda topshir",
+    "foydalan\\w* (fakt|tan)",
+    "hisob[- ]?faktura"
+   ],
+   "fell": [
+    "\\brozimiz\\b",
+    "\\bto'g'ri\\b.{0,30}(qarz yo'q|boshlanmagan)",
+    "qarz yo'q"
+   ],
+   "refs": [
+    "FK 541",
+    "OXS 234-9"
+   ],
+   "debrief": {
+    "headline": "Raqib kichik narsani tan olib, katta xulosaga burildi.",
+    "remedy": "Tan olingan faktni bayonnomaga kiritishni so'rang va uni burilishdan ajrating: foydalanish fakti va hisob-fakturalar topshirilganini ko'rsatadi (FK 541(2), OXS 234-son Plenum 9-band).",
+    "model": "Hurmatli sud, javobgar uch oy foydalanganini tan oldi — buni bayonnomaga kiritishni so'raymiz. Dalolatnomani tuzish ijaraga beruvchining burchi bo'lsa ham, foydalanish fakti va imzolangan hisob-fakturalar mulk amalda topshirilganini tasdiqlaydi."
+   }
+  },
+  {
+   "id": "R1",
+   "name": "Raqam bilan langar",
+   "mode": "Q",
+   "speaker": "opponent",
+   "student_role": "davogar-vakili",
+   "stage": "penya",
+   "min_level": "beginner",
+   "line": "Hurmatli sud, penya ochiq-oydin nomutanosib. Adolatli miqdor ko'pi bilan o'ttiz ming so'm atrofida bo'ladi.",
+   "avoided": [
+    "327",
+    "\\b163\\b",
+    "plenum",
+    "8\\.5",
+    "0[.,]5",
+    "hisob-?kitob",
+    "asoslanmagan",
+    "nomutanosib emas",
+    "kamaytirish chegara"
+   ],
+   "fell": [
+    "o'rtas",
+    "yarmi",
+    "kelish(amiz|aylik)",
+    "\\brozimiz\\b",
+    "o'ttiz ming\\w* (rozi|mayli)"
+   ],
+   "refs": [
+    "FK 326",
+    "FK 327",
+    "OXS 163-4"
+   ],
+   "debrief": {
+    "headline": "Raqib past raqam bilan «langar» tashladi — sud shu raqamga yaqinlashishi mumkin (Englich, 2006).",
+    "remedy": "Langarni nomlang va asossizligini ayting, keyin o'z hisob-kitobingizni bering: penya shartnomaning 8.5-bandi bo'yicha hisoblangan, kamaytirilsa ham FK 327 foizidan past bo'lmaydi (OXS 163-son Plenum 4-band).",
+    "model": "Hurmatli sud, «o'ttiz ming» degan raqam hech qanday hisob-kitobga asoslanmagan. Penya 8.5-band bo'yicha hisoblangan; sud kamaytirsa ham, OXS 163-son Plenumining 4-bandiga ko'ra FK 327 foizidan past bo'lishi mumkin emas."
+   }
+  },
+  {
+   "id": "R1b",
+   "name": "Raqam bilan langar (yuqori)",
+   "mode": "Q",
+   "speaker": "opponent",
+   "student_role": "javobgar-vakili",
+   "stage": "penya",
+   "min_level": "beginner",
+   "line": "Hurmatli sud, shartnomaning 8.5-bandi bo'yicha penya to'liq miqdorda — uch million qirq ming besh yuz sakson so'm undirilishi kerak. Bu tomonlar o'zi kelishgan summa.",
+   "avoided": [
+    "326",
+    "nomutanosib",
+    "kamaytir",
+    "\\b163\\b",
+    "plenum",
+    "oqibat"
+   ],
+   "fell": [
+    "\\brozimiz\\b",
+    "to'liq (to'lay|to'lash)",
+    "e'tirozimiz yo'q"
+   ],
+   "refs": [
+    "FK 326",
+    "OXS 163-4"
+   ],
+   "debrief": {
+    "headline": "Raqib shartnomadagi to'liq summani «langar» qilib qo'ydi.",
+    "remedy": "Kelishilgan bo'lsa ham, sud nomutanosib penyani kamaytirishga haqli (FK 326). Nomutanosiblik dalilini keltiring: penya va qarz nisbati, kechikish muddati, zarar yo'qligi.",
+    "model": "Hurmatli sud, shartnomada kelishilgani penyani kamaytirishga to'sqinlik qilmaydi: FK 326-moddasiga ko'ra sud nomutanosib penyani kamaytirishga haqli. Kechikish oqibatlari bu summaga mutanosib emas."
+   }
+  },
+  {
+   "id": "R10",
+   "name": "Shior takrorlash (uchlik)",
+   "mode": "Q",
+   "speaker": "opponent",
+   "student_role": "davogar-vakili",
+   "stage": "qoshimcha",
+   "min_level": "intermediate",
+   "line": "Hurmatli sud, qo'shimcha qilib eslatib o'taman: dalolatnoma yo'q. Imzo yo'q. Topshirish yo'q.",
+   "avoided": [
+    "foydalan",
+    "faktura",
+    "to'lov",
+    "amalda",
+    "541",
+    "234"
+   ],
+   "fell": [
+    "(imzo yo'q|topshirish yo'q).{0,40}(imzo yo'q|topshirish yo'q|dalolatnoma yo'q)"
+   ],
+   "refs": [
+    "FK 541",
+    "OXS 234-9"
+   ],
+   "debrief": {
+    "headline": "Raqib qisqa shiorni takrorladi — u esda qoladi va «haqiqatdek» tuyuladi.",
+    "remedy": "Raqib shiorini, hatto inkor qilish uchun ham, takrorlamang. O'z iborangizni ayting: «uch oy foydalanish, imzolangan hisob-fakturalar, to'lanmagan ijara».",
+    "model": "Hurmatli sud, ishdagi asosiy faktlar boshqa: javobgar uch oy foydalangan, hisob-fakturalarni imzolagan va ijara haqini to'lamagan."
+   }
+  },
+  {
+   "id": "R8",
+   "name": "Argumentga yorliq",
+   "mode": "Q",
+   "speaker": "opponent",
+   "student_role": "davogar-vakili",
+   "stage": "dalillar",
+   "min_level": "advanced",
+   "line": "Hurmatli sud, da'vogarning «foydalanish fakti» degan gapi rasmiy hujjat yo'qligini yashirishga urinishdir, xolos.",
+   "avoided": [
+    "faktura",
+    "to'lov",
+    "dalil",
+    "541",
+    "234",
+    "bayonnoma"
+   ],
+   "fell": [
+    "yolg'on",
+    "uyat",
+    "bema'ni",
+    "sharmanda",
+    "o'zingiz",
+    "siz yashir"
+   ],
+   "refs": [
+    "Etika qoidalari 11, 55"
+   ],
+   "debrief": {
+    "headline": "Raqib argumentingizga salbiy yorliq yopishtirdi.",
+    "remedy": "Yorliq bilan bahslashmang va hissiy javob bermang. Argumentni dalil bilan neytral qayta ayting.",
+    "model": "Hurmatli sud, bu yashirish emas: foydalanish fakti javobgar imzolagan hisob-fakturalar bilan tasdiqlanadi."
+   }
+  },
+  {
+   "id": "J5",
+   "name": "Sudya: «eng kuchli asosingiz?»",
+   "mode": "Q",
+   "speaker": "judge",
+   "student_role": "any",
+   "stage": "muzokara",
+   "min_level": "intermediate",
+   "line": "{role_name}, bitta gap bilan ayting: eng kuchli huquqiy asosingiz qaysi?",
+   "check": "one_norm",
+   "refs": [
+    "Jessup: savollarga javob"
+   ],
+   "debrief": {
+    "headline": "Sudya eng kuchli asosni so'radi — bitta, aniq javob kutadi.",
+    "remedy": "Bitta norma va u nima uchun hal qiluvchi ekanini ayting. Beshta manbani sanab bermang.",
+    "model": "Hurmatli sud, eng kuchli asosimiz — OXS 234-son Plenumining 9-bandi: mulk amalda topshirilgan bo'lsa, dalolatnoma yo'qligi to'lovdan ozod qilmaydi."
+   }
+  },
+  {
+   "id": "J6",
+   "name": "Sudya: tan olishni sinash",
+   "mode": "Q",
+   "speaker": "judge",
+   "student_role": "javobgar-vakili",
+   "stage": "dalillar",
+   "min_level": "beginner",
+   "line": "Javobgar vakili, aniq javob bering: mijozingiz obyektdan uch oy foydalanganini tan olasizmi?",
+   "check": "direct_yes",
+   "refs": [
+    "IPK 89"
+   ],
+   "debrief": {
+    "headline": "Sudya ochiq faktni tan olishni so'radi.",
+    "remedy": "Ishda tasdiqlangan faktni inkor etmang — avval to'g'ridan-to'g'ri «ha», keyin o'z pozitsiyangiz. Inkor ishonchni yo'qotadi va ish materiallariga zid bo'ladi.",
+    "model": "Ha, Hurmatli sud, foydalanganini tan olamiz. Lekin dalolatnoma imzolanmagani sababli penya hisobini noto'g'ri deb hisoblaymiz."
+   }
+  },
+  {
+   "id": "P13",
+   "name": "Tekshirilmagan dalilga tayanish",
+   "mode": "E",
+   "speaker": "opponent",
+   "student_role": "javobgar-vakili",
+   "stage": "muzokara",
+   "min_level": "advanced",
+   "line": "Hurmatli sud, javobgar direktori telefonda qarzni tan olgan edi, buni ham inobatga olishingizni so'raymiz.",
+   "avoided": [
+    "dalil\\w* (yo'q|emas)",
+    "tekshirilma",
+    "173",
+    "inobatga olma",
+    "ish materiallarida yo'q",
+    "isbotlanmagan"
+   ],
+   "fell": [
+    "\\bto'g'ri\\b",
+    "tan olgan",
+    "\\brozimiz\\b"
+   ],
+   "refs": [
+    "IPK 173(5)",
+    "IPK 68(4)"
+   ],
+   "debrief": {
+    "headline": "Bu ataylab noto'g'ri harakat edi (e'tiroz mashqi): raqib majlisda tekshirilmagan dalilga tayandi. Haqiqiy advokat buni qilmasligi kerak.",
+    "remedy": "Sudga e'tiroz bildiring: bu ish materiallarida yo'q, muzokarada tekshirilmagan dalilga tayanib bo'lmaydi (IPK 173-moddaning 5-qismi).",
+    "model": "Hurmatli sud, bu holat ish materiallarida yo'q va majlisda tekshirilmagan. IPK 173-moddasiga ko'ra uni inobatga olmaslikni so'raymiz."
+   }
+  }
+ ],
+ "perStage": {
+  "beginner": 1,
+  "intermediate": 1,
+  "advanced": 2
+ }
+}

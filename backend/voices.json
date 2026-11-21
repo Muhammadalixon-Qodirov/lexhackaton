@@ -1,0 +1,15 @@
+{
+  "_izoh": "Frontend ovozlari -> GPU Chatterbox'dagi saqlangan ovoz nomlari. Ovoz GPU kompyuterda klonlanmagan bo'lsa, 'Standart ovoz' + balandlik filtri ishlatiladi. Klonlash: POST /api/v1/admin/voice/clone?name=<nom> (admin token, tana — 5–10 s toza audio).",
+  "chatterbox_gpu": {
+    "elder_m": "sudya",
+    "male": "raqib_ayol",
+    "female": "qiz_1",
+    "female_alt": "qiz_1"
+  },
+  "chatterbox_gpu_filter": {
+    "male": "rubberband=pitch=0.9:tempo=0.97",
+    "female_alt": "rubberband=pitch=0.93:tempo=1.03"
+  },
+  "_izoh_male": "2026-11-21: PREZIDENT.ogg dan olingan 'taraf_erkak' klon egasining so'rovi bilan olib tashlandi. 'male' vaqtincha BETOFIQ klonini (raqib_ayol) pastroq ohangda ishlatadi.",
+  "_izoh_female": "2026-11-21: ayol rollari (kotib, devonxona, jabrlanuvchi ayol, raqib advokat) 'qiz_1' klonida (Turing sud kelyabdi.mp3, 4 s). female_alt — pastroq/tezroq ohang."
+}

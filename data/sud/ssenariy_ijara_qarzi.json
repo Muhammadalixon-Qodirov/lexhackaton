@@ -1,0 +1,143 @@
+{
+  "id": "ipk-ijara-qarzi-001",
+  "version": 1,
+  "status": "qoralama — mentor tekshirishi kerak",
+  "case_type": "IPK",
+  "fsm": "bosqichlar_ipk.json",
+  "source": {
+    "type": "real_court_decision",
+    "note": "Iqtisodiy sud hal qiluv qarori (2023), ish raqami va barcha ismlar olib tashlangan. Ssenariy soddalashtirilgan: da'vogar o'rniga to'g'ridan-to'g'ri ijaraga beruvchi tashkilot qo'yilgan.",
+    "mentorApproved": false
+  },
+
+  "public": {
+    "title": "Ijara qarzi va penya",
+    "level": "boshlang'ich",
+    "durationMinutes": 25,
+    "roomId": "courtroom-01",
+    "selectable_roles": ["davogar-vakili", "javobgar-vakili"],
+    "briefing": {
+      "davogar-vakili": "Siz «A» MChJ (ijaraga beruvchi) vakilisiz. Mijozingiz savdo markazidagi 9,5 m² maydonni tadbirkor «B»ga ijaraga bergan. Ijara haqi to'lanmagan. Sudda 25 620 433,19 so'm asosiy qarz va 3 040 580,45 so'm penya undirishni so'raysiz.",
+      "javobgar-vakili": "Siz yakka tartibdagi tadbirkor «B» vakilisiz. «A» MChJ ijara haqi qarzi va penya undirish to'g'risida da'vo qo'zg'atgan. Mijozingiz joy unga dalolatnoma bilan topshirilmaganini aytmoqda, lekin u yerdan uch oy foydalangan."
+    },
+    "disclaimer": "O'quv ssenariysi. Real ish asosida, sezilarli o'zgartirilgan. Huquqiy maslahat emas."
+  },
+
+  "facts_shared": [
+    "Taraflar o'rtasida 2022-yil 1-apreldagi 32-P-sonli ijara shartnomasi tuzilgan.",
+    "Ijara obyekti — savdo markazidagi 9,5 m² maydon.",
+    "Shartnomaning 6.4-bandi: har bir kalendar oyi uchun to'lov 10 kundan kechiktirmay to'lanadi.",
+    "Shartnomaning 8.5-bandi: to'lov kechiktirilganda penya undiriladi.",
+    "Da'vo: 25 620 433,19 so'm asosiy qarz va 3 040 580,45 so'm penya."
+  ],
+
+  "evidence": [
+    {"id": "E1", "name": "Ijara shartnomasi (2022-yil 1-aprel, 32-P)", "holder": "both", "proves": "ijara munosabati, to'lov muddati (6.4), penya (8.5)"},
+    {"id": "E2", "name": "Hisob-fakturalar", "holder": "both",
+     "items": [
+       "31.05.2022, 311-son — 4 256 817 so'm",
+       "30.06.2022, 323-son — 6 081 160,9 so'm",
+       "14.07.2022, 437-son — 172 663,3 so'm",
+       "31.07.2022, 517-son — 6 081 160,9 so'm",
+       "11.08.2022, 537-son — 172 663,3 so'm",
+       "30.09.2022, 751-son — 172 663,3 so'm"
+     ],
+     "proves": "hisob-fakturalar imzolangan — xizmatdan foydalanilgan va to'lov majburiyati bor", "note": "Ro'yxat qarordagi tartibda; jami summa da'vo summasiga teng emas — ssenariyda bu ataylab o'zgartirilmagan, mentor ko'rib chiqsin"},
+    {"id": "E3", "name": "Vakil ishonchnomasi", "holder": "student", "proves": "vakolat (IPK-62)"},
+    {"id": "E4", "name": "Penya hisob-kitobi", "holder": "davogar", "proves": "3 040 580,45 so'm penya qanday hisoblangani", "note": "Ssenariy uchun yaratilgan hujjat"}
+  ],
+
+  "roles": {
+    "judge": {
+      "agent": "llm+templates",
+      "knows": ["facts_shared", "evidence (faqat sudda o'qilganlari)", "taraflarning sudda aytganlari"],
+      "never_knows": ["taraflarning maxfiy ma'lumoti", "outcome (maslahatxonagacha)"],
+      "questions": [
+        "Qarz summasi qanday hisoblangan?",
+        "Obyekt javobgarga qachon va qanday hujjat bilan topshirilgan?",
+        "Javobgar obyektdan qaysi davrda foydalangan?",
+        "Penya qaysi davr uchun va qanday stavkada hisoblangan?"
+      ]
+    },
+    "davogar-vakili": {
+      "private": [
+        "Topshirish dalolatnomasi imzolanmagan — bu sizning zaif joyingiz.",
+        "Lekin javobgar hisob-fakturalarni imzolagan va joydan foydalangan.",
+        "Mijoz ko'rsatmasi: asosiy qarz to'liq to'lansa, penya bo'yicha kelishuvga tayyor."
+      ],
+      "ai_strategy_when_opponent": "Qarzni E1, E2 va FK-544 bilan isbotlaydi. Dalolatnoma yo'qligi haqidagi e'tirozga foydalanish faktini va imzolangan hisob-fakturalarni keltiradi. Penyani kamaytirishga qarshi: shartnomada kelishilgan (FK-262). Muzokaradan tashqari yangi faktlar aytmaydi."
+    },
+    "javobgar-vakili": {
+      "private": [
+        "Mijoz joydan taxminan uch oy foydalangan, keyin chiqib ketgan.",
+        "Topshirish dalolatnomasi imzolanmagan.",
+        "Mijozning moliyaviy ahvoli og'ir (mulkiy ahvol — FK-326 mezoni).",
+        "Hisob-fakturalar imzolanganini inkor etib bo'lmaydi."
+      ],
+      "ai_strategy_when_opponent": "Obyekt dalolatnoma bilan topshirilmaganini aytadi (FK-578, FK-541). Penya nomutanosib ekanini aytib, FK-326 bo'yicha kamaytirishni so'raydi. Hisob-fakturalarni inkor etmaydi. Kelishuvga rozi bo'lmaydi."
+    },
+    "clerk": {"agent": "templates", "lines": ["T_RISE", "T_CLERK_REPORT"]}
+  },
+
+  "key_moments": [
+    {
+      "id": "KM1", "state": "ishtirokchilar", "title": "Vakolatni tasdiqlash",
+      "expected": {"any_role": "Ishonchnomani (E3) taqdim etadi va «Hurmatli sud» deb murojaat qiladi"},
+      "norms": ["IPK-62", "IPK-64", "IPK-167"], "criterion": "procedure"
+    },
+    {
+      "id": "KM2", "state": "dalillar", "title": "Dalolatnoma yo'qligi haqidagi bahs",
+      "trigger": "Javobgar tomoni obyekt dalolatnoma bilan topshirilmaganini aytadi",
+      "expected": {
+        "davogar-vakili": "Javobgar obyektdan foydalanganini va hisob-fakturalarni imzolaganini ko'rsatadi; FK-544 va shartnomaning 6.4-bandiga tayanadi",
+        "javobgar-vakili": "FK-578 va FK-541 ga tayanib, topshirish majburiyati hujjat bilan rasmiylashtirilmaganini asoslaydi; foydalanish faktini inkor etmaydi"
+      },
+      "judge_ruling": "defer", "ruling_template": "T_RULING_DEFER",
+      "real_court": "Sud hisob-fakturalar va foydalanish faktiga tayanib, asosiy qarzni to'liq undirdi",
+      "norms": ["FK-578", "FK-541", "FK-544", "OXS234-p9"], "criterion": "legal"
+    },
+    {
+      "id": "KM3", "state": "dalillar", "title": "Penyani kamaytirish iltimosnomasi",
+      "trigger": "motion mavzusi = penya/neustoyka kamaytirish",
+      "expected": {
+        "javobgar-vakili": "FK-326 bo'yicha kamaytirishni so'raydi va mezonlarni aytadi: nomutanosiblik, bajarilish darajasi, mulkiy ahvol",
+        "davogar-vakili": "Penya shartnomada yozma kelishilganini (FK-262) va kechiktirish davrini asoslaydi"
+      },
+      "judge_flow": "T_HEAR_OTHER → T_RULING_DEFER",
+      "real_court": "Sud FK-326 bo'yicha penyani 3 040 580,45 so'mdan 30 405 so'mgacha kamaytirdi",
+      "norms": ["FK-326", "FK-260", "FK-262", "FK-333", "OXS163-p4", "OXS163-p12"], "criterion": "legal"
+    },
+    {
+      "id": "KM4", "state": "muzokaralar", "title": "Faqat tekshirilgan dalillarga tayanish",
+      "expected": {"any_role": "Nutqda faqat sudda o'qilgan E1–E4 va taraflarning tushuntirishlari ishlatiladi; talab va asos aniq aytiladi"},
+      "violation": "Tekshirilmagan holatga tayanish → W_UNEXAMINED",
+      "norms": ["IPK-173"], "criterion": "procedure"
+    }
+  ],
+
+  "outcome": {
+    "note": "Hal qiluv qarori har doim haqiqiy qaror bo'yicha e'lon qilinadi — u talabaning chiqishiga bog'liq emas. Talaba qanchalik yaxshi yoki yomon chiqqani baholash hisobotida ko'rsatiladi.",
+    "operative_part": "Da'vo arizasi qisman qanoatlantirilsin. Javobgardan da'vogar foydasiga 25 620 433 so'm 19 tiyin asosiy qarz, 30 405 so'm penya va 33 000 so'm pochta xarajati undirilsin. Respublika byudjetiga 573 220 so'm 27 tiyin davlat boji undirilsin. Da'voning qolgan qismi rad qilinsin.",
+    "norms": ["FK-8", "FK-234", "FK-324", "FK-326", "FK-333", "FK-544", "IPK-118", "IPK-176", "IPK-179", "IPK-192"]
+  },
+
+  "idealPath": {
+    "davogar-vakili": [
+      "Vakolatni tasdiqlash (E3)",
+      "Rad qilishga asos yo'qligini aytish",
+      "Talab va summani aniq bayon qilish (E1, 6.4-band, FK-544)",
+      "Dalolatnoma e'tiroziga foydalanish fakti va hisob-fakturalar bilan javob (KM2)",
+      "Penya asosini keltirish (8.5-band, FK-262, FK-333)",
+      "Muzokarada faqat tekshirilgan dalillarga tayanish (KM4)"
+    ],
+    "javobgar-vakili": [
+      "Vakolatni tasdiqlash (E3)",
+      "Da'voni qisman tan olish yoki asosli e'tiroz bildirish",
+      "FK-578/FK-541 bo'yicha dalolatnoma masalasini ko'tarish (KM2)",
+      "FK-326 bo'yicha penyani kamaytirishni asosli so'rash (KM3)",
+      "Muzokarada faqat tekshirilgan dalillarga tayanish (KM4)"
+    ]
+  },
+
+  "sources": ["FK-8", "FK-234", "FK-260", "FK-262", "FK-324", "FK-326", "FK-333", "FK-541", "FK-544", "FK-578", "IPK-62", "IPK-64", "IPK-118", "IPK-167", "IPK-169", "IPK-173", "OXS234-p9", "OXS163-p4", "OXS163-p12"]
+}

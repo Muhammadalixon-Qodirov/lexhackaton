@@ -1,0 +1,1007 @@
+{
+ "_izoh": "Sud majlisida talabaning tashabbus harakatlari (v1). Har bir talaba gapi avval harakat sifatida aniqlanadi: savol (raqibga), iltimosnoma (penya / dalil yoki guvoh / qoldirish), e'tiroz, kelishuv taklifi. Ruxsat etilgan bosqichda dvigatel uni hal qiladi va bosqich o'zgarmaydi; aks holda oddiy javob sifatida ishlanadi. Sudya va raqib matnlari shu yerda — mentor tahrirlaydi. Har bir raqib javobi llm_check'dan o'tadi (unit test).",
+ "limits": {
+  "questions": 4,
+  "motions": 3,
+  "objections": 3,
+  "settlement": 1
+ },
+ "reask": {
+  "beginner": 2,
+  "intermediate": 1,
+  "advanced": 1,
+  "cap": {
+   "beginner": 3,
+   "intermediate": 3,
+   "advanced": 2
+  }
+ },
+ "stages": {
+  "question": [
+   "tushuntirish",
+   "dalillar",
+   "penya"
+  ],
+  "motion": [
+   "oldingi",
+   "tushuntirish",
+   "dalillar",
+   "penya",
+   "qoshimcha"
+  ],
+  "objection": [
+   "tushuntirish",
+   "dalillar",
+   "penya",
+   "muzokara"
+  ],
+  "settlement": [
+   "ishtirokchilar",
+   "rad",
+   "huquqlar",
+   "oldingi",
+   "tushuntirish",
+   "dalillar",
+   "penya",
+   "qoshimcha",
+   "muzokara"
+  ]
+ },
+ "judge": {
+  "Q_FLOOR": "Savolga javob berish uchun so'z {opp}ga beriladi.",
+  "Q_IRRELEVANT": "Savol ish holatlariga taalluqli emas, olib tashlanadi. Savolni ish materiallari doirasida bering.",
+  "Q_STAGE": "Savollar tushuntirishlar va dalillarni tekshirish bosqichida beriladi.",
+  "Q_LIMIT": "Savollar yetarli. Sud ishni ko'rishda davom etadi.",
+  "M_PENYA_EARLY": "Iltimosnomangiz bayonnomaga kiritildi. U dalillar tekshirilgach, boshqa tarafning fikri eshitilib hal qilinadi.",
+  "M_EVIDENCE_HEAR": "Iltimosnoma bo'yicha boshqa taraf fikrini eshitamiz. {opp}, fikringiz?",
+  "M_EVIDENCE_DENY_BASIS": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnomani qanoatlantirish rad etilsin, chunki dalil qaysi holatni tasdiqlashi asoslanmadi.",
+  "M_EVIDENCE_DENY_ENOUGH": "Sud joyida maslahatlashib, ajrim chiqardi: iltimosnomani qanoatlantirish rad etilsin, chunki ishdagi yozma dalillar bu holatni aniqlash uchun yetarli.",
+  "M_POSTPONE_DENY": "Sud joyida maslahatlashib, ajrim chiqardi: ishni keyinga qoldirish to'g'risidagi iltimosnoma rad etilsin, chunki qonunda nazarda tutilgan uzrli sabab hujjat bilan tasdiqlanmadi.",
+  "M_LIMIT": "Iltimosnomalar bayonnomaga kiritildi. Sud ishni ko'rishda davom etadi.",
+  "S_CONTINUE": "Kelishuv bitimi ishning istalgan bosqichida tuzilishi mumkin va yozma shaklda sudga taqdim etiladi. Yozma kelishuv bitimi taqdim etilmagani sababli ish mazmunan ko'rishda davom etadi.",
+  "RESUME": {
+   "tushuntirish": {
+    "davogar-vakili": [
+     "Da'vogar vakili, talablaringiz va ularning asoslarini bayon qiling.",
+     "Da'vogar vakili, asosiy masalaga qaytamiz: talablaringizni bayon qiling.",
+     "Da'vogar vakili, davom eting: nimani va qaysi asosda undirishni so'rayapsiz?"
+    ],
+    "javobgar-vakili": [
+     "Javobgar vakili, da'vo talablariga munosabatingizni bayon qiling.",
+     "Javobgar vakili, asosiy masalaga qaytamiz: da'voni tan olasizmi?",
+     "Javobgar vakili, davom eting: da'vo talablariga munosabatingiz qanday?"
+    ]
+   },
+   "dalillar": {
+    "davogar-vakili": [
+     "Da'vogar vakili, javobgar obyekt dalolatnoma bilan topshirilmaganini aytmoqda. Bunga munosabatingiz?",
+     "Da'vogar vakili, savolga qaytamiz: dalolatnoma masalasiga munosabatingiz?",
+     "Da'vogar vakili, endi asosiy savolga javob bering: obyekt qanday topshirilgan?"
+    ],
+    "javobgar-vakili": [
+     "Javobgar vakili, yozma dalillarga fikringiz bormi? Iltimosnomangiz bo'lsa, bayon qiling.",
+     "Javobgar vakili, yozma dalillarga qaytamiz: fikringiz bormi?",
+     "Javobgar vakili, davom eting: dalillar bo'yicha yana nima deysiz?"
+    ]
+   },
+   "penya": {
+    "davogar-vakili": [
+     "Da'vogar vakili, penyani kamaytirish iltimosnomasiga munosabatingiz?",
+     "Da'vogar vakili, iltimosnomaga qaytamiz: penyani kamaytirishga munosabatingiz?",
+     "Da'vogar vakili, endi penya masalasiga javob bering."
+    ],
+    "javobgar-vakili": [
+     "Javobgar vakili, da'vogarning penya talabiga munosabatingiz?",
+     "Javobgar vakili, penya masalasiga qaytamiz: munosabatingiz?",
+     "Javobgar vakili, endi penya talabiga javob bering."
+    ]
+   },
+   "oldingi": {
+    "any": [
+     "Ishni mazmunan ko'rishdan oldin boshqa iltimosnomalaringiz bormi?",
+     "Boshqa iltimosnomalar bormi?"
+    ]
+   },
+   "qoshimcha": {
+    "any": [
+     "Ishda ishtirok etuvchi shaxslarda qo'shimcha materiallar bormi?",
+     "Qo'shimcha materiallar bormi?"
+    ]
+   },
+   "muzokara": {
+    "any": [
+     "Sud muzokaralarida nutqingizni davom ettiring.",
+     "Nutqingizni davom ettiring.",
+     "Davom eting, sud sizni tinglayapti."
+    ]
+   },
+   "ishtirokchilar": {
+    "davogar-vakili": [
+     "Da'vogar vakili, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+     "Da'vogar vakili, avval ishonchnomangizni taqdim eting."
+    ],
+    "javobgar-vakili": [
+     "Javobgar vakili, vakolatingizni tasdiqlovchi hujjatni taqdim eting.",
+     "Javobgar vakili, avval ishonchnomangizni taqdim eting."
+    ]
+   },
+   "rad": {
+    "any": [
+     "Sudga rad bildirasizmi?",
+     "Shunday qilib, sud tarkibiga rad bildirasizmi?"
+    ]
+   },
+   "huquqlar": {
+    "any": [
+     "Protsessual huquq va majburiyatlaringiz tushunarlimi?",
+     "Tushuntirilgan huquq va majburiyatlaringiz sizga tushunarlimi?"
+    ]
+   }
+  },
+  "O_SUSTAIN": "Sud joyida maslahatlashib, e'tirozni qabul qildi: u bayonnomaga kiritiladi va dalillarga baho berishda inobatga olinadi.",
+  "O_OVERRULE": "E'tiroz rad etildi, chunki uning asosi ko'rsatilmadi: raqib tomonning qaysi gapi qaysi dalilga zid ekanini ayting.",
+  "S_NEAR": "Taraflar kelishuvga yaqin ko'rinadi. Kelishuv bitimi yozma shaklda tuzilib, sud tomonidan tasdiqlanadi. Hozircha yozma bitim taqdim etilmagani sababli ish mazmunan ko'rishda davom etadi.",
+  "R_CONTINUE": "Sud mavjud tushuntirishlar asosida ishni ko'rishda davom etadi.",
+  "NO_POWERS": "Vakolatni tasdiqlovchi hujjat taqdim etilmagani sababli vakilning sud majlisida ishtirok etishiga yo'l qo'yilmaydi. Bu holat bayonnomaga qayd etiladi.",
+  "M_STAGE": "Iltimosnomalar huquq va majburiyatlar tushuntirilgach beriladi. Hozir sud joriy masalani hal qiladi.",
+  "O_STAGE": "E'tirozlar ish mazmunan ko'rilayotganda, raqib tomon gapiga nisbatan bildiriladi."
+ },
+ "reask_text": {
+  "tushuntirish": {
+   "davogar-vakili": [
+    "Da'vogar vakili, talabingizni aniqlashtiring: qaysi shartnoma asosida, qancha summani va qaysi huquqiy asosda undirishni so'rayapsiz?",
+    "Da'vogar vakili, aniqroq ayting: qaysi shartnoma bo'yicha, qancha summa va qaysi modda asosida undirishni so'rayapsiz?"
+   ],
+   "javobgar-vakili": [
+    "Javobgar vakili, da'voga munosabatingizni aniq ayting: talablarni tan olasizmi va qaysi asosda e'tiroz bildirasiz?",
+    "Javobgar vakili, pozitsiyangizni aniq ayting: da'voni tan olasizmi, tan olmasangiz — qaysi asosda?"
+   ]
+  },
+  "dalillar": {
+   "davogar-vakili": [
+    "Da'vogar vakili, savolga aniq javob bering: dalolatnoma bo'lmasa, obyekt topshirilganini qaysi dalil tasdiqlaydi?",
+    "Da'vogar vakili, savol aniq: dalolatnoma bo'lmasa, obyekt topshirilganini nima tasdiqlaydi?"
+   ]
+  },
+  "penya": {
+   "davogar-vakili": [
+    "Da'vogar vakili, iltimosnomaga aniq munosabat bildiring: penyani kamaytirishga rozimisiz va nega?",
+    "Da'vogar vakili, penyani kamaytirish iltimosnomasiga rozimisiz yoki qarshimisiz? Sababini ayting."
+   ]
+  },
+  "muzokara": {
+   "any": [
+    "{role_name}, nutqingizni yakunlang: tekshirilgan dalillar asosida suddan aniq nimani so'raysiz?",
+    "{role_name}, xulosangizni aniq ayting: sud qanday qaror chiqarishini so'raysiz va qaysi dalilga tayanasiz?"
+   ]
+  }
+ },
+ "questions": {
+  "javobgar-vakili": [
+   {
+    "id": "q-foydalanish",
+    "reveal": [
+     "F3"
+    ],
+    "when": [
+     "Obyektdan foydalanganmisiz? Qancha muddat foydalandingiz?",
+     "Javobgar joyda savdo qilganmi?"
+    ],
+    "answer": "Hurmatli sud, joydan taxminan uch oy foydalanganmiz, keyin chiqib ketganmiz."
+   },
+   {
+    "id": "q-faktura",
+    "when": [
+     "Hisob-fakturalarni imzolaganmisiz?",
+     "Fakturalardagi imzo sizningmi?"
+    ],
+    "answer": "Hurmatli sud, hisob-fakturalar imzolanganini inkor etmaymiz."
+   },
+   {
+    "id": "q-sabab",
+    "when": [
+     "Nega ijara haqini to'lamadingiz?",
+     "To'lov nima sababdan qilinmagan?"
+    ],
+    "answer": "Hurmatli sud, obyekt bizga dalolatnoma bilan rasman topshirilmagani sababli to'lovni amalga oshirmadik, moliyaviy qiyinchilik ham bo'ldi."
+   },
+   {
+    "id": "q-talab",
+    "when": [
+     "Dalolatnoma tuzishni talab qilganmisiz?",
+     "Ijaraga beruvchidan topshirish hujjatini so'raganmisiz?"
+    ],
+    "answer": "Hurmatli sud, bu haqda yozma talab bildirmaganmiz, lekin dalolatnomani tuzish ijaraga beruvchining burchi edi."
+   },
+   {
+    "id": "q-etiroz",
+    "when": [
+     "Hisob-fakturalarga e'tiroz bildirganmisiz?",
+     "Fakturalar kelganda norozilik bildirdingizmi?"
+    ],
+    "answer": "Hurmatli sud, hisob-fakturalarga yozma e'tiroz bildirmaganmiz."
+   }
+  ],
+  "davogar-vakili": [
+   {
+    "id": "q-dalolatnoma",
+    "when": [
+     "Dalolatnoma nega tuzilmagan?",
+     "Obyektni topshirish hujjati qayerda?"
+    ],
+    "answer": "Hurmatli sud, obyekt amalda topshirilgan, javobgar undan foydalangan. Dalolatnoma rasmiylashtirilmagani to'lov majburiyatiga ta'sir qilmaydi."
+   },
+   {
+    "id": "q-penya",
+    "when": [
+     "Penya qanday hisoblangan?",
+     "Penya qaysi stavka bo'yicha hisoblangan?"
+    ],
+    "answer": "Hurmatli sud, penya shartnomaning 8.5-bandida belgilangan stavka bo'yicha, kechiktirilgan har bir kun uchun hisoblangan."
+   },
+   {
+    "id": "q-zarar",
+    "when": [
+     "Qanday zarar ko'rdingiz?",
+     "Kechikish sizga qanday zarar yetkazdi?"
+    ],
+    "answer": "Hurmatli sud, FK 260-moddaga ko'ra neustoyka talab qilishda kreditor zararni isbotlashga majbur emas."
+   },
+   {
+    "id": "q-davr",
+    "when": [
+     "Qarz qaysi davr uchun hisoblangan?",
+     "Qarz summasi nimadan iborat?"
+    ],
+    "answer": "Hurmatli sud, qarz imzolangan hisob-fakturalar bo'yicha, javobgar obyektdan foydalangan davr uchun hisoblangan."
+   },
+   {
+    "id": "q-ogohlantirish",
+    "when": [
+     "Javobgarni to'lov haqida ogohlantirganmisiz?",
+     "Talabnoma yuborganmisiz?"
+    ],
+    "answer": "Hurmatli sud, to'lov muddatlari shartnomada belgilangan, hisob-fakturalar javobgarga topshirilgan."
+   }
+  ]
+ },
+ "opponent": {
+  "javobgar-vakili": {
+   "on_evidence_motion": "Hurmatli sud, iltimosnomaga qarshimiz: ishda yetarli yozma dalillar bor.",
+   "settlement": "Hurmatli sud, hozircha kelishuv bitimiga rozi emasmiz, avval penya masalasi ko'rib chiqilsin.",
+   "object_unexamined": "Hurmatli sud, e'tiroz bildiraman: da'vogar vakili sudda tekshirilmagan holatga tayanmoqda."
+  },
+  "davogar-vakili": {
+   "on_evidence_motion": "Hurmatli sud, iltimosnomaga qarshimiz: ishda yetarli yozma dalillar bor, iltimosnoma ishni cho'zishga qaratilgan.",
+   "settlement": "Hurmatli sud, asosiy qarz to'liq to'lansa, penya bo'yicha kelishuvni muhokama qilishga tayyormiz.",
+   "object_unexamined": "Hurmatli sud, e'tiroz bildiraman: javobgar vakili sudda tekshirilmagan holatga tayanmoqda.",
+   "settlement_main": "Hurmatli sud, javobgar asosiy qarzni to'liq to'lashga tayyor bo'lsa, penya bo'yicha kelishuvga tayyormiz."
+  }
+ },
+ "stage_notes": {
+  "question": "Bu harakat keyingi bosqichda qilinadi: raqibga savollar tushuntirishlar va dalillarni tekshirish bosqichida beriladi.",
+  "motion": "Bu harakat keyingi bosqichda qilinadi: iltimosnomalar huquqlar tushuntirilgach, «iltimosnomalaringiz bormi?» savolidan keyin beriladi.",
+  "objection": "Bu harakat keyingi bosqichda qilinadi: e'tiroz ish mazmunan ko'rilayotganda, raqib gapiga nisbatan bildiriladi.",
+  "settlement": "Kelishuv taklifi hozir ko'rib chiqilmaydi."
+ },
+ "powers_note": "Sudya vakolatni tasdiqlovchi hujjatni so'radi: avval ishonchnomani taqdim eting (IPK 62-modda).",
+ "fillers": {
+  "_izoh": "AI javob yozayotganda (202) sudya darhol aytadigan qisqa gap; har 3 navbatda ko'pi bilan 1 marta.",
+  "judge": [
+   "Tushunarli.",
+   "Sud sizni eshitdi.",
+   "Bir lahza."
+  ]
+ },
+ "reprimand": {
+  "_izoh": "Kuchayib boradigan tanbeh (v15 §7.2): har xato turi uchun o'z hisoblagichi; bosqich = nechanchi marta. 4-bosqich faqat advanced. Choralar uchun modda aytilmaydi (mentor tasdiqlagach qo'shiladi).",
+  "steps": [
+   {
+    "emotion": "calm",
+    "gesture": "none",
+    "points": {
+     "beginner": 0,
+     "intermediate": 1,
+     "advanced": 2
+    }
+   },
+   {
+    "emotion": "impatient",
+    "gesture": "shake-head",
+    "points": {
+     "beginner": 2,
+     "intermediate": 2,
+     "advanced": 2
+    }
+   },
+   {
+    "emotion": "upset",
+    "gesture": "shake-head",
+    "points": {
+     "beginner": 5,
+     "intermediate": 5,
+     "advanced": 5
+    }
+   },
+   {
+    "emotion": "upset",
+    "gesture": "shake-head",
+    "points": {
+     "beginner": 5,
+     "intermediate": 5,
+     "advanced": 5
+    },
+    "ethics": true
+   }
+  ],
+  "seated": [
+   [
+    "{role_name}, sudga o'rningizdan turib murojaat qiling.",
+    "{role_name}, sudga tik turib murojaat qilinadi."
+   ],
+   [
+    "Sizga ikkinchi marta eslatyapman: sudga tik turib murojaat qilinadi.",
+    "{role_name}, yana eslataman: sudga faqat tik turib murojaat qilinadi."
+   ],
+   [
+    "Sud majlisi tartibiga rioya qilmayapsiz. Ogohlantirish bayonnomaga kiritiladi.",
+    "{role_name}, sud majlisi tartibini buzyapsiz. Bu holat bayonnomaga kiritiladi."
+   ],
+   [
+    "Sud majlisi tartibi yana buzildi. Takrorlansa, sud qonunda nazarda tutilgan choralarni qo'llashi mumkin.",
+    "{role_name}, bu oxirgi ogohlantirish. Tartib buzilishi davom etsa, sud choralar ko'radi."
+   ]
+  ],
+  "address": [
+   [
+    "{role_name}, sudga «Hurmatli sud» deb murojaat qiling.",
+    "{role_name}, sudga murojaatni «Hurmatli sud» deb boshlang."
+   ],
+   [
+    "Ikkinchi marta eslatyapman: sudga «Hurmatli sud» deb murojaat qilinadi.",
+    "{role_name}, yana eslataman: murojaat «Hurmatli sud» bilan boshlanadi."
+   ],
+   [
+    "Sud majlisi tartibiga rioya qilmayapsiz. Ogohlantirish bayonnomaga kiritiladi.",
+    "{role_name}, sud majlisi tartibini buzyapsiz. Bu holat bayonnomaga kiritiladi."
+   ],
+   [
+    "Sud majlisi tartibi yana buzildi. Takrorlansa, sud qonunda nazarda tutilgan choralarni qo'llashi mumkin.",
+    "{role_name}, bu oxirgi ogohlantirish. Tartib buzilishi davom etsa, sud choralar ko'radi."
+   ]
+  ],
+  "interrupt": [
+   [
+    "{role_name}, sudni oxirigacha tinglang, keyin gapiring.",
+    "{role_name}, iltimos, sud gapini bo'lmang."
+   ],
+   [
+    "Ikkinchi marta eslatyapman: sud gapirayotganda gapni bo'lmang.",
+    "{role_name}, yana eslataman: sud gapini bo'lish mumkin emas."
+   ],
+   [
+    "Sud majlisi tartibiga rioya qilmayapsiz. Ogohlantirish bayonnomaga kiritiladi.",
+    "{role_name}, sud majlisi tartibini buzyapsiz. Bu holat bayonnomaga kiritiladi."
+   ],
+   [
+    "Sud majlisi tartibi yana buzildi. Takrorlansa, sud qonunda nazarda tutilgan choralarni qo'llashi mumkin.",
+    "{role_name}, bu oxirgi ogohlantirish. Tartib buzilishi davom etsa, sud choralar ko'radi."
+   ]
+  ]
+ },
+ "hall": {
+  "_izoh": "Zalning kichik lahzalari (v15 §7.4).",
+  "clerk_minutes": "Bayonnomaga kiritildi.",
+  "too_long": [
+   "Qisqaroq, mohiyatini ayting.",
+   "Iltimos, qisqa va aniq bayon qiling: asosiy talabingiz nima?"
+  ],
+  "too_long_words": 120,
+  "interrupt_opp": "E'tiroz, hurmatli sud!",
+  "interrupt_judge": "{opp}, navbatingiz kelganda gapirasiz. Davom eting.",
+  "too_long_seconds": 90,
+  "sit_ok": [
+   "O'tirishingiz mumkin.",
+   "Raqib gapirayotganda o'tirishingiz mumkin."
+  ],
+  "unclear": [
+   "{role_name}, fikringizni aniqroq bayon qiling.",
+   "Sud sizni tushunmadi. Qisqa va aniq ayting.",
+   "Iltimos, savolga mazmunan javob bering."
+  ]
+ },
+ "situations": [
+  {
+   "id": "against_client",
+   "patterns": [
+    "mijozim\\w* (aybdor|yolg'on|aldagan|aldayap)",
+    "mijozim\\w* (qama|jazola|sudla)",
+    "mijozimga ishonma"
+   ],
+   "lines": [
+    "{role_name}, siz mijozingiz manfaatini himoya qilish uchun shu yerdasiz. Uning nomidan aytilgan gap oqibatli bo'ladi. Fikringizni aniq bayon qiling: da'voning qaysi qismini tan olasiz va nega?",
+    "{role_name}, vakil mijozining manfaatiga zid gapira olmaydi. Pozitsiyangizni qayta ko'rib chiqing va aniq ayting."
+   ],
+   "steps": [
+    [
+     "uncertain",
+     "lean-in"
+    ],
+    [
+     "impatient",
+     "shake-head"
+    ]
+   ],
+   "reactions": [
+    [
+     "principal",
+     "upset"
+    ]
+   ],
+   "resume": false,
+   "tone": "bad",
+   "points": 2,
+   "note": "Vakil mijozi manfaatiga zid gapirdi — bu vakilning kasbiy majburiyatiga zid.",
+   "early_lines": [
+    "{role_name}, siz mijozingiz manfaatini himoya qilish uchun shu yerdasiz — bunday gaplar uning zarariga ishlaydi. Keling, tartib bilan davom etamiz.",
+    "{role_name}, vakil mijozining manfaatiga zid gapira olmaydi. Tartib bilan davom etamiz."
+   ]
+  },
+  {
+   "id": "criminal",
+   "patterns": [
+    "\\bqama(ng|sin|lsin|ysiz|ladi|sh|b)\\b",
+    "\\bqamoq",
+    "ozodlikdan mahrum",
+    "\\bturmaga\\b",
+    "jinoiy jazo",
+    "hibsga ol",
+    "\\bjazola(ng|sin|nsin)\\b"
+   ],
+   "lines": [
+    "Bir daqiqa. Bu iqtisodiy sud — bu yerda fuqarolik-huquqiy nizo ko'rilyapti. Hech kim qamalmaydi va jinoiy jazo tayinlanmaydi: sud faqat ijara qarzi va penya masalasini hal qiladi.",
+    "Yana eslataman: iqtisodiy sudda jinoiy jazo so'ralmaydi. Talabingizni ish doirasida — qarz va penya bo'yicha bayon qiling."
+   ],
+   "steps": [
+    [
+     "confused",
+     "lean-in"
+    ],
+    [
+     "impatient",
+     "shake-head"
+    ]
+   ],
+   "resume": true,
+   "tone": "bad",
+   "points": 1,
+   "note": "Iqtisodiy sudda jinoiy jazo so'ralmaydi — talab ish doirasida (qarz, penya) bo'lishi kerak."
+  },
+  {
+   "id": "russian",
+   "patterns": [
+    "\\buva(j|zh)a\\w*",
+    "\\bpo(j|zh)aluy?st",
+    "\\bizvinit",
+    "\\bspasibo\\b"
+   ],
+   "cyrillic": true,
+   "lines": [
+    "Sud majlisi davlat tilida olib boriladi. Iltimos, o'zbek tilida gapiring. Zarur bo'lsa, tarjimon xizmatidan foydalanish huquqingiz bor.",
+    "Iltimos, o'zbek tilida davom eting."
+   ],
+   "steps": [
+    [
+     "calm",
+     "none"
+    ],
+    [
+     "neutral",
+     "none"
+    ]
+   ],
+   "resume": true,
+   "tone": "info",
+   "points": 0,
+   "note": "Sud ishlari davlat tilida yuritiladi; tilni bilmagan shaxs tarjimondan foydalanishga haqli."
+  },
+  {
+   "id": "offtopic",
+   "patterns": [
+    "\\b(qalaysiz|qandaysiz|yaxshimisiz|charchamadingizmi)\\b",
+    "ishlar\\w* qalay",
+    "\\bismingiz",
+    "necha yosh",
+    "\\buylangan",
+    "turmush qurgan",
+    "ob-?havo",
+    "\\bfutbol",
+    "\\bovqat",
+    "\\btushlik",
+    "\\bkino\\b",
+    "telefon raqam",
+    "\\binstagram",
+    "qachon tugaydi"
+   ],
+   "lines": [
+    "Savolingiz ishga taalluqli emas. Sud majlisida faqat ish bo'yicha gapiriladi — keling, ish mohiyatiga qaytaylik.",
+    "Hozir bu mavzu uchun vaqt emas. Ish bo'yicha fikringizni bayon qiling.",
+    "Sud sizni tinglashga tayyor, lekin faqat ish bo'yicha."
+   ],
+   "steps": [
+    [
+     "neutral",
+     "none"
+    ],
+    [
+     "impatient",
+     "shake-head"
+    ],
+    [
+     "impatient",
+     "check-watch"
+    ]
+   ],
+   "resume": true,
+   "tone": "info",
+   "points": 0,
+   "note": "Sud majlisida faqat ish bo'yicha gapiriladi."
+  },
+  {
+   "id": "stress",
+   "patterns": [
+    "\\bhayajon",
+    "qo'rqyap",
+    "\\bbilmayapman\\b",
+    "\\buyalyap",
+    "nima deyishni bilma",
+    "\\badashib ketdim"
+   ],
+   "lines": [
+    "Xavotirlanmang, shoshilmasdan fikringizni jamlang. Sud sizni tinglaydi.",
+    "Bir nafas oling. Asosiy fikringizni qisqa ayting — sud kutib turadi."
+   ],
+   "steps": [
+    [
+     "calm",
+     "nod"
+    ],
+    [
+     "calm",
+     "none"
+    ]
+   ],
+   "reactions": [
+    [
+     "principal",
+     "uncertain"
+    ]
+   ],
+   "resume": true,
+   "tone": "info",
+   "points": 0,
+   "note": "Sudya hayajonni sezdi va vaqt berdi. Javobni rejaga soling: talab — asos — dalil."
+  }
+ ],
+ "powers_excuse": {
+  "patterns": [
+   "uyda qol",
+   "\\bunut",
+   "olib kelma",
+   "esim\\w* chiq",
+   "yo'qot",
+   "topolma",
+   "keyin\\w* olib kel",
+   "ertaga olib",
+   "yonimda yo'q",
+   "hozir (yonimda )?yo'q",
+   "qolib ketdi",
+   "qolib ketibdi",
+   "keyin\\w* ber",
+   "\\byo'q\\b",
+   "\\bnet\\b",
+   "нет",
+   "забыл",
+   "olmadim",
+   "olib kelmadim"
+  ],
+  "first": [
+   "Tushunaman, bunday holat bo'lib turadi. Lekin vakolatingizni tasdiqlovchi hujjatsiz sud sizni vakil sifatida majlisga qo'ya olmaydi. Ishonchnoma yoki uning nusxasi yoningizda yo'qmi?",
+   "Hujjat esdan chiqqan bo'lsa ham, qonun talabi o'zgarmaydi: vakolat hujjat bilan tasdiqlanishi kerak. Ishonchnomaning nusxasi yoki elektron shakli bormi?"
+  ],
+  "then": "Afsuski, hujjat bo'lmasa, sud vakolatingizni tan ola olmaydi."
+ },
+ "order_ladder": [
+  "Sud majlisi tartibini buzmang. Takrorlansa, chora ko'riladi.",
+  "Siz sudga nisbatan hurmatsizlik qilyapsiz. Bu oxirgi ogohlantirish: yana takrorlansa, sud majlisi zalidan chiqarilasiz.",
+  "Sudga nisbatan hurmatsizlik takrorlangani sababli siz sud majlisi zalidan chiqarilasiz. Bu holat bayonnomaga qayd etiladi."
+ ],
+ "recusal": {
+  "postpone": "Rad qilish ish mazmunan ko'rilishidan oldin bildiriladi. Keyinroq faqat asos keyin ma'lum bo'lsagina bildirish mumkin. Hozir sud tarkibiga yoki kotibga rad bildirasizmi?",
+  "weak": "Sud joyida maslahatlashib, ajrim chiqardi: rad qilish arizasi qanoatlantirilmaydi. {who} yoshi yoki tajribasi rad qilish uchun qonuniy asos bo'lmaydi: rad faqat qonunda ko'rsatilgan holatlarda — masalan, ishda manfaatdorlik yoki qarindoshlik bo'lsa — bildiriladi.",
+  "who": {
+   "kotib": "Kotibning",
+   "sudya": "Sudyaning",
+   "any": "Shaxsning"
+  }
+ },
+ "nlu_situations": [
+  {
+   "id": "repeat",
+   "action": "repeat_last",
+   "maxWords": 7,
+   "patterns": [
+    "\\btakrorla",
+    "eshitma(dim|y qol)",
+    "eshitolmadim",
+    "nima deding",
+    "nima dedingiz",
+    "tushunmay qoldim",
+    "\\b(qayta|yana bir (bor|marta))\\s*(ayt|gapir|takror)",
+    "qaytarib (ayt|gapir|yubor)\\w*\\s*[?!.]*$",
+    "^\\s*(iltimos\\W*)?qaytar\\w*\\s*[?!.]*$",
+    "\\bpovtor",
+    "повтор",
+    "ещ[её] раз",
+    "не расслышал"
+   ],
+   "tone": "info",
+   "note": "Talaba gapni qayta so'radi — qahramon oxirgi gapini takrorladi (ball ayirilmaydi).",
+   "replies": {
+    "client": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "officer": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "investigator": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "chief": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "clerk": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "secretary": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "judge": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "respondent": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    },
+    "witness": {
+     "emotion": "calm",
+     "lines": [
+      "Albatta, qaytaraman."
+     ]
+    }
+   }
+  },
+  {
+   "id": "profanity",
+   "prof": true,
+   "tone": "bad",
+   "note": "So'kinish — kasbiy etikaning qo'pol buzilishi.",
+   "replies": {
+    "client": {
+     "emotion": "upset",
+     "lines": [
+      "Nima?! Bunaqa gaplarni sizdan kutmagan edim… Siz rostdan ham advokatmisiz?",
+      "Iltimos, men bilan bunday gaplashmang. Men yordam so'rab kelganman."
+     ]
+    },
+    "officer": {
+     "emotion": "impatient",
+     "lines": [
+      "Bu yer navbatchi qism. Haqorat qilmang — davom etsangiz, bu holat bayonnomaga yoziladi.",
+      "Ogohlantiraman: odob saqlang, aks holda suhbatni to'xtataman."
+     ]
+    },
+    "investigator": {
+     "emotion": "impatient",
+     "lines": [
+      "So'roq paytida haqorat qilmang. Bu holat bayonnomaga qayd etiladi.",
+      "Odob saqlang, aks holda so'roqni to'xtataman."
+     ]
+    },
+    "chief": {
+     "emotion": "impatient",
+     "lines": [
+      "Bunday gaplar bilan murojaat qabul qilinmaydi. Odob bilan gapiring.",
+      "Ogohlantiraman: hurmatsizlik takrorlansa, qabul to'xtatiladi."
+     ]
+    },
+    "clerk": {
+     "emotion": "upset",
+     "lines": [
+      "Iltimos, odob saqlang. Bu yer sud devonxonasi.",
+      "Bunday gaplar bilan ariza qabul qilinmaydi."
+     ]
+    },
+    "secretary": {
+     "emotion": "upset",
+     "lines": [
+      "Iltimos, sud majlisida odob saqlang.",
+      "Bunday gaplar bayonnomaga qayd etiladi."
+     ]
+    },
+    "judge": {
+     "emotion": "upset",
+     "lines": [
+      "Sud majlisi tartibini buzmang. Takrorlansa, chora ko'riladi.",
+      "Siz sudga nisbatan hurmatsizlik qilyapsiz. Bu oxirgi ogohlantirish: yana takrorlansa, sud majlisi zalidan chiqarilasiz."
+     ]
+    },
+    "respondent": {
+     "emotion": "upset",
+     "lines": [
+      "Hurmatli sud, raqib tomon haqorat qilyapti — buni bayonnomaga kiritishingizni so'rayman."
+     ]
+    },
+    "witness": {
+     "emotion": "upset",
+     "lines": [
+      "Men bunday gaplarga javob bermayman."
+     ]
+    }
+   }
+  },
+  {
+   "id": "lost_document",
+   "patterns": [
+    "yo'qot",
+    "topolma",
+    "uyda qol",
+    "\\bunut",
+    "olib kelma",
+    "esim\\w* chiq",
+    "qolib ket"
+   ],
+   "tone": "info",
+   "note": "Hujjat yo'q — qahramon vaziyatni tushundi, qonuniy yo'lni aytdi.",
+   "replies": {
+    "officer": {
+     "emotion": "calm",
+     "lines": [
+      "Tushunaman, bunday bo'ladi. Unda arizani og'zaki aytib bering — bayonnomaga yozaman. Shaxsingizni tasdiqlovchi hujjat bormi?"
+     ]
+    },
+    "investigator": {
+     "emotion": "calm",
+     "lines": [
+      "Hujjat bo'lmasa, holatni so'zma-so'z aytib bering — bayonnomaga yoziladi."
+     ]
+    },
+    "clerk": {
+     "emotion": "neutral",
+     "lines": [
+      "Hujjatlarsiz arizani ro'yxatga ololmayman. Iltimos, hujjatlarni to'liq olib keling."
+     ]
+    },
+    "client": {
+     "emotion": "uncertain",
+     "lines": [
+      "Voy… Qayerga qo'yganimni eslay olmayapman. Endi nima qilamiz?"
+     ]
+    },
+    "judge": {
+     "emotion": "uncertain",
+     "lines": [
+      "Hujjat bo'lmasa, sud uni dalil sifatida ko'ra olmaydi. Boshqa dalilingiz bormi?"
+     ]
+    },
+    "chief": {
+     "emotion": "calm",
+     "lines": [
+      "Hujjatsiz ham shikoyatni qabul qilamiz, lekin holatni aniq bayon qiling."
+     ]
+    }
+   }
+  },
+  {
+   "id": "refusal",
+   "patterns": [
+    "yordam bera olmay",
+    "\\b(qila|bera|olib bora) olmayman\\b",
+    "\\bvoz kechaman\\b",
+    "ishni olmayman",
+    "\\bboshqa advokat\\w* top"
+   ],
+   "tone": "bad",
+   "note": "Vakil mijozni sababsiz tashlab ketmoqchi bo'ldi — avval sababini tushuntirib, maslahat berish kerak.",
+   "replies": {
+    "client": {
+     "emotion": "upset",
+     "lines": [
+      "Qanday qilib?! Men sizga umid bilan kelgandim… Hech bo'lmasa nima qilishim kerakligini ayting.",
+      "Unda men endi kimga boraman? Iltimos, bir maslahat bering."
+     ]
+    }
+   }
+  },
+  {
+   "id": "russian",
+   "cyrillic": true,
+   "patterns": [
+    "\\buva(j|zh)a\\w*",
+    "\\bpo(j|zh)aluy?st",
+    "\\bizvinit",
+    "\\bspasibo\\b"
+   ],
+   "tone": "info",
+   "note": "Ish davlat tilida yuritiladi; tilni bilmagan shaxs tarjimondan foydalanishga haqli.",
+   "replies": {
+    "client": {
+     "emotion": "uncertain",
+     "lines": [
+      "Kechirasiz, o'zbekcha gapiring, men ruschani yaxshi tushunmayman."
+     ]
+    },
+    "officer": {
+     "emotion": "calm",
+     "lines": [
+      "Iltimos, o'zbek tilida gapiring. Zarur bo'lsa, tarjimon taklif qilinadi."
+     ]
+    },
+    "investigator": {
+     "emotion": "calm",
+     "lines": [
+      "Iltimos, o'zbek tilida gapiring. Zarur bo'lsa, tarjimon taklif qilinadi."
+     ]
+    },
+    "chief": {
+     "emotion": "calm",
+     "lines": [
+      "Iltimos, o'zbek tilida gapiring. Zarur bo'lsa, tarjimon taklif qilinadi."
+     ]
+    },
+    "clerk": {
+     "emotion": "calm",
+     "lines": [
+      "Iltimos, o'zbek tilida gapiring."
+     ]
+    },
+    "judge": {
+     "emotion": "calm",
+     "lines": [
+      "Sud majlisi davlat tilida olib boriladi. Iltimos, o'zbek tilida gapiring. Zarur bo'lsa, tarjimon xizmatidan foydalanish huquqingiz bor."
+     ]
+    }
+   }
+  },
+  {
+   "id": "offtopic",
+   "patterns": [
+    "\\b(qalaysiz|qandaysiz|yaxshimisiz|charchamadingizmi)\\b",
+    "ishlar\\w* qalay",
+    "\\bismingiz",
+    "necha yosh",
+    "\\buylangan",
+    "turmush qurgan",
+    "ob-?havo",
+    "\\bfutbol",
+    "\\bovqat",
+    "\\btushlik",
+    "\\bkino\\b",
+    "telefon raqam",
+    "\\binstagram",
+    "qachon tugaydi"
+   ],
+   "tone": "info",
+   "note": "Mavzudan tashqari gap — qahramon suhbatni ishga qaytardi.",
+   "replies": {
+    "client": {
+     "emotion": "uncertain",
+     "lines": [
+      "Kechirasiz, hozir boshqa gapga holim yo'q… Ishim haqida gaplashsak bo'ladimi?"
+     ]
+    },
+    "officer": {
+     "emotion": "neutral",
+     "lines": [
+      "Bu savol arizaga taalluqli emas. Qanday masalada keldingiz?"
+     ]
+    },
+    "investigator": {
+     "emotion": "neutral",
+     "lines": [
+      "Bu so'roqqa taalluqli emas. Ish bo'yicha gapiring."
+     ]
+    },
+    "chief": {
+     "emotion": "neutral",
+     "lines": [
+      "Bu masala qabulga taalluqli emas. Shikoyatingizni ayting."
+     ]
+    },
+    "clerk": {
+     "emotion": "neutral",
+     "lines": [
+      "Bu savolga javob bera olmayman. Ariza bo'yicha nima kerak?"
+     ]
+    },
+    "secretary": {
+     "emotion": "neutral",
+     "lines": [
+      "Iltimos, ish bo'yicha gapiring."
+     ]
+    },
+    "judge": {
+     "emotion": "impatient",
+     "lines": [
+      "Savolingiz ishga taalluqli emas. Ish bo'yicha gapiring."
+     ]
+    },
+    "witness": {
+     "emotion": "confused",
+     "lines": [
+      "Bu savol ishga aloqador emas-ku…"
+     ]
+    },
+    "respondent": {
+     "emotion": "neutral",
+     "lines": [
+      "Hurmatli sud, savol ishga taalluqli emas."
+     ]
+    }
+   }
+  }
+ ],
+ "nlu_voices": {
+  "client": [
+   "male",
+   "female"
+  ],
+  "officer": [
+   "male"
+  ],
+  "investigator": [
+   "male"
+  ],
+  "chief": [
+   "elder_m"
+  ],
+  "judge": [
+   "elder_m"
+  ],
+  "clerk": [
+   "female"
+  ],
+  "secretary": [
+   "female"
+  ],
+  "respondent": [
+   "female_alt"
+  ],
+  "witness": [
+   "male"
+  ]
+ }
+}

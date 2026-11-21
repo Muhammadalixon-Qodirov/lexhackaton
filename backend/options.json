@@ -1,0 +1,550 @@
+{
+  "_izoh": "Darajalar uchun javob variantlari (v2, LexSim_Frontend_v3_Javob.md B3). Har bosqichda: 1 ta to'g'ri, 2 ta 'deyarli to'g'ri' xato (noto'g'ri modda, noto'g'ri tartib yoki talabdan voz kechish), 1 ta qo'pol etik yoki protsessual xato. Uzunliklar bosqich ichida +-20% (unit test). Klientga faqat {id, text, kind} boradi; tone/article/why tanlangandan keyin feedback va decisions'da beriladi. km — xato variant tanlansa lahza darajasi chegarasi; violation — dvigatel qayd etadigan qoidabuzarlik. Mentor tekshirishi kerak.",
+  "stages": {
+    "ishtirokchilar": {
+      "any": [
+        {
+          "id": "v-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "IPK-62",
+          "text": "Hurmatli sud, {rol} sifatida qatnashyapman, vakolatimni tasdiqlovchi ishonchnomani taqdim etaman.",
+          "why": "Vakilning vakolati ishonchnoma bilan tasdiqlanadi (IPK 62-modda) va sudga «Hurmatli sud» deb murojaat qilinadi."
+        },
+        {
+          "id": "v-2",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-62",
+          "km": {
+            "KM1": 1
+          },
+          "why": "Vakilning vakolati pasport bilan emas, ishonchnoma bilan tasdiqlanadi.",
+          "text": "Hurmatli sud, vakolatimni tasdiqlash uchun pasportimni taqdim etaman, mijozim rozi bo'lgan."
+        },
+        {
+          "id": "v-3",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-165",
+          "km": {
+            "KM1": 2
+          },
+          "why": "Vakolat sud majlisi boshida tekshiriladi; uni keyinroq taqdim etib bo'lmaydi.",
+          "text": "Hurmatli sud, ishonchnomani muzokara bosqichida beraman, avval da'vo bo'yicha talablarimizni aytib olay."
+        },
+        {
+          "id": "v-4",
+          "kind": "react",
+          "tone": "bad",
+          "violation": "bribe",
+          "km": {
+            "KM1": 0
+          },
+          "why": "Sudya bilan «oldindan gaplashish» — sudga ta'sir o'tkazishga urinish, kasbiy etikaning qo'pol buzilishi.",
+          "text": "Hurmatli sud, hujjat yo'q, lekin bu masalani siz bilan oldindan gaplashib qo'yganmiz."
+        }
+      ]
+    },
+    "rad": {
+      "any": [
+        {
+          "id": "r-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "IPK-20",
+          "text": "Hurmatli sud, sud tarkibiga va kotibga rad bildirmaymiz, rad qilish uchun asos yo'q.",
+          "why": "Qonundagi asos (manfaatdorlik, qarindoshlik) bo'lmasa rad bildirilmaydi; ariza ishni mazmunan ko'rishdan oldin beriladi (IPK 20–22-moddalar)."
+        },
+        {
+          "id": "r-2",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-21",
+          "why": "Kotibni rad qilish uchun qonundagi asos kerak (manfaatdorlik va h.k.); yosh yoki tajriba asos emas.",
+          "text": "Hurmatli sud, kotibga rad bildiraman, u yosh va tajribasi kam ko'rinyapti."
+        },
+        {
+          "id": "r-3",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-22",
+          "points": 2,
+          "why": "Rad qilish ishni mazmunan ko'rish boshlangunga qadar bildiriladi, oxirida emas.",
+          "text": "Hurmatli sud, rad bildirish huquqimdan ish mazmunan ko'rib bo'lingach, oxirida foydalanaman."
+        },
+        {
+          "id": "r-4",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-20",
+          "points": 5,
+          "why": "Tasdiqlanmagan mish-mishga tayanib sudyani rad qilish — asossiz va sudga hurmatsizlik.",
+          "text": "Hurmatli sud, sudyani rad etaman, u javobgarning tanishi ekanini koridorda eshitib qoldim."
+        }
+      ]
+    },
+    "huquqlar": {
+      "any": [
+        {
+          "id": "h-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "IPK-165",
+          "text": "Hurmatli sud, protsessual huquq va majburiyatlarimiz tushunarli, savolimiz yo'q.",
+          "why": "Huquqlar tushuntirilgach, ularni tushunganingizni qisqa va «Hurmatli sud» bilan tasdiqlaysiz (IPK 165-modda)."
+        },
+        {
+          "id": "h-2",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-173",
+          "points": 2,
+          "why": "Muzokarada yangi dalil keltirib bo'lmaydi — faqat sudda tekshirilgan dalillarga tayaniladi.",
+          "text": "Hurmatli sud, tushunarli, muzokarada yangi dalil va guvoh keltirish huquqimiz ham bor, shundaymi?"
+        },
+        {
+          "id": "h-3",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-167",
+          "points": 2,
+          "why": "Sudga tushuntirish va javoblar tik turib beriladi.",
+          "text": "Hurmatli sud, huquqlar tushunarli, ruxsat bersangiz, o'tirib javob beraman."
+        },
+        {
+          "id": "h-4",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-167",
+          "violation": "order",
+          "why": "Sudga «Hurmatli sud» deb murojaat qilinmadi va sudga ko'rsatma berildi — tartibni qo'pol buzish.",
+          "text": "Tushunarli, bularni hammamiz yaxshi bilamiz, vaqtni cho'zmasdan tezroq ishni ko'raylik."
+        }
+      ]
+    },
+    "oldingi": {
+      "any": [
+        {
+          "id": "o-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "IPK-169",
+          "text": "Hurmatli sud, ishni mazmunan ko'rishdan oldin iltimosnomamiz yo'q.",
+          "why": "Penya bo'yicha iltimosnoma dalillar bosqichida beriladi; hozir boshqa iltimosnoma kerak emas (IPK 169-modda)."
+        },
+        {
+          "id": "o-2",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "IPK-169",
+          "points": 2,
+          "why": "Penyani kamaytirish iltimosnomasi dalillar tekshirilgach beriladi va qarorda hal qilinadi.",
+          "text": "Hurmatli sud, penyani kamaytirishni hozir, dalillardan oldin hal qilishingizni so'rayman."
+        },
+        {
+          "id": "o-3",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "IPK-171",
+          "points": 3,
+          "why": "Ishni qoldirish uchun asos (uzrli sabab, yangi dalil) yo'q; tayyorgarlik vakilning burchi.",
+          "text": "Hurmatli sud, ishni keyinga qoldirishni so'rayman, mijoz bilan yana maslahatlashay."
+        },
+        {
+          "id": "o-4",
+          "kind": "ask",
+          "tone": "bad",
+          "violation": "stage",
+          "why": "Sud ishni dalillarsiz «biz foydamizga» hal qilmaydi — bu protsessni qo'pol buzish.",
+          "text": "Hurmatli sud, iltimosim shuki, ishni tezroq va bizning foydamizga hal qiling."
+        }
+      ]
+    },
+    "tushuntirish": {
+      "davogar-vakili": [
+        {
+          "id": "t-1",
+          "kind": "explain",
+          "tone": "good",
+          "article": "FK-544",
+          "text": "Hurmatli sud, 32-P-sonli ijara shartnomasi bo'yicha javobgar ijara haqini to'lamagan. Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga asosan 25 620 433,19 so'm asosiy qarz va 8.5-bandga ko'ra penya undirishni so'raymiz.",
+          "why": "Talab to'liq bayon qilindi: shartnoma, summa, huquqiy asos (FK 544-modda) va penya asosi (8.5-band)."
+        },
+        {
+          "id": "t-2",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-544",
+          "km": {
+            "claim": 2
+          },
+          "why": "Ijara haqini to'lash majburiyati FK 544-moddada; FK 333-modda javobgarlik asoslari haqida.",
+          "text": "Hurmatli sud, 32-P-sonli ijara shartnomasi bo'yicha javobgar ijara haqini to'lamagan. Fuqarolik kodeksining 333-moddasiga asosan 25 620 433,19 so'm asosiy qarz va 8.5-bandga ko'ra penya undirishni so'raymiz, talablarimizni to'liq quvvatlaymiz."
+        },
+        {
+          "id": "t-3",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-544",
+          "km": {
+            "claim": 1
+          },
+          "why": "Summalar almashib ketdi: asosiy qarz 25 620 433,19 so'm, penya 3 040 580,45 so'm.",
+          "text": "Hurmatli sud, 32-P-sonli ijara shartnomasi bo'yicha javobgar ijara haqini to'lamagan. Fuqarolik kodeksining 544-moddasiga asosan 3 040 580,45 so'm asosiy qarz va 25 620 433,19 so'm penya undirishni so'raymiz."
+        },
+        {
+          "id": "t-4",
+          "kind": "explain",
+          "tone": "bad",
+          "violation": "false_claim",
+          "km": {
+            "claim": 0
+          },
+          "why": "Javobgarni dalilsiz «firibgar» deyish va tekshirilmagan holatlarga tayanish — sudni chalg'itish va hurmatsizlik.",
+          "text": "Hurmatli sud, javobgar firibgar, u boshqa ijarachilarni ham aldagan, bu hammaga ma'lum. Shuning uchun undan butun qarzni va penyani, yana ma'naviy zararni ham undirib berishingizni so'raymiz."
+        }
+      ],
+      "javobgar-vakili": [
+        {
+          "id": "t-1",
+          "kind": "explain",
+          "tone": "good",
+          "article": "FK-578",
+          "text": "Hurmatli sud, da'voga e'tirozimiz bor: Fuqarolik kodeksining 578-moddasiga ko'ra bino topshirish dalolatnomasi yoki boshqa topshirish hujjati bilan topshiriladi, bunday hujjat imzolanmagan.",
+          "why": "E'tiroz to'g'ri moddaga tayandi: bino dalolatnoma yoki boshqa topshirish hujjati bilan topshiriladi (FK 578-modda)."
+        },
+        {
+          "id": "t-2",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-578",
+          "km": {
+            "KM2": 2
+          },
+          "why": "Topshirish tartibi FK 578-moddada; FK 544-modda ijara haqini to'lash haqida.",
+          "text": "Hurmatli sud, da'voga e'tirozimiz bor: Fuqarolik kodeksining 544-moddasiga ko'ra bino topshirish dalolatnomasi yoki boshqa topshirish hujjati bilan topshiriladi, bunday hujjat imzolanmagan, dalillar ham buni to'liq tasdiqlaydi."
+        },
+        {
+          "id": "t-3",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-578",
+          "violation": "false_claim",
+          "km": {
+            "KM2": 1
+          },
+          "why": "Mijoz joydan uch oy foydalangan — foydalanmaganlikni aytish ish materiallariga zid.",
+          "text": "Hurmatli sud, da'voni tan olmaymiz: mijozim joydan umuman foydalanmagan, topshirish dalolatnomasi ham imzolanmagan, shuning uchun ijara munosabati umuman yuzaga kelmagan. Shu sababli da'voni to'liq rad etishingizni so'raymiz."
+        },
+        {
+          "id": "t-4",
+          "kind": "explain",
+          "tone": "bad",
+          "violation": "stage",
+          "km": {
+            "KM2": 0
+          },
+          "why": "Raqib vakilini zaldan chiqarishni talab qilish — protsessual huquqlarni qo'pol buzish.",
+          "text": "Hurmatli sud, e'tirozimni aytishdan oldin da'vogar vakili zaldan chiqarilishini talab qilaman, uning ishtirokida mijozim manfaatini to'liq himoya qila olmayman, iltimos, buni hal qiling."
+        }
+      ]
+    },
+    "dalillar": {
+      "davogar-vakili": [
+        {
+          "id": "d-1",
+          "kind": "explain",
+          "tone": "good",
+          "article": "FK-544",
+          "text": "Hurmatli sud, javobgar obyektdan uch oy foydalanganini o'zi tan oldi va hisob-fakturalarni imzolagan. Bu ijara amalda bajarilganini tasdiqlaydi, FK 544-moddaga ko'ra ijara haqi to'lanishi shart.",
+          "why": "Foydalanish fakti va imzolangan hisob-fakturalar to'lov majburiyatini tasdiqlaydi (FK 544-modda)."
+        },
+        {
+          "id": "d-2",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-544",
+          "km": {
+            "KM2": 2
+          },
+          "why": "Ijara haqi FK 544-modda bo'yicha to'lanadi; FK 326-modda penyani kamaytirish haqida.",
+          "text": "Hurmatli sud, javobgar obyektdan uch oy foydalanganini o'zi tan oldi va hisob-fakturalarni imzolagan. Bu ijara amalda bajarilganini tasdiqlaydi, FK 326-moddaga ko'ra ijara haqi to'lanishi shart, u buni inkor etmaydi."
+        },
+        {
+          "id": "d-3",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-578",
+          "km": {
+            "KM2": 1
+          },
+          "why": "Mijoz manfaatidan voz kechildi: imzolangan hisob-fakturalar topshirishga doir boshqa hujjat sifatida butun davr uchun qarzni tasdiqlaydi.",
+          "text": "Hurmatli sud, dalolatnoma yo'qligi to'g'ri, shuning uchun biz faqat oxirgi bir oy uchun qarzni undirishni so'raymiz, qolgan talablardan voz kechamiz."
+        },
+        {
+          "id": "d-4",
+          "kind": "explain",
+          "tone": "bad",
+          "violation": "false_claim",
+          "km": {
+            "KM2": 0
+          },
+          "why": "Dalolatnoma imzolanmagan — uning «nusxasini tayyorlab keltirish» soxta dalil yaratishdir.",
+          "text": "Hurmatli sud, dalolatnoma aslida imzolangan edi, uning nusxasini ertaga o'zimiz tayyorlab keltiramiz, hozircha shunga ishonib, asosiy qarz va penyani to'liq undirib bering."
+        }
+      ],
+      "javobgar-vakili": [
+        {
+          "id": "d-1",
+          "kind": "ask",
+          "tone": "good",
+          "article": "FK-326",
+          "text": "Hurmatli sud, Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishni so'rab iltimosnoma beraman: u qarzga nomutanosib, mijozim obyektdan qisqa muddat foydalangan va mulkiy ahvoli og'ir.",
+          "why": "Iltimosnoma to'liq: nima so'ralyapti, modda (FK 326) va mezonlar — nomutanosiblik, bajarilish darajasi, mulkiy ahvol."
+        },
+        {
+          "id": "d-2",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "FK-326",
+          "km": {
+            "KM3": 2
+          },
+          "why": "Penyani kamaytirish asosi FK 326-moddada; FK 333-modda javobgarlik va ayb haqida.",
+          "text": "Hurmatli sud, Fuqarolik kodeksining 333-moddasiga asosan penyani kamaytirishni so'rab iltimosnoma beraman: u qarzga nomutanosib, mijozim obyektdan qisqa muddat foydalangan va mulkiy ahvoli og'ir, qanoatlantiring."
+        },
+        {
+          "id": "d-3",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "FK-326",
+          "km": {
+            "KM3": 1
+          },
+          "why": "Sud penyani bekor qilmaydi, faqat kamaytirishi mumkin (FK 326-modda).",
+          "text": "Hurmatli sud, Fuqarolik kodeksining 326-moddasiga asosan penyani butunlay bekor qilishingizni so'rayman, chunki mijozim og'ir ahvolda va bu penya umuman adolatsiz."
+        },
+        {
+          "id": "d-4",
+          "kind": "ask",
+          "tone": "bad",
+          "violation": "bribe",
+          "km": {
+            "KM3": 0
+          },
+          "why": "Sudga «minnatdorchilik» va'da qilish — pora taklifi, kasbiy etikaning eng qo'pol buzilishi.",
+          "text": "Hurmatli sud, penyani kamaytirsangiz, mijozim sizga alohida minnatdorchilik bildiradi, bu haqda tashvishlanmang, hammasi o'zimizning oramizda qoladi, kelishamiz."
+        }
+      ]
+    },
+    "penya": {
+      "davogar-vakili": [
+        {
+          "id": "p-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "FK-262",
+          "text": "Hurmatli sud, penya 8.5-bandda yozma kelishilgan (FK 262-modda), javobgar to'lovni kechiktirgan, kamaytirishga asos yo'q.",
+          "why": "Penya yozma kelishilgan (FK 262-modda) va javobgar to'lovni kechiktirgan — kamaytirishga qarshi asos aytildi."
+        },
+        {
+          "id": "p-2",
+          "kind": "react",
+          "tone": "bad",
+          "article": "FK-262",
+          "km": {
+            "KM3": 1
+          },
+          "why": "FK 326-modda sudga penyani kamaytirish huquqini beradi; unga «kamaytirilmaydi» deb tayanib bo'lmaydi.",
+          "text": "Hurmatli sud, penya shartnomaning 8.5-bandida kelishilgan, FK 326-moddaga ko'ra esa penya hech qachon kamaytirilmaydi."
+        },
+        {
+          "id": "p-3",
+          "kind": "react",
+          "tone": "bad",
+          "article": "FK-262",
+          "km": {
+            "KM3": 1
+          },
+          "why": "Mijoz manfaati himoya qilinmadi: yozma kelishuv va kechiktirish asosi aytilmadi.",
+          "text": "Hurmatli sud, penya kelishilgan, lekin kamaytirish masalasini to'liq sudning ixtiyoriga qoldiramiz."
+        },
+        {
+          "id": "p-4",
+          "kind": "react",
+          "tone": "bad",
+          "violation": "order",
+          "km": {
+            "KM3": 0
+          },
+          "why": "O'zboshimchalik bilan «qulf osish» tahdidi — qonunga zid va sud majlisi tartibini qo'pol buzish.",
+          "text": "Hurmatli sud, javobgar penyani to'lamasa, uning do'koniga o'zimiz qulf osib, mollarini olib qo'yamiz."
+        }
+      ],
+      "javobgar-vakili": [
+        {
+          "id": "p-1",
+          "kind": "ask",
+          "tone": "good",
+          "article": "FK-326",
+          "text": "Hurmatli sud, FK 326-moddaga asosan penyani kamaytirishingizni so'rayman: u nomutanosib, mijozim uch oy foydalangan, ahvoli og'ir.",
+          "why": "Iltimosnoma to'liq: nima so'ralyapti, modda (FK 326) va mezonlar — nomutanosiblik, bajarilish darajasi, mulkiy ahvol."
+        },
+        {
+          "id": "p-2",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "FK-326",
+          "km": {
+            "KM3": 2
+          },
+          "why": "Kamaytirish asosi FK 326-modda; FK 262-modda neustoyka kelishuvining shakli haqida.",
+          "text": "Hurmatli sud, FK 262-moddaga asosan penyani kamaytirishingizni so'rayman: u nomutanosib, mijozim uch oy foydalangan, ahvoli og'ir, shuni so'rayman."
+        },
+        {
+          "id": "p-3",
+          "kind": "ask",
+          "tone": "bad",
+          "article": "FK-326",
+          "km": {
+            "KM3": 1
+          },
+          "why": "To'lay olmaslik o'zi asos emas; FK 326-modda bo'yicha kamaytirishni mezonlari bilan so'rash kerak edi.",
+          "text": "Hurmatli sud, penyaga qarshimiz, chunki mijozim uni to'lay olmaydi, shuning uchun bu talabni umuman tan olmaymiz."
+        },
+        {
+          "id": "p-4",
+          "kind": "ask",
+          "tone": "bad",
+          "violation": "bribe",
+          "km": {
+            "KM3": 0
+          },
+          "why": "Sudga «minnatdorchilik» va'da qilish — pora taklifi, kasbiy etikaning eng qo'pol buzilishi.",
+          "text": "Hurmatli sud, penyani kamaytirsangiz, mijozim bundan keyin ham sizdan minnatdor bo'lib yuradi, buni unutmaymiz."
+        }
+      ]
+    },
+    "qoshimcha": {
+      "any": [
+        {
+          "id": "q-1",
+          "kind": "react",
+          "tone": "good",
+          "article": "IPK-173",
+          "text": "Hurmatli sud, qo'shimcha materiallarimiz yo'q, sud muzokaralariga tayyormiz.",
+          "why": "Yangi material bo'lmasa, buni aytib, sud muzokaralariga o'tiladi (IPK 173-modda)."
+        },
+        {
+          "id": "q-2",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-173",
+          "points": 3,
+          "why": "Muzokarada tekshirilmagan guvoh ko'rsatuviga tayanib bo'lmaydi; guvohni dalillar bosqichida so'rash kerak edi.",
+          "text": "Hurmatli sud, materiallar yo'q, lekin muzokarada yangi guvoh gapini aytib o'taman."
+        },
+        {
+          "id": "q-3",
+          "kind": "react",
+          "tone": "bad",
+          "article": "IPK-173",
+          "violation": "stage",
+          "why": "Hal qiluv qaroridan oldin sud muzokaralari o'tkaziladi — bosqichni tashlab bo'lmaydi.",
+          "text": "Hurmatli sud, materiallar yo'q, muzokarasiz hal qiluv qarorini e'lon qiling."
+        },
+        {
+          "id": "q-4",
+          "kind": "react",
+          "tone": "bad",
+          "violation": "improper_evidence",
+          "why": "Raqibning shaxsiy yozishmalarini ruxsatsiz olish — noqonuniy dalil va kasbiy etikaning qo'pol buzilishi.",
+          "text": "Hurmatli sud, raqibning shaxsiy yozishmalarini yashirincha topib keldim, ko'ring."
+        }
+      ]
+    },
+    "muzokara": {
+      "davogar-vakili": [
+        {
+          "id": "m-1",
+          "kind": "explain",
+          "tone": "good",
+          "article": "FK-544",
+          "text": "Hurmatli sud! Tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning to'lov majburiyatini tasdiqlaydi. FK 544-modda va shartnomaning 6.4-bandiga asosan asosiy qarzni, 8.5-bandiga asosan penyani undirishni so'rayman.",
+          "why": "Nutq faqat sudda tekshirilgan dalillarga tayandi va aniq talab bilan tugadi (IPK 173-modda)."
+        },
+        {
+          "id": "m-2",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-544",
+          "km": {
+            "KM4": 2
+          },
+          "why": "To'lov majburiyati FK 544-moddada; FK 578-modda obyektni topshirish haqida.",
+          "text": "Hurmatli sud! Tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning to'lov majburiyatini tasdiqlaydi. FK 578-modda va shartnomaning 6.4-bandiga asosan asosiy qarzni, 8.5-bandiga asosan penyani undirishni so'rayman, bu qonuniy talab."
+        },
+        {
+          "id": "m-3",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "IPK-173",
+          "km": {
+            "KM4": 2
+          },
+          "why": "Yakuniy nutq aniq talab bilan tugashi kerak: sud nimani undirishi so'ralayotganini aytish shart.",
+          "text": "Hurmatli sud! Sudda tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar shuni ko'rsatadiki, javobgar obyektdan foydalangan va ijara haqini to'lamagan, dalolatnoma yo'qligi esa bunga ta'sir qilmaydi, shuni hisobga oling."
+        },
+        {
+          "id": "m-4",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "IPK-173",
+          "why": "Muzokarada sudda tekshirilmagan holatga tayanib bo'lmaydi.",
+          "text": "Hurmatli sud! Menda ma'lumot bor, javobgar boshqa ijarachilardan ham qarzdor, demak u qasddan to'lamayapti. Shuning uchun asosiy qarzni ham, penyani ham to'liq undirishingizni so'rayman."
+        }
+      ],
+      "javobgar-vakili": [
+        {
+          "id": "m-1",
+          "kind": "explain",
+          "tone": "good",
+          "article": "FK-326",
+          "text": "Hurmatli sud! Sudda tekshirilgan shartnoma va hisob-fakturalardan ko'rinadiki, obyekt dalolatnoma bilan topshirilmagan va penya qarzga nomutanosib. Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishingizni so'rayman.",
+          "why": "Nutq faqat sudda tekshirilgan dalillarga tayandi va aniq talab bilan tugadi (IPK 173-modda)."
+        },
+        {
+          "id": "m-2",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "FK-326",
+          "km": {
+            "KM4": 2
+          },
+          "why": "Penyani kamaytirish asosi FK 326-moddada; FK 544-modda ijara haqini to'lash haqida.",
+          "text": "Hurmatli sud! Sudda tekshirilgan shartnoma va hisob-fakturalardan ko'rinadiki, obyekt dalolatnoma bilan topshirilmagan va penya qarzga nomutanosib. Fuqarolik kodeksining 544-moddasiga asosan penyani kamaytirishingizni so'rayman, bu adolatli bo'ladi."
+        },
+        {
+          "id": "m-3",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "IPK-173",
+          "km": {
+            "KM4": 2
+          },
+          "why": "Yakuniy nutq aniq talab bilan tugashi kerak: penyani kamaytirish so'ralmadi.",
+          "text": "Hurmatli sud! Sudda tekshirilgan shartnoma va hisob-fakturalardan ko'rinadiki, obyekt dalolatnoma bilan topshirilmagan, penya esa qarzga nisbatan juda katta va adolatsiz bo'lib ko'rinadi."
+        },
+        {
+          "id": "m-4",
+          "kind": "explain",
+          "tone": "bad",
+          "article": "IPK-173",
+          "why": "Muzokarada sudda tekshirilmagan holatga tayanib bo'lmaydi.",
+          "text": "Hurmatli sud! Eshitishimcha, da'vogar boshqa ijarachilarni ham shunday aldagan, shuning uchun uning da'vosiga ishonmaslik kerak va penyani to'liq rad etishingizni so'rayman, shuni inobatga oling."
+        }
+      ]
+    }
+  }
+}

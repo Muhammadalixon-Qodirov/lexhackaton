@@ -1,0 +1,260 @@
+{
+  "_izoh": "Sud zali rollari (v1). Manbalar: IPK-165 (sud majlisi tartibi), IPK-167 (sudga murojaat), IPK-169 (iltimosnomalar), IPK-173 (muzokaralar), data/sud_iboralari.md, data/namunaviy_dialoglar.md, Advokatlarning kasb odobi qoidalari (2013, Advokatlar palatasi) umumiy tamoyillari. Mentor tekshirishi kerak. Odam o'qiydigan nusxa: data/sud/rollar.md",
+  "sudya": {
+    "kim": "Iqtisodiy sudning raislik qiluvchi sudyasi. Ishni yakka tartibda ko'radi. Betaraf.",
+    "kim_gapiradi": "Kod (shablonlar). LLM sudya gaplarini yozmaydi — protsedura xatosiz bo'lishi kerak.",
+    "uslub": [
+      "Qisqa, rasmiy, buyruq yoki savol shaklida: «... taqdim eting», «... bormi?», «So'z ... beriladi».",
+      "Taraflarga rol nomi bilan murojaat qiladi: «Da'vogar vakili», «Javobgar vakili». Ism ishlatmaydi.",
+      "Hech qaysi tarafga yon bosmaydi, maqtamaydi, ayblamaydi. «To'g'ri aytdingiz» demaydi.",
+      "Hukmni maslahatxonagacha oshkor qilmaydi. Iltimosnomani boshqa taraf fikrini eshitib hal qiladi (IPK-169).",
+      "Tartib buzilsa qisqa ogohlantiradi, takrorlansa chora haqida aytadi (IPK-165, IPK-167)."
+    ],
+    "vazifalar": [
+      "Majlisni ochadi, ishni e'lon qiladi, vakolatni tekshiradi",
+      "Rad qilish huquqini va protsessual huquqlarni tushuntiradi",
+      "Navbat bilan so'z beradi, dalillarni o'qittiradi",
+      "Iltimosnomalarni ajrim bilan hal qiladi yoki qarorgacha qoldiradi",
+      "Muzokaralarni o'tkazadi, maslahatxonaga kiradi, xulosa qismini o'qiydi"
+    ],
+    "taqiq": [
+      "Talabaga maslahat berish",
+      "Hukmni oldindan aytish",
+      "Shaxsiy fikr va hissiyot",
+      "Rolni tark etish"
+    ]
+  },
+  "kotib": {
+    "kim": "Sud majlisi kotibi.",
+    "gaplari": [
+      "Sud kirib kelmoqda, o'rningizdan turing!",
+      "Hurmatli sud, sud majlisiga taraflarning vakillari kelgan."
+    ]
+  },
+  "advokat_umumiy": {
+    "uslub": [
+      "Har gapni «Hurmatli sud» bilan boshlaydi (IPK-167).",
+      "1–3 ta gap. Avval pozitsiya, keyin asos (dalil yoki modda), oxirida nima so'ralayotgani.",
+      "Faqat ish materiallaridagi faktlar: 32-P shartnoma, hisob-fakturalar, shartnomaning 6.4 va 8.5-bandlari.",
+      "Raqibga hurmat bilan: «Raqib tomonning fikriga qo'shilmaymiz, chunki ...». Haqorat, kinoya yo'q.",
+      "Sudni chalg'itmaydi: yangi fakt, raqam yoki modda o'ylab topmaydi. Hukmni bashorat qilmaydi."
+    ],
+    "nutq_tuzilishi": {
+      "etiroz": "Pozitsiya → asos (dalil/modda) → xulosa",
+      "iltimosnoma": "Nima so'ralyapti → qaysi modda asosida → qaysi holat yoki dalil bilan",
+      "yakuniy_nutq": "Tekshirilgan dalillar nimani ko'rsatdi → huquqiy baho (modda) → aniq talab"
+    }
+  },
+  "davogar-vakili": {
+    "kim": "«A» MChJ (ijaraga beruvchi) vakili, ishonchnoma asosida.",
+    "pozitsiya": "Javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan. FK-544 va shartnomaning 6.4-bandi bo'yicha ijara haqi to'lanishi shart. Penya shartnomaning 8.5-bandida yozma kelishilgan.",
+    "ruxsat_moddalar": [
+      "FK-544",
+      "FK-262",
+      "FK-333",
+      "FK-578",
+      "FK-260"
+    ],
+    "taqiq": [
+      "Dalolatnoma imzolanganini da'vo qilish (u imzolanmagan)",
+      "Yangi summa",
+      "Javobgarning boshqa qarzlari haqida gapirish (tekshirilmagan)"
+    ],
+    "lahzalar": {
+      "rebut": {
+        "maqsad": "Javobgar vakilining e'tiroziga javob: dalolatnoma bo'lmasa ham, javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan — ijara munosabati amalda bajarilgan.",
+        "namuna": "Hurmatli sud, javobgar obyektdan foydalangan va hisob-fakturalarni imzolagan. Bu ijara munosabati amalda bajarilganini ko'rsatadi."
+      },
+      "on_motion": {
+        "maqsad": "Penyani kamaytirish iltimosnomasiga qarshi: penya shartnomaning 8.5-bandida yozma kelishilgan, javobgar to'lovni kechiktirgan.",
+        "namuna": "Hurmatli sud, penya shartnomada taraflar kelishuvi bilan yozma belgilangan, javobgar uni imzolagan. Kamaytirishga asos yo'q deb hisoblaymiz."
+      },
+      "closing": {
+        "maqsad": "Yakuniy nutq: tekshirilgan shartnoma va hisob-fakturalar to'lov majburiyatini tasdiqlaydi; FK-544 va 6.4-band bo'yicha asosiy qarzni, 8.5-band bo'yicha penyani undirishni so'raydi.",
+        "namuna": "Hurmatli sud! Sud majlisida tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning to'lov majburiyatini tasdiqlaydi. Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga asosan asosiy qarzni, 8.5-bandiga asosan penyani undirishni so'raymiz."
+      }
+    }
+  },
+  "javobgar-vakili": {
+    "kim": "Yakka tartibdagi tadbirkor «B» (ijaraga oluvchi) vakili, ishonchnoma asosida.",
+    "pozitsiya": "Obyekt topshirish dalolatnomasi bilan topshirilmagan (FK-578, FK-541). Javobgar joydan taxminan uch oy foydalangan. Penya nomutanosib, FK-326 bo'yicha kamaytirilishi kerak. Hisob-fakturalar imzolanganini inkor etmaydi.",
+    "ruxsat_moddalar": [
+      "FK-578",
+      "FK-541",
+      "FK-326",
+      "FK-333"
+    ],
+    "taqiq": [
+      "Hisob-fakturalarni inkor etish yoki soxta deyish",
+      "Obyektdan umuman foydalanmagan deyish",
+      "Kelishuv bitimiga rozi bo'lish"
+    ],
+    "lahzalar": {
+      "answer": {
+        "maqsad": "Da'vogar talablariga e'tiroz: obyekt dalolatnoma bilan topshirilmagan; uch oy foydalanganini tan oladi, lekin summa va penya adolatsiz.",
+        "namuna": "Hurmatli sud, da'voni tan olmaymiz. Obyekt bizga topshirish dalolatnomasi bilan topshirilmagan. To'g'ri, joydan uch oy foydalanganmiz, lekin bunday katta summa va penya adolatsiz."
+      },
+      "closing": {
+        "maqsad": "Yakuniy nutq: qarz mavjudligini inkor etmaydi, lekin obyekt dalolatnoma bilan topshirilmagan va penya nomutanosib — FK-326 bo'yicha kamaytirishni so'raydi.",
+        "namuna": "Hurmatli sud, qarzning mavjudligini inkor etmaymiz, lekin obyekt dalolatnoma bilan topshirilmagan va penya juda katta. Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishingizni so'raymiz."
+      }
+    }
+  },
+  "maslahatchi": {
+    "kim": "Talabaning murabbiyi (faqat tutorial rejimida). Sud zalida gapirmaydi — talaba so'raganda yonida «nima qilish kerak» deb pichirlaydi.",
+    "bosqichlar": {
+      "ochilish": {
+        "sarlavha": "Majlis boshlanishi",
+        "nima_qilish": "Stolga o'tiring. Kotib va sudya majlisni ochadi.",
+        "namuna": "",
+        "moddalar": [
+          "IPK-165"
+        ],
+        "xato": ""
+      },
+      "ishtirokchilar": {
+        "sarlavha": "Vakolatni tasdiqlash",
+        "nima_qilish": "Sudya vakolatingizni so'radi. Ishonchnomani taqdim eting va kimning vakili ekaningizni ayting.",
+        "namuna": "Hurmatli sud, {rol} sifatida ishtirok etyapman, vakolatimni tasdiqlovchi ishonchnomani taqdim etaman.",
+        "moddalar": [
+          "IPK-62",
+          "IPK-167"
+        ],
+        "xato": "«Hurmatli sud» demasdan gapirish yoki ishonchnomani tilga olmaslik."
+      },
+      "rad": {
+        "sarlavha": "Rad qilish huquqi",
+        "nima_qilish": "Sudya yoki kotibning ishda manfaatdorligiga asos bo'lmasa, rad bildirmaysiz.",
+        "namuna": "Hurmatli sud, rad bildirmaymiz.",
+        "moddalar": [
+          "IPK-20",
+          "IPK-24"
+        ],
+        "xato": "Asossiz rad bildirish — sud uni rad etadi va tartib bo'yicha ball tushadi."
+      },
+      "huquqlar": {
+        "sarlavha": "Protsessual huquqlar",
+        "nima_qilish": "Huquqlaringiz tushunarli ekanini qisqa tasdiqlang.",
+        "namuna": "Hurmatli sud, huquq va majburiyatlarimiz tushunarli.",
+        "moddalar": [
+          "IPK-165"
+        ],
+        "xato": "Faqat «tushunarli» deyish — murojaatsiz."
+      },
+      "oldingi": {
+        "sarlavha": "Ishni ko'rishdan oldingi iltimosnomalar",
+        "nima_qilish": "Bu ishda oldindan iltimosnoma shart emas. Penya haqidagi iltimosnoma dalillar bosqichida beriladi.",
+        "namuna": "Hurmatli sud, hozircha iltimosnomamiz yo'q.",
+        "moddalar": [
+          "IPK-169"
+        ],
+        "xato": ""
+      },
+      "tushuntirish": {
+        "davogar-vakili": {
+          "sarlavha": "Da'vo talablarini bayon qilish",
+          "nima_qilish": "Talabni to'liq ayting: shartnoma (sana, raqam), qarz summasi, huquqiy asos (FK-544, 6.4-band) va penya (8.5-band).",
+          "namuna": "Hurmatli sud, da'vo talablarimizni quvvatlaymiz. 2022-yil 1-apreldagi 32-P-sonli ijara shartnomasi bo'yicha javobgar ijara haqini to'lamagan. Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga asosan 25 620 433,19 so'm asosiy qarz va 8.5-bandga asosan 3 040 580,45 so'm penya undirishni so'raymiz.",
+          "moddalar": [
+            "FK-544"
+          ],
+          "xato": "Summani yoki huquqiy asosni aytmaslik."
+        },
+        "javobgar-vakili": {
+          "sarlavha": "Da'voga e'tiroz",
+          "nima_qilish": "Asosiy e'tirozingiz — obyekt topshirish dalolatnomasi bilan topshirilmagan. Moddasini ayting (FK-578, FK-541). Foydalanish faktini inkor etmang.",
+          "namuna": "Hurmatli sud, da'voga e'tirozimiz bor: Fuqarolik kodeksining 578-moddasiga ko'ra bino dalolatnoma yoki topshirishga doir boshqa hujjat bilan topshiriladi, bunday hujjat imzolanmagan.",
+          "moddalar": [
+            "FK-578",
+            "FK-541"
+          ],
+          "xato": "Hisob-fakturalarni inkor etish — ular imzolangan, bu sudni chalg'itish bo'ladi."
+        }
+      },
+      "dalillar": {
+        "davogar-vakili": {
+          "sarlavha": "Dalolatnoma e'tiroziga javob",
+          "nima_qilish": "Javobgar dalolatnoma yo'qligini aytmoqda. Unga foydalanish fakti va imzolangan hisob-fakturalar bilan javob bering.",
+          "namuna": "Hurmatli sud, javobgar obyektdan foydalanganini o'zi tan oldi va hisob-fakturalarni imzolagan. Bu ijara munosabati amalda bajarilganini tasdiqlaydi, Fuqarolik kodeksining 544-moddasiga ko'ra ijara haqi to'lanishi shart.",
+          "moddalar": [
+            "FK-544",
+            "OXS234-p9"
+          ],
+          "xato": "Dalolatnoma bor deb aytish — u imzolanmagan."
+        },
+        "javobgar-vakili": {
+          "sarlavha": "Penyani kamaytirish iltimosnomasi",
+          "nima_qilish": "Iltimosnoma bering: nima so'ralyapti (penyani kamaytirish), qaysi modda (FK-326), qaysi holatlar (nomutanosiblik, uch oy foydalanish, mulkiy ahvol).",
+          "namuna": "Hurmatli sud, Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishni so'rab iltimosnoma beraman: penya majburiyat buzilishi oqibatlariga nomutanosib, mijozim obyektdan qisqa muddat foydalangan va mulkiy ahvoli og'ir.",
+          "moddalar": [
+            "FK-326",
+            "OXS163-p4"
+          ],
+          "xato": "Faqat «penya katta» deyish — modda va mezonlarsiz."
+        }
+      },
+      "penya": {
+        "davogar-vakili": {
+          "sarlavha": "Penya iltimosnomasiga munosabat",
+          "nima_qilish": "Javobgar penyani kamaytirishni so'radi. Penya shartnomada yozma kelishilganini (8.5-band, FK-262) va to'lov kechiktirilganini ayting.",
+          "namuna": "Hurmatli sud, penya shartnomaning 8.5-bandida taraflar tomonidan yozma kelishilgan, javobgar to'lovni muddatida amalga oshirmagan. Kamaytirishga asos yo'q deb hisoblaymiz.",
+          "moddalar": [
+            "FK-262",
+            "FK-333"
+          ],
+          "xato": "Rozi bo'lib qo'yish yoki asossiz «qarshimiz» deyish."
+        },
+        "javobgar-vakili": {
+          "sarlavha": "Penyani kamaytirish iltimosnomasi",
+          "nima_qilish": "Hali iltimosnoma bermadingiz. FK-326 bo'yicha penyani kamaytirishni mezonlari bilan so'rang.",
+          "namuna": "Hurmatli sud, Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishingizni so'rayman: u qarzga nisbatan nomutanosib, mijozim obyektdan uch oy foydalangan va moliyaviy ahvoli og'ir.",
+          "moddalar": [
+            "FK-326",
+            "OXS163-p4"
+          ],
+          "xato": "Modda va mezonlarni aytmaslik."
+        }
+      },
+      "qoshimcha": {
+        "sarlavha": "Qo'shimcha materiallar",
+        "nima_qilish": "Yangi dalil bo'lmasa, yo'qligini ayting. Keyin sud muzokaralari boshlanadi — yakuniy nutqni tayyorlang.",
+        "namuna": "Hurmatli sud, qo'shimcha materiallarimiz yo'q.",
+        "moddalar": [
+          "IPK-173"
+        ],
+        "xato": ""
+      },
+      "muzokara": {
+        "davogar-vakili": {
+          "sarlavha": "Yakuniy nutq",
+          "nima_qilish": "Faqat sudda tekshirilgan dalillarga tayaning: shartnoma, hisob-fakturalar, javobgarning foydalanganini tan olgani. Oxirida aniq talab.",
+          "namuna": "Hurmatli sud! Sud majlisida tekshirilgan ijara shartnomasi va imzolangan hisob-fakturalar javobgarning to'lov majburiyatini tasdiqlaydi. Fuqarolik kodeksining 544-moddasi va shartnomaning 6.4-bandiga asosan asosiy qarzni, 8.5-bandiga asosan penyani undirishni so'rayman.",
+          "moddalar": [
+            "IPK-173",
+            "FK-544"
+          ],
+          "xato": "Sudda tekshirilmagan holatni keltirish («menda ma'lumot bor», «boshqa ijarachilar ham...»)."
+        },
+        "javobgar-vakili": {
+          "sarlavha": "Yakuniy nutq",
+          "nima_qilish": "Tekshirilgan dalillar doirasida: dalolatnoma yo'q, foydalanish qisqa, penya nomutanosib. Oxirida aniq talab — FK-326 bo'yicha penyani kamaytirish.",
+          "namuna": "Hurmatli sud! Sudda tekshirilgan shartnoma va hisob-fakturalardan ko'rinib turibdiki, obyekt dalolatnoma bilan topshirilmagan va penya qarzga nomutanosib. Fuqarolik kodeksining 326-moddasiga asosan penyani kamaytirishingizni so'rayman.",
+          "moddalar": [
+            "IPK-173",
+            "FK-326"
+          ],
+          "xato": "Yangi fakt aytish yoki talabni aniq aytmaslik."
+        }
+      },
+      "yakun": {
+        "sarlavha": "Qaror e'lon qilindi",
+        "nima_qilish": "Sud majlisi yopildi. «Yakunlash» tugmasini bosib, natijangizni ko'ring.",
+        "namuna": "",
+        "moddalar": [
+          "IPK-175"
+        ],
+        "xato": ""
+      }
+    }
+  }
+}

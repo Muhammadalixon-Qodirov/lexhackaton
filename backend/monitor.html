@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LexSim kuzatuv</title>
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--ink:#16181d;--muted:#5f6673;--line:#e3e6eb;
+  --rag:#2f6fdb;--llm:#d9480f;--engine:#2b8a3e;--db:#7048e8;--tts:#0b7285;--stt:#c2255c;--rerank:#e67700;
+  --ok:#2b8a3e;--warn:#d9480f;--err:#c92a2a;--info:#2f6fdb;--chip:#eef1f5;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1115;--card:#181b21;--ink:#e8eaee;--muted:#9aa1ad;--line:#2a2f38;
+  --rag:#5b8ff0;--llm:#ff8a4c;--engine:#51cf66;--db:#9775fa;--tts:#3bc9db;--stt:#f06595;--rerank:#ffc078;
+  --ok:#51cf66;--warn:#ff8a4c;--err:#ff6b6b;--info:#5b8ff0;--chip:#232831;}}
+:root[data-theme="dark"]{
+  --bg:#0f1115;--card:#181b21;--ink:#e8eaee;--muted:#9aa1ad;--line:#2a2f38;
+  --rag:#5b8ff0;--llm:#ff8a4c;--engine:#51cf66;--db:#9775fa;--tts:#3bc9db;--stt:#f06595;--rerank:#ffc078;
+  --ok:#51cf66;--warn:#ff8a4c;--err:#ff6b6b;--info:#5b8ff0;--chip:#232831;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:2}
+h1{font-size:17px;margin:0}
+h2{font-size:14px;margin:0 0 10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+main{padding:16px 20px;display:grid;gap:14px;grid-template-columns:repeat(12,1fr);max-width:1500px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s6{grid-column:span 6}.s4{grid-column:span 4}.s3{grid-column:span 3}
+@media (max-width:1000px){.s8,.s6,.s4{grid-column:span 12}.s3{grid-column:span 6}}
+@media (max-width:560px){main{padding:12px 16px}.s3{grid-column:span 12}}
+.kpi .v{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--muted);font-size:12px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:600;font-size:12px}
+td.n,th.n{text-align:right}
+.scroll{overflow-x:auto}
+.bar{display:flex;height:22px;border-radius:5px;overflow:hidden;background:var(--chip)}
+.bar i{display:block;height:100%}
+.mini{display:flex;height:10px;border-radius:3px;overflow:hidden;background:var(--chip);min-width:120px}
+.mini i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;font-size:12px;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;background:var(--chip)}
+.up{color:var(--ok)}.down{color:var(--err)}
+.adv{border-left:4px solid var(--info);padding:8px 10px;margin-bottom:8px;background:var(--chip);border-radius:0 6px 6px 0}
+.adv.warn{border-color:var(--warn)}.adv.error{border-color:var(--err)}.adv.ok{border-color:var(--ok)}
+.adv b{display:block}.adv small{color:var(--muted)}
+.ctrl{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+label.sw{display:flex;gap:8px;align-items:center;cursor:pointer}
+input[type=number],input[type=password],select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+button{background:var(--ink);color:var(--card);border:0;border-radius:6px;padding:7px 12px;font:inherit;cursor:pointer}
+.muted{color:var(--muted)}
+.live{font-weight:700;color:var(--llm)}
+#login{max-width:420px;margin:60px auto}
+.err{color:var(--err)}
+</style>
+</head>
+<body>
+<header>
+  <h1>LexSim kuzatuv paneli</h1>
+  <div class="muted" id="hdr">ulanmoqda…</div>
+</header>
+
+<div id="login" class="card" hidden>
+  <h2>Admin token</h2>
+  <p class="muted">Serverda: <code>cat ~/lexsim/backend/.admin_token</code></p>
+  <div class="ctrl"><input id="tok" type="password" placeholder="token" style="flex:1"><button id="go">Kirish</button></div>
+  <p id="lerr" class="err"></p>
+</div>
+
+<main id="app" hidden>
+  <section class="card s3 kpi"><div class="l">So'rov vaqti (p50 / p95)</div><div class="v" id="k1">–</div><div class="l" id="k1b"></div></section>
+  <section class="card s3 kpi"><div class="l">Hozir bajarilmoqda</div><div class="v" id="k2">–</div><div class="l" id="k2b"></div></section>
+  <section class="card s3 kpi"><div class="l">LLM: OK / shablon</div><div class="v" id="k3">–</div><div class="l" id="k3b"></div></section>
+  <section class="card s3 kpi"><div class="l">Server CPU / RAM</div><div class="v" id="k4">–</div><div class="l" id="k4b"></div></section>
+
+  <section class="card s8">
+    <h2>Vaqt qayerga ketyapti</h2>
+    <div class="bar" id="share"></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--llm)"></i>LLM (raqib)</span>
+      <span><i class="dot" style="background:var(--rag)"></i>RAG (Lex.uz qidiruv)</span>
+      <span><i class="dot" style="background:var(--engine)"></i>Dvigatel (FSM, qoidalar)</span>
+      <span><i class="dot" style="background:var(--db)"></i>Saqlash (SQLite)</span>
+      <span><i class="dot" style="background:var(--rerank)"></i>Maʼno boʻyicha baholash (GPU reranker)</span>
+      <span><i class="dot" style="background:var(--tts)"></i>TTS (ovozlashtirish)</span>
+      <span><i class="dot" style="background:var(--stt)"></i>STT (nutqni tanish)</span>
+    </div>
+    <div class="scroll" style="margin-top:12px"><table id="comp"></table></div>
+  </section>
+
+  <section class="card s4">
+    <h2>Tavsiyalar</h2>
+    <div id="adv"></div>
+  </section>
+
+  <section class="card s6">
+    <h2>Hozir bajarilayotgan so'rovlar</h2>
+    <div id="infl" class="muted">yo'q</div>
+  </section>
+
+  <section class="card s6">
+    <h2>Sozlamalar (darhol qo'llanadi)</h2>
+    <div class="ctrl">
+      <label class="sw"><input type="checkbox" id="s_llm"> LLM (raqib advokat)</label>
+      <label class="sw"><input type="checkbox" id="s_rag"> RAG qidiruv</label>
+      <label class="sw"><input type="checkbox" id="s_sem"> Maʼno boʻyicha baholash</label>
+      <label class="sw">LLM kutish, s <input type="number" id="s_tmo" min="10" max="300" step="5" style="width:80px"></label>
+      <label class="sw">TTS <select id="s_tts"><option value="mms">MMS (tez)</option><option value="chatterbox_gpu">Chatterbox GPU (tabiiy, ~6 s/gap)</option><option value="chatterbox">Chatterbox CPU (juda sekin)</option></select></label>
+      <label class="sw">STT <select id="s_stt"><option value="gpu">Kotib GPU (~1 s, tavsiya)</option><option value="gpu_rubai">rubaistt GPU (eng aniq)</option><option value="kotib">Kotib CPU</option><option value="navai">NavAI CPU</option></select></label>
+      <button id="save">Saqlash</button><span id="saved" class="muted"></span>
+    </div>
+    <p class="muted" style="margin:10px 0 0">LLM o'chsa — raqib shablon gap aytadi (tez). RAG o'chsa — modda tekshiruvi bazadagi ro'yxat bo'yicha ishlayveradi, hisobotdagi qo'shimcha manbalar kamayadi. Kutish vaqti tugasa — shablon ishlatiladi.</p>
+  </section>
+
+  <section class="card s6">
+    <h2>Bosqichlar bo'yicha (sud gaplari)</h2>
+    <div class="scroll"><table id="stg"></table></div>
+  </section>
+
+  <section class="card s6">
+    <h2>Xizmatlar</h2>
+    <div class="scroll"><table id="svc"></table></div>
+  </section>
+
+  <section class="card s6">
+    <h2>Jarayonlar — CPU (jonli)</h2>
+    <div class="scroll"><table id="proc"></table></div>
+  </section>
+
+  <section class="card s6">
+    <h2>Ovoz (TTS / STT)</h2>
+    <div id="voice" class="muted">hali chaqirilmadi</div>
+  </section>
+
+  <section class="card s6">
+    <h2>LLM: shablonga o'tish sabablari</h2>
+    <div id="rsn" class="muted">yo'q</div>
+  </section>
+
+  <section class="card s12">
+    <h2>So'nggi so'rovlar</h2>
+    <div class="scroll"><table id="rec"></table></div>
+  </section>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const BASE = "/api/v1";
+let TOKEN = new URLSearchParams(location.search).get("token") || "";
+try { TOKEN = TOKEN || localStorage.getItem("lexsim_admin") || ""; } catch (e) {}
+const STAGE = {ochilish:"Ochilish",ishtirokchilar:"Vakolat",rad:"Rad qilish",huquqlar:"Huquqlar",oldingi:"Iltimosnomalar",
+  tushuntirish:"Tushuntirishlar",dalillar:"Dalillar",penya:"Penya",qoshimcha:"Qo'shimcha",muzokara:"Muzokara",yakun:"Yakun"};
+const KIND = {tts:"Ovoz (TTS)",stt:"Nutq (STT)",turns:"Gap",interactions:"Harakat",finish:"Yakunlash",documents:"Hujjat",sessions:"Sessiya",other:"Boshqa"};
+const PHASE = {llm:"LLM javobi kutilmoqda",rag:"RAG qidirmoqda",db:"saqlanmoqda",dvigatel:"dvigatel"};
+const sec = ms => ms == null ? "–" : ms >= 1000 ? (ms/1000).toFixed(ms >= 10000 ? 0 : 1) + " s" : Math.round(ms) + " ms";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let editing = false;
+
+async function api(path, opt = {}) {
+  const r = await fetch(BASE + path, {...opt, headers: {"X-Admin-Token": TOKEN, "Content-Type": "application/json"}});
+  if (r.status === 401) throw new Error("401");
+  return r.json();
+}
+
+function segs(r, scale) {
+  return [["llm",r.llm],["rag",r.rag],["tts",r.tts||0],["stt",r.stt||0],["engine",r.engine],["db",r.db]]
+    .filter(x => x[1] > 0).map(([k,v]) => `<i title="${k}: ${sec(v)}" style="width:${100*v/scale}%;background:var(--${k})"></i>`).join("");
+}
+
+function render(d) {
+  $("hdr").textContent = `yangilandi ${new Date(d.now*1000).toLocaleTimeString()} · ishlamoqda ${Math.floor(d.uptime_s/60)} daq · so'rovlar: ${d.requests.total} (5 daqiqada ${d.requests.last5min})`;
+  $("k1").textContent = `${sec(d.requests.p50)} / ${sec(d.requests.p95)}`;
+  $("k1b").textContent = `eng uzuni ${sec(d.requests.max)}`;
+  $("k2").textContent = d.inflight.length;
+  $("k2b").textContent = d.inflight.length ? PHASE[d.inflight[0].phase] || d.inflight[0].phase : "bo'sh";
+  $("k3").textContent = `${d.llm.ok} / ${d.llm.fallback}`;
+  $("k3b").textContent = d.llm.ttft_p50 ? `birinchi token p50 ${sec(d.llm.ttft_p50)}` : (d.settings.llm ? "hali chaqirilmadi" : "LLM o'chiq");
+  const sy = d.system;
+  $("k4").textContent = `${sy.cpu ?? "–"}% / ${sy.mem ? sy.mem.used_pct + "%" : "–"}`;
+  $("k4b").textContent = sy.load ? `load ${sy.load.join(" ")} · ${sy.ncpu || "?"} yadro` : "";
+
+  const c = d.components;
+  const ALL = ["llm","rag","rerank","tts","stt","engine","db"];
+  $("share").innerHTML = ALL.filter(k => c[k].share > 0)
+    .map(k => `<i title="${k} ${c[k].share}%" style="width:${c[k].share}%;background:var(--${k})"></i>`).join("");
+  const NAME = {llm:"LLM (raqib)",rag:"RAG qidiruv",tts:"TTS ("+d.settings.tts+")",stt:"STT ("+d.settings.stt+")",rerank:"Baholash (reranker)",engine:"Dvigatel",db:"Saqlash"};
+  $("comp").innerHTML = `<tr><th>Qism</th><th class="n">Ulushi</th><th class="n">Chaqiruv</th><th class="n">O'rtacha</th><th class="n">p50</th><th class="n">p95</th><th class="n">Eng uzun</th></tr>` +
+    ALL.map(k => `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAME[k]}</td><td class="n"><b>${c[k].share}%</b></td><td class="n">${c[k].calls}</td><td class="n">${sec(c[k].avg)}</td><td class="n">${sec(c[k].p50)}</td><td class="n">${sec(c[k].p95)}</td><td class="n">${sec(c[k].max)}</td></tr>`).join("");
+
+  $("adv").innerHTML = d.advice.map(a => `<div class="adv ${a.level}"><b>${esc(a.part)}: ${esc(a.text)}</b>${a.fix ? `<small>${esc(a.fix)}</small>` : ""}</div>`).join("");
+
+  $("infl").innerHTML = d.inflight.length ? `<table><tr><th>Turi</th><th>Bosqich</th><th>Hozir</th><th class="n">Shu qismda</th><th class="n">Jami</th></tr>` +
+    d.inflight.map(f => `<tr><td>${KIND[f.kind]||f.kind}</td><td>${STAGE[f.stage]||f.stage||"–"}</td><td class="${f.phase==="llm"?"live":""}">${PHASE[f.phase]||f.phase}</td><td class="n">${sec(f.phase_ms)}</td><td class="n live">${sec(f.elapsed_ms)}</td></tr>`).join("") + `</table>` : "yo'q";
+
+  if (!editing) { $("s_llm").checked = !!d.settings.llm; $("s_rag").checked = !!d.settings.rag; $("s_sem").checked = d.settings.sem !== false; $("s_tmo").value = d.settings.llm_timeout;
+                  $("s_tts").value = d.settings.tts; $("s_stt").value = d.settings.stt; }
+  const v = d.voice || {}, ct = c.tts, cs = c.stt;
+  $("voice").innerHTML = `<table>
+    <tr><th></th><th class="n">Chaqiruv</th><th class="n">p50</th><th class="n">p95</th><th>Izoh</th></tr>
+    <tr><td><i class="dot" style="background:var(--tts)"></i>TTS — ${esc(d.settings.tts)}</td><td class="n">${v.tts_calls||0}</td><td class="n">${sec(ct.p50)}</td><td class="n">${sec(ct.p95)}</td>
+        <td class="muted">talabaga keshdan: <b>${v.servedFromCache==null?"–":Math.round(v.servedFromCache*100)+" %"}</b> (${v.servedTotal||0} ta, maqsad ≥ 90 %) · klonlangan ovozda tayyor: ${v.coverage?`${v.coverage.ready}/${v.coverage.canonical}`:"–"}${v.autoPrerender&&!v.autoPrerender.finished?` · avto-render ${v.autoPrerender.done}/${v.autoPrerender.total}`:""}</td></tr>
+    <tr><td><i class="dot" style="background:var(--stt)"></i>STT — ${esc(d.settings.stt)}</td><td class="n">${v.stt_calls||0}</td><td class="n">${sec(cs.p50)}</td><td class="n">${sec(cs.p95)}</td>
+        <td class="muted">${v.stt_rtf ? `1 s audioga ${v.stt_rtf} s` : ""}</td></tr></table>`;
+
+  const smax = Math.max(1, ...d.stages.map(s => s.avg));
+  $("stg").innerHTML = d.stages.length ? `<tr><th>Bosqich</th><th class="n">Gaplar</th><th class="n">O'rtacha</th><th class="n">Eng uzun</th><th>Tarkibi</th></tr>` +
+    d.stages.map(s => `<tr><td>${STAGE[s.stage]||s.stage}</td><td class="n">${s.n}</td><td class="n">${sec(s.avg)}</td><td class="n">${sec(s.max)}</td><td><div class="mini">${segs({llm:s.llm_avg,rag:s.rag_avg,engine:Math.max(0,s.avg-s.llm_avg-s.rag_avg),db:0}, smax)}</div></td></tr>`).join("") : `<tr><td class="muted">hali gap yo'q</td></tr>`;
+
+  const sv = Object.entries(d.services);
+  $("svc").innerHTML = `<tr><th>Xizmat</th><th>Holat</th><th class="n">Javob</th><th>Izoh</th></tr>` +
+    sv.map(([n,s]) => `<tr><td>${esc(n)}</td><td class="${s.up?"up":"down"}">${s.up?"● ishlayapti":"● ishlamayapti"}</td><td class="n">${sec(s.ms)}</td><td class="muted">${esc(s.error||"")}</td></tr>`).join("");
+
+  const pm = Math.max(100, ...(sy.procs||[]).map(p => p.cpu));
+  $("proc").innerHTML = `<tr><th>Jarayon</th><th class="n">CPU</th><th class="n">Yadro</th><th class="n">RAM</th><th></th></tr>` +
+    (sy.procs||[]).map(p => `<tr><td>${esc(p.name)}${p.n>1?` <span class="pill">${p.n}</span>`:""}</td><td class="n">${p.cpu}%</td><td class="n">${p.cores}</td><td class="n">${(p.rss_mb/1024).toFixed(1)} GB</td><td><div class="mini"><i style="width:${100*p.cpu/pm}%;background:var(--warn)"></i></div></td></tr>`).join("");
+
+  $("rsn").innerHTML = d.llm.reasons.length ? `<table>${d.llm.reasons.map(([r,n]) => `<tr><td>${esc(r)}</td><td class="n">${n}</td></tr>`).join("")}</table>` : "yo'q";
+
+  const rmax = Math.max(1, ...d.recent.map(r => r.total));
+  $("rec").innerHTML = `<tr><th>Vaqt</th><th>Turi</th><th>Bosqich</th><th class="n">Jami</th><th class="n">LLM</th><th class="n">RAG</th><th class="n">Ovoz</th><th class="n">Dvigatel</th><th>Taqsimot</th><th>Natija</th><th class="n">Kod</th></tr>` +
+    d.recent.map(r => `<tr><td>${new Date(r.ts*1000).toLocaleTimeString()}</td><td>${KIND[r.kind]||r.kind}</td><td>${STAGE[r.stage]||r.stage||"–"}</td><td class="n"><b>${sec(r.total)}</b></td><td class="n">${r.llm?sec(r.llm):"–"}</td><td class="n">${r.rag?sec(r.rag):"–"}</td><td class="n">${(r.tts||r.stt)?sec((r.tts||0)+(r.stt||0)):"–"}</td><td class="n">${sec(r.engine)}</td><td><div class="mini" style="min-width:180px">${segs(r, rmax)}</div></td><td>${r.voice?`${esc(r.voice.engine)}${r.voice.cache?' <span class="up">kesh</span>':''}${r.voice.seconds?` · audio ${r.voice.seconds} s`:''}`:r.llm_info?(r.llm_info.result==="ok"?`<span class="up">OK</span>`:`<span class="down">shablon</span> <span class="muted">${esc(r.llm_info.why||"")}</span>`)+(r.llm_info.ttft_ms?` <span class="muted">· 1-token ${sec(r.llm_info.ttft_ms)}</span>`:""):"–"}</td><td class="n">${r.status}</td></tr>`).join("");
+}
+
+async function tick() {
+  try {
+    const d = await api("/admin/stats");
+    $("login").hidden = true; $("app").hidden = false;
+    render(d);
+  } catch (e) {
+    if (e.message === "401") { $("app").hidden = true; $("login").hidden = false; $("lerr").textContent = TOKEN ? "Token noto'g'ri" : ""; return; }
+    $("hdr").textContent = "server bilan aloqa yo'q — qayta urinilmoqda…";
+  }
+  setTimeout(tick, 2000);
+}
+
+$("go").onclick = () => { TOKEN = $("tok").value.trim(); try { localStorage.setItem("lexsim_admin", TOKEN); } catch (e) {} tick(); };
+["s_llm","s_rag","s_sem","s_tmo","s_tts","s_stt"].forEach(id => $(id).addEventListener("input", () => editing = true));
+$("save").onclick = async () => {
+  const body = {llm: $("s_llm").checked, rag: $("s_rag").checked, sem: $("s_sem").checked, llm_timeout: Number($("s_tmo").value), tts: $("s_tts").value, stt: $("s_stt").value};
+  try { const r = await api("/admin/settings", {method: "POST", body: JSON.stringify(body)});
+        $("saved").textContent = r.settings ? "saqlandi ✓" : (r.error?.message || "xato"); }
+  catch (e) { $("saved").textContent = "xato"; }
+  editing = false; setTimeout(() => $("saved").textContent = "", 3000);
+};
+tick();
+</script>
+</body>
+</html>

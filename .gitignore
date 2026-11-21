@@ -1,0 +1,26 @@
+# --- Sirlar (hech qachon yuklanmasin)
+LEXSIM_REMOTE_KEY.txt
+*.key
+.env
+.env.*
+**/.lexsim_key
+**/.admin_token
+**/tokens.json
+
+# --- Haqiqiy odamlarning ovozi va shaxsiy hujjatlar (rozilik/maxfiylik)
+*.ogg
+*.mp3
+*.wav
+ovoz_namunalar/
+sud keys.docx
+
+# --- Baza, kesh, vaqtinchalik
+*.db
+*.db-wal
+*.db-shm
+__pycache__/
+*.pyc
+backend/tts_cache/
+data/lex/_cache/
+docs.zip
+.DS_Store
