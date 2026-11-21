@@ -24,3 +24,15 @@ backend/tts_cache/
 data/lex/_cache/
 docs.zip
 .DS_Store
+
+# --- Ichki hujjatlar - faqat lokal
+BACKEND_TASKS_V14.md
+LexSim_AI_Fallback_Backend.md
+LexSim_Bahs_Backend_javob.md
+LexSim_Dalillar_va_Asoslar.md
+LexSim_Sohalar_Caselar_Backend.md
+LexSim_Texnik_Tushuntirish.md
+folder2/BACKEND_TASKS_V14 (2).md
+reports/LexSim tekshiruv va yechimlar.md
+research_notes/LexSim manbalar asosi/lexsim_funksiyalar_audit.md
+research_notes/LexSim tekshiruv va yechimlar/yechimlar.md
